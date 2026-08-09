@@ -1,0 +1,9 @@
+project:
+  output-dir: _outputs/html
+
+format:
+  html:
+    toc: true
+    css:
+      - resources/css/iasi.css
+      - resources/css/infra.css

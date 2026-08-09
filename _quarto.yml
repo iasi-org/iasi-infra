@@ -1,0 +1,15 @@
+project:
+  type: book
+
+profile:
+  group:
+    - [html, pdf]
+
+metadata-files:
+  - _book-structure.yml
+
+lang: es
+
+book:
+  title: "IASI Infra"
+  output-file: "iasi-infra"
