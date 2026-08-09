@@ -1,0 +1,20 @@
+---
+title: "Windows sin cuenta ni pin"
+---
+Si no quieres crear una cuenta de Microsoft ni configurar un PIN dentro de la máquina virtual de Windows 11, puedes saltarte ambos bloqueos fácilmente durante la instalación inicial (la pantalla azul de configuración inicial o OOBE).
+Sigue estos trucos para instalar el sistema de forma 100 % local y anónima:
+
+1. Evitar la cuenta de Microsoft (Iniciar sesión)Cuando el instalador te obligue a conectarte a internet o a iniciar sesión con un correo, haz lo siguiente:
+En la pantalla donde te pide el correo, presiona la combinación de teclas Shift + F10 (en algunas laptops es Fn + Shift + F10).
+Se abrirá una ventana negra de comandos (Símbolo del sistema).
+Escribe exactamente este comando y presiona Enter: OOBE\BYPASSNRO
+La máquina virtual se reiniciará automáticamente.Al volver a la pantalla de red, aparecerá un nuevo botón que dice "No tengo internet". 
+Haz clic ahí.Selecciona "Continuar con la configuración limitada". 
+Ahora te dejará escribir cualquier nombre de usuario local sin pedirte correos ni contraseñas obligatorias.
+2. Evitar la creación del PINS
+si el instalador te obliga a crear un PIN de seguridad de Windows Hello después de poner tu contraseña, usa este atajo:
+Cuando aparezca la ventana flotante que te obliga a configurar el PIN, haz clic en Cancelar o cierra esa ventana específica si te da la opción.
+Si no te deja cancelar, deja los campos del PIN completamente vacíos.
+Presiona la tecla Esc (Escape) en tu teclado o haz clic en la flecha de "Atrás" en la esquina superior izquierda de la pantalla.
+El sistema se saltará el paso del PIN y te llevará directamente al escritorio de Windows
+.Con estos dos pasos tendrás un Windows 11 virtualizado totalmente limpio, que iniciará directamente al escritorio sin pedirte contraseñas, PINs ni cuentas de correo.

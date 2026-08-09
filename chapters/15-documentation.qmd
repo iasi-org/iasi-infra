@@ -1,0 +1,44 @@
+# Documentación
+
+IASI considera la documentación como una parte del propio proceso de ingeniería, no se trata únicamente de escribir textos, sino de disponer de un entorno capaz de producir documentación estructurada, reproducible y publicable en distintos formatos.
+
+## ¿Por qué?
+
+Para esta función se han elegido dos herramientas principales:
+
+- **RStudio**, como entorno de trabajo para la creación y mantenimiento de la documentación.
+- **Quarto**, como sistema de publicación y generación de los distintos formatos finales.
+
+### RStudio
+
+RStudio proporciona el entorno de trabajo desde el que se redactan, organizan, revisan y generan los documentos, aunque RStudio está estrechamente ligado a R, y este esta estrechamente ligado al análisis de datos, en IASI su utilización se emplea también como entorno cómodo para trabajar con proyectos documentales basados en Quarto, como herramienta óptima para publicar.
+
+La instalación de R es, por tanto, un requisito previo de esta capa.
+
+### Quarto
+
+Quarto es el sistema de publicación utilizado por IASI, a partir de una misma fuente permite generar diferentes artefactos, entre ellos HTML,PDF,eBook, Gitdoc, etc, manteniendo una estructura común y separando el contenido de su presentación.
+
+Quarto incorpora además Pandoc, por lo que no es necesario instalarlo de forma independiente.
+
+La generación de PDF requiere una distribución TeX. En IASI utilizaremos TinyTeX, instalada y gestionada desde Quarto.
+
+## R/RStudio
+
+RStudio es el IDE de R, por lo que primero es necesario instalar R:
+
+[CRAN - R for Windows](https://cran.r-project.org/bin/windows/base/).
+
+Seguir el procedimiento estándar del instalador y despues verificar:
+
+```powershell
+R --version
+```
+
+Una vez instalado R, descargar RStudio Desktop desde la página oficial de Posit:
+
+[Posit - RStudio Desktop](https://posit.co/download/rstudio-desktop/).
+
+Al iniciarse, RStudio utilizará normalmente la versión actual de R instalada en el sistema.
+
+
