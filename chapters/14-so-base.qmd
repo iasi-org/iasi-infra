@@ -12,6 +12,7 @@ Necesitamos los siguientes paquetes:
 - Git
 - Notepad++
 - Powershell 7
+- docker compose
 
 ### Instalacion
 
@@ -22,7 +23,7 @@ Programa de control de versiones
 ```powershell
 winget install --id Git.Git -e
 ```
-### Notepad++
+#### Notepad++
 
 Un editor de textos que siempre viene bien
 
@@ -30,7 +31,7 @@ Un editor de textos que siempre viene bien
 winget install --id Notepad++.Notepad++ -e
 ```
 
-### PowerShell 7
+#### PowerShell 7
 
 > Una herramienta de automatización y un intérprete de comandos multiplataforma (compatible con Windows, macOS y Linux) de código abierto. 
 > Se ejecuta en paralelo a Windows PowerShell 5.1, ofrece un mejor rendimiento, operadores avanzados y soporte completo para canalizaciones de objetos y APIs 
@@ -39,7 +40,7 @@ winget install --id Notepad++.Notepad++ -e
 winget install --id Microsoft.PowerShell --source winget
 ```
 
-### OpenSSH Client
+#### OpenSSH Client
 
 Un cliente _shell_ seguro
 
@@ -55,7 +56,15 @@ Si no está instalado:
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 ```
 
-## Verfificacion
+#### Docker
+
+La plataforma para generar contenedores
+
+```powershell
+winget install --id Docker.DockerDesktop -e
+```
+
+### Verfificacion
 
 Ejecutar lo siguiente
 
@@ -89,6 +98,43 @@ if (Get-Command pwsh -ErrorAction SilentlyContinue) {
     Write-Host " KO"
 }
 
+Write-Host "Verificando Docker..." -NoNewline
+
+if (Get-Command docker -ErrorAction SilentlyContinue) {
+    Write-Host " OK"
+} else {
+    Write-Host " KO"
+}
+
+Write-Host "Verificando Docker Compose..." -NoNewline
+
+if (docker compose version 2>$null) {
+    Write-Host " OK"
+} else {
+    Write-Host " KO"
+}
+
+```
+
+### Configuracion
+
+#### Git
+
+Una vez todo instalado, git debe ser configurado y conectado a GitHub. Actualmente recomendamos SSH, mientras GitHub no exija 2FC
+Desde git bash, que estara disponible
+
+```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"
+
+ssh-keygen -t ed25519 -C "tu@email.com"
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+cat ~/.ssh/id_ed25519.pub
+
+ssh -T git@github.com
 ```
 
 ## Linux
