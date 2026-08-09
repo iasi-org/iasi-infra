@@ -1,0 +1,100 @@
+# Sistema operativo base
+
+Una vez creada la máquina virtual, el siguiente objetivo es dejar disponible un sistema operativo base, limpio y mínimamente preparado.
+Tenemos dos "sabores": Windows y Linux
+
+## Windows
+
+**Asumimos que existe WinGet**, si no habria que instalarlo. 
+
+Necesitamos los siguientes paquetes:
+
+- Git
+- Notepad++
+- Powershell 7
+
+### Instalacion
+
+#### Git
+
+Programa de control de versiones 
+
+```powershell
+winget install --id Git.Git -e
+```
+### Notepad++
+
+Un editor de textos que siempre viene bien
+
+```powershell
+winget install --id Notepad++.Notepad++ -e
+```
+
+### PowerShell 7
+
+> Una herramienta de automatización y un intérprete de comandos multiplataforma (compatible con Windows, macOS y Linux) de código abierto. 
+> Se ejecuta en paralelo a Windows PowerShell 5.1, ofrece un mejor rendimiento, operadores avanzados y soporte completo para canalizaciones de objetos y APIs 
+
+```powershell
+winget install --id Microsoft.PowerShell --source winget
+```
+
+### OpenSSH Client
+
+Un cliente _shell_ seguro
+
+Primero comprobar si está disponible:
+
+```powershell
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Client*'
+```
+
+Si no está instalado:
+
+```powershell
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+```
+
+## Verfificacion
+
+Ejecutar lo siguiente
+
+```powershell
+Write-Host "Verificando Git..." -NoNewline
+
+if (Get-Command git -ErrorAction SilentlyContinue) {
+    Write-Host " OK"
+} else {
+    Write-Host " KO"
+}
+
+Write-Host "Verificando Notepad++..." -NoNewline
+
+if (Get-Command notepad++ -ErrorAction SilentlyContinue) {
+    Write-Host " OK"
+} else {
+    Write-Host " KO"
+}
+
+Write-Host "Verificando PowerShell 7..." -NoNewline
+
+if (Get-Command pwsh -ErrorAction SilentlyContinue) {
+    $version = & pwsh -NoProfile -Command '$PSVersionTable.PSVersion.Major'
+    if ($version -ge 7) {
+        Write-Host " OK"
+    } else {
+        Write-Host " KO"
+    }
+} else {
+    Write-Host " KO"
+}
+
+```
+
+## Linux
+
+TODO Pendiente de escribir
+
+No deberia requerir nada especial salvo instalaciones minimas
+
+
