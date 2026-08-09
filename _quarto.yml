@@ -10,6 +10,10 @@ metadata-files:
 
 lang: es
 
-book:
+website:
   title: "IASI Infra"
-  output-file: "iasi-infra"
+
+  sidebar:
+    style: docked
+    search: true
+    contents: auto
