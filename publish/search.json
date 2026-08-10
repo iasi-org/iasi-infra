@@ -1,0 +1,591 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IASI Infra",
+    "section": "",
+    "text": "Infraestructura reproducible para crear, configurar y preparar entornos de trabajo IASI desde cero."
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html",
+    "href": "chapters/19-postinstalacion.html",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "Una vez instaladas las herramientas y descargados los repositorios, queda preparar el entorno para que los distintos componentes de IASI puedan utilizarse entre sí.\nLa postinstalación no incorpora nuevas capas de software general. Su función es materializar los componentes propios de IASI, instalar sus extensiones y arrancar los servicios necesarios.\nLa secuencia inicial es:\nRepositorios descargados\n↓\ninstalar iasi.quarto\n↓\ninstalar extensiones de iasi-lua\n↓\nconfigurar servicios\n↓\nDocker Compose\n↓\nverificar el entorno\n\n\niasi.quarto es un paquete R y debe instalarse desde el repositorio local previamente descargado.\nDesde RStudio, situados en el directorio raíz iasi-org, puede instalarse con:\nremotes::install_local(\n  \"iasi_quarto\",\n  upgrade = \"never\"\n)\nremotes::install_local() permite instalar un paquete directamente desde un directorio local.\nReferencia:\nremotes - install_local\nVerificar:\nlibrary(iasi.quarto)\n\npackageVersion(\"iasi.quarto\")\nEsta instalación utiliza el código presente en el repositorio local.\nLa generación de documentación del paquete, la ejecución de pruebas y otras tareas propias de su desarrollo no forman parte de esta postinstalación.\n\n\n\nEl repositorio iasi-lua contiene extensiones Quarto utilizadas por los proyectos IASI.\nLas extensiones Quarto se instalan de forma local dentro de cada proyecto que las necesita. Quarto crea para ello el directorio _extensions.\nReferencia:\nQuarto - Managing Extensions\nDesde el directorio de un proyecto:\nquarto add ../iasi-lua\nPor ejemplo:\ncd iasi-book\nquarto add ../iasi-lua\ncd ..\ny:\ncd iasi-infra\nquarto add ../iasi-lua\ncd ..\nQuarto también permite evitar la confirmación interactiva:\nquarto add ../iasi-lua --no-prompt\nReferencia:\nQuarto CLI - add\nLa instalación debe realizarse únicamente en los proyectos que utilicen las extensiones de iasi-lua.\nEl resultado esperado será similar a:\niasi-book/\n└── _extensions/\n    └── iasi-plantuml/\n\niasi-infra/\n└── _extensions/\n    └── iasi-plantuml/\nLas extensiones quedan junto al proyecto que las utiliza, favoreciendo que el proyecto conserve su propia definición reproducible.\n\n\n\nAlgunos componentes utilizados por IASI no son aplicaciones instaladas directamente en la máquina de desarrollo.\nSe ejecutan como servicios.\nInicialmente se contemplan:\nServicios\n├── PlantUML\n├── Ollama\n└── Open WebUI\nEstos servicios pueden ejecutarse en la propia máquina o en una máquina de servicios independiente.\nLa ubicación física del servicio no debe alterar la configuración funcional del proyecto.\n\n\n\nCuando los servicios se ejecuten en otra máquina, la máquina IASI debe poder resolver su nombre.\nPor ejemplo, si PlantUML se publica mediante:\nhttp://javier:1025\nel nombre javier debe resolverse desde la máquina IASI hacia la dirección IP correspondiente.\nEn Windows puede definirse, cuando sea necesario, en:\nC:\\Windows\\System32\\drivers\\etc\\hosts\nPor ejemplo:\n192.168.x.x    javier\nLa dirección concreta depende de la infraestructura y no debe fijarse en la documentación común.\n\n\n\nLa definición de los servicios se realizará mediante Docker Compose.\nDocker Compose permite crear y arrancar los servicios definidos en un archivo Compose mediante:\ndocker compose up -d\nReferencia:\nDocker - docker compose up\nLa composición concreta se definirá posteriormente, pero deberá contemplar al menos los servicios que formen parte de la infraestructura IASI:\nDocker Compose\n├── PlantUML\n├── Ollama\n└── Open WebUI\nNo todos los servicios tienen por qué ejecutarse necesariamente en la misma máquina.\n\n\n\nUna vez disponible Ollama podrán incorporarse los modelos seleccionados para la plataforma local:\nOllama\n├── Llama\n├── Qwen\n└── DeepSeek\nLa descarga de los modelos forma parte de la preparación de la plataforma de sistemas inteligentes, pero las variantes y tamaños concretos dependerán de los recursos disponibles.\n\n\n\nLa postinstalación debe terminar comprobando que cada capa puede utilizar la siguiente.\n\n\nlibrary(iasi.quarto)\n\npackageVersion(\"iasi.quarto\")\n\n\n\nDesde cada proyecto que utilice extensiones:\nquarto list extensions\n\n\n\ndocker compose ps\n\n\n\nDesde la máquina IASI:\ncurl http://javier:1025\n\n\n\nCuando los servicios estén desplegados, deberán ser accesibles mediante sus puntos de entrada definidos.\n\n\n\n\nDespués de la postinstalación, el entorno deja de ser únicamente una máquina con herramientas y repositorios.\nLos componentes empiezan a estar conectados entre sí:\nIASI\n├── repositorios\n├── iasi.quarto instalado\n├── extensiones iasi-lua materializadas\n├── PlantUML accesible\n└── plataforma IA preparada\n    ├── Open WebUI\n    ├── Ollama\n    └── modelos\nLa instalación crea la máquina.\nLa postinstalación convierte esa máquina en un entorno IASI operativo.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html#iasi.quarto",
+    "href": "chapters/19-postinstalacion.html#iasi.quarto",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "iasi.quarto es un paquete R y debe instalarse desde el repositorio local previamente descargado.\nDesde RStudio, situados en el directorio raíz iasi-org, puede instalarse con:\nremotes::install_local(\n  \"iasi_quarto\",\n  upgrade = \"never\"\n)\nremotes::install_local() permite instalar un paquete directamente desde un directorio local.\nReferencia:\nremotes - install_local\nVerificar:\nlibrary(iasi.quarto)\n\npackageVersion(\"iasi.quarto\")\nEsta instalación utiliza el código presente en el repositorio local.\nLa generación de documentación del paquete, la ejecución de pruebas y otras tareas propias de su desarrollo no forman parte de esta postinstalación.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html#iasi-lua",
+    "href": "chapters/19-postinstalacion.html#iasi-lua",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "El repositorio iasi-lua contiene extensiones Quarto utilizadas por los proyectos IASI.\nLas extensiones Quarto se instalan de forma local dentro de cada proyecto que las necesita. Quarto crea para ello el directorio _extensions.\nReferencia:\nQuarto - Managing Extensions\nDesde el directorio de un proyecto:\nquarto add ../iasi-lua\nPor ejemplo:\ncd iasi-book\nquarto add ../iasi-lua\ncd ..\ny:\ncd iasi-infra\nquarto add ../iasi-lua\ncd ..\nQuarto también permite evitar la confirmación interactiva:\nquarto add ../iasi-lua --no-prompt\nReferencia:\nQuarto CLI - add\nLa instalación debe realizarse únicamente en los proyectos que utilicen las extensiones de iasi-lua.\nEl resultado esperado será similar a:\niasi-book/\n└── _extensions/\n    └── iasi-plantuml/\n\niasi-infra/\n└── _extensions/\n    └── iasi-plantuml/\nLas extensiones quedan junto al proyecto que las utiliza, favoreciendo que el proyecto conserve su propia definición reproducible.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html#servicios",
+    "href": "chapters/19-postinstalacion.html#servicios",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "Algunos componentes utilizados por IASI no son aplicaciones instaladas directamente en la máquina de desarrollo.\nSe ejecutan como servicios.\nInicialmente se contemplan:\nServicios\n├── PlantUML\n├── Ollama\n└── Open WebUI\nEstos servicios pueden ejecutarse en la propia máquina o en una máquina de servicios independiente.\nLa ubicación física del servicio no debe alterar la configuración funcional del proyecto.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html#resolución-de-nombres",
+    "href": "chapters/19-postinstalacion.html#resolución-de-nombres",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "Cuando los servicios se ejecuten en otra máquina, la máquina IASI debe poder resolver su nombre.\nPor ejemplo, si PlantUML se publica mediante:\nhttp://javier:1025\nel nombre javier debe resolverse desde la máquina IASI hacia la dirección IP correspondiente.\nEn Windows puede definirse, cuando sea necesario, en:\nC:\\Windows\\System32\\drivers\\etc\\hosts\nPor ejemplo:\n192.168.x.x    javier\nLa dirección concreta depende de la infraestructura y no debe fijarse en la documentación común.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html#docker-compose",
+    "href": "chapters/19-postinstalacion.html#docker-compose",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "La definición de los servicios se realizará mediante Docker Compose.\nDocker Compose permite crear y arrancar los servicios definidos en un archivo Compose mediante:\ndocker compose up -d\nReferencia:\nDocker - docker compose up\nLa composición concreta se definirá posteriormente, pero deberá contemplar al menos los servicios que formen parte de la infraestructura IASI:\nDocker Compose\n├── PlantUML\n├── Ollama\n└── Open WebUI\nNo todos los servicios tienen por qué ejecutarse necesariamente en la misma máquina.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html#modelos",
+    "href": "chapters/19-postinstalacion.html#modelos",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "Una vez disponible Ollama podrán incorporarse los modelos seleccionados para la plataforma local:\nOllama\n├── Llama\n├── Qwen\n└── DeepSeek\nLa descarga de los modelos forma parte de la preparación de la plataforma de sistemas inteligentes, pero las variantes y tamaños concretos dependerán de los recursos disponibles.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html#verificación",
+    "href": "chapters/19-postinstalacion.html#verificación",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "La postinstalación debe terminar comprobando que cada capa puede utilizar la siguiente.\n\n\nlibrary(iasi.quarto)\n\npackageVersion(\"iasi.quarto\")\n\n\n\nDesde cada proyecto que utilice extensiones:\nquarto list extensions\n\n\n\ndocker compose ps\n\n\n\nDesde la máquina IASI:\ncurl http://javier:1025\n\n\n\nCuando los servicios estén desplegados, deberán ser accesibles mediante sus puntos de entrada definidos.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/19-postinstalacion.html#resultado",
+    "href": "chapters/19-postinstalacion.html#resultado",
+    "title": "Postinstalación",
+    "section": "",
+    "text": "Después de la postinstalación, el entorno deja de ser únicamente una máquina con herramientas y repositorios.\nLos componentes empiezan a estar conectados entre sí:\nIASI\n├── repositorios\n├── iasi.quarto instalado\n├── extensiones iasi-lua materializadas\n├── PlantUML accesible\n└── plataforma IA preparada\n    ├── Open WebUI\n    ├── Ollama\n    └── modelos\nLa instalación crea la máquina.\nLa postinstalación convierte esa máquina en un entorno IASI operativo.",
+    "crumbs": [
+      "Chapters",
+      "Postinstalación"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html",
+    "href": "chapters/17-sistemas-inteligentes.html",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "IASI incorpora una plataforma local de sistemas inteligentes basada en una separación clara entre interfaz, motor de ejecución y modelos. Existen asistentes externos como ChatGPT o GitHub Copilot que pueden participar en el proceso de ingeniería. Pueden resultar útiles para análisis, diseño, documentación o desarrollo, pero no forman parte de la infraestructura local definida en esta sección. La plataforma local elegida para IASI es:\nOpen WebUI\n    ↓\nOllama\n    ↓\n├── Llama\n├── Qwen\n└── DeepSeek\n\n\nOpen WebUI proporciona la interfaz desde la que se utilizan los modelos.\nSu función es ofrecer un punto único de interacción con las distintas familias de modelos disponibles, de forma que el usuario no tenga que trabajar directamente con el motor que los ejecuta.\nReferencia oficial:\nOpen WebUI - Documentation\n\n\n\nOllama proporciona el runtime encargado de descargar, gestionar y ejecutar los modelos.\nOpen WebUI actúa como interfaz y Ollama como motor de ejecución.\nReferencia oficial:\nOllama - Documentation\nEsta separación permite cambiar los modelos sin modificar la interfaz ni la arquitectura general.\n\n\n\nLlama es una familia de modelos desarrollada por Meta.\nEn IASI se utiliza como una de las familias generalistas de referencia. Resulta adecuada para conversación, análisis, redacción, resumen y generación de contenido.\nReferencia en Ollama:\nLlama - Ollama\nLlama representa una primera perspectiva dentro de la plataforma, pero no se considera el modelo único ni el modelo por defecto para todos los problemas.\n\n\n\nQwen es una familia de modelos desarrollada por Alibaba.\nIASI la incorpora como otra familia generalista con la que contrastar resultados y comportamiento.\nReferencia en Ollama:\nQwen - Ollama\nQwen dispone de diferentes variantes y tamaños, lo que permite adaptar su uso a los recursos disponibles y al tipo de tarea.\n\n\n\nDeepSeek es una familia especialmente interesante para tareas de razonamiento, programación y resolución de problemas técnicos. IASI la incorpora como tercera familia de referencia, complementando a Llama y Qwen.\nReferencia en Ollama:\nDeepSeek - Ollama\nSu presencia permite comparar no solo respuestas finales, sino también el comportamiento de distintos modelos ante problemas complejos.\n\n\n\nIASI no parte de la idea de que exista un único modelo adecuado para todos los problemas. La misma infraestructura permite utilizar diferentes modelos:\nOpen WebUI\n    ↓\nOllama\n    ↓\n├── Llama\n├── Qwen\n└── DeepSeek\nUna misma cuestión puede contrastarse entre varios modelos y el usuario puede elegir cuál resulta más adecuado para cada tarea.\nLos modelos son sustituibles. La infraestructura permanece.\n\n\n\nIASI puede utilizar también sistemas externos como ChatGPT o GitHub Copilot.\nEstos sistemas forman parte del ecosistema de trabajo asistido por IA, pero quedan fuera de la plataforma local descrita aquí.\nLa plataforma local de referencia de IASI es:\nOpen WebUI\n    ↓\nOllama\n    ↓\nLlama / Qwen / DeepSeek\n\n\n\nLa instalación concreta mediante Docker y Docker Compose se tratará posteriormente.\nEn esta sección únicamente se fija la arquitectura y la selección inicial de componentes.\n\n\n\nLa capa de sistemas inteligentes queda formada por:\nInterfaz\n└── Open WebUI\n\nRuntime\n└── Ollama\n\nModelos\n├── Llama\n├── Qwen\n└── DeepSeek\nEl modelo puede cambiar. La infraestructura permanece.",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#open-webui",
+    "href": "chapters/17-sistemas-inteligentes.html#open-webui",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "Open WebUI proporciona la interfaz desde la que se utilizan los modelos.\nSu función es ofrecer un punto único de interacción con las distintas familias de modelos disponibles, de forma que el usuario no tenga que trabajar directamente con el motor que los ejecuta.\nReferencia oficial:\nOpen WebUI - Documentation",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#ollama",
+    "href": "chapters/17-sistemas-inteligentes.html#ollama",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "Ollama proporciona el runtime encargado de descargar, gestionar y ejecutar los modelos.\nOpen WebUI actúa como interfaz y Ollama como motor de ejecución.\nReferencia oficial:\nOllama - Documentation\nEsta separación permite cambiar los modelos sin modificar la interfaz ni la arquitectura general.",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#llama",
+    "href": "chapters/17-sistemas-inteligentes.html#llama",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "Llama es una familia de modelos desarrollada por Meta.\nEn IASI se utiliza como una de las familias generalistas de referencia. Resulta adecuada para conversación, análisis, redacción, resumen y generación de contenido.\nReferencia en Ollama:\nLlama - Ollama\nLlama representa una primera perspectiva dentro de la plataforma, pero no se considera el modelo único ni el modelo por defecto para todos los problemas.",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#qwen",
+    "href": "chapters/17-sistemas-inteligentes.html#qwen",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "Qwen es una familia de modelos desarrollada por Alibaba.\nIASI la incorpora como otra familia generalista con la que contrastar resultados y comportamiento.\nReferencia en Ollama:\nQwen - Ollama\nQwen dispone de diferentes variantes y tamaños, lo que permite adaptar su uso a los recursos disponibles y al tipo de tarea.",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#deepseek",
+    "href": "chapters/17-sistemas-inteligentes.html#deepseek",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "DeepSeek es una familia especialmente interesante para tareas de razonamiento, programación y resolución de problemas técnicos. IASI la incorpora como tercera familia de referencia, complementando a Llama y Qwen.\nReferencia en Ollama:\nDeepSeek - Ollama\nSu presencia permite comparar no solo respuestas finales, sino también el comportamiento de distintos modelos ante problemas complejos.",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#varios-modelos-una-misma-plataforma",
+    "href": "chapters/17-sistemas-inteligentes.html#varios-modelos-una-misma-plataforma",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "IASI no parte de la idea de que exista un único modelo adecuado para todos los problemas. La misma infraestructura permite utilizar diferentes modelos:\nOpen WebUI\n    ↓\nOllama\n    ↓\n├── Llama\n├── Qwen\n└── DeepSeek\nUna misma cuestión puede contrastarse entre varios modelos y el usuario puede elegir cuál resulta más adecuado para cada tarea.\nLos modelos son sustituibles. La infraestructura permanece.",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#otros-sistemas-inteligentes",
+    "href": "chapters/17-sistemas-inteligentes.html#otros-sistemas-inteligentes",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "IASI puede utilizar también sistemas externos como ChatGPT o GitHub Copilot.\nEstos sistemas forman parte del ecosistema de trabajo asistido por IA, pero quedan fuera de la plataforma local descrita aquí.\nLa plataforma local de referencia de IASI es:\nOpen WebUI\n    ↓\nOllama\n    ↓\nLlama / Qwen / DeepSeek",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#despliegue",
+    "href": "chapters/17-sistemas-inteligentes.html#despliegue",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "La instalación concreta mediante Docker y Docker Compose se tratará posteriormente.\nEn esta sección únicamente se fija la arquitectura y la selección inicial de componentes.",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/17-sistemas-inteligentes.html#resultado",
+    "href": "chapters/17-sistemas-inteligentes.html#resultado",
+    "title": "Sistemas inteligentes",
+    "section": "",
+    "text": "La capa de sistemas inteligentes queda formada por:\nInterfaz\n└── Open WebUI\n\nRuntime\n└── Ollama\n\nModelos\n├── Llama\n├── Qwen\n└── DeepSeek\nEl modelo puede cambiar. La infraestructura permanece.",
+    "crumbs": [
+      "Chapters",
+      "Sistemas inteligentes"
+    ]
+  },
+  {
+    "objectID": "chapters/15-documentation.html",
+    "href": "chapters/15-documentation.html",
+    "title": "Documentación",
+    "section": "",
+    "text": "IASI considera la documentación como una parte del propio proceso de ingeniería, no se trata únicamente de escribir textos, sino de disponer de un entorno capaz de producir documentación estructurada, reproducible y publicable en distintos formatos.\n\n\nPara esta función se han elegido dos herramientas principales:\n\nRStudio, como entorno de trabajo para la creación y mantenimiento de la documentación.\nQuarto, como sistema de publicación y generación de los distintos formatos finales.\n\n\n\nRStudio proporciona el entorno de trabajo desde el que se redactan, organizan, revisan y generan los documentos, aunque RStudio está estrechamente ligado a R, y este esta estrechamente ligado al análisis de datos, en IASI su utilización se emplea también como entorno cómodo para trabajar con proyectos documentales basados en Quarto, como herramienta óptima para publicar.\nLa instalación de R es, por tanto, un requisito previo de esta capa.\n\n\n\nQuarto es el sistema de publicación utilizado por IASI, a partir de una misma fuente permite generar diferentes artefactos, entre ellos HTML,PDF,eBook, Gitdoc, etc, manteniendo una estructura común y separando el contenido de su presentación.\nQuarto incorpora además Pandoc, por lo que no es necesario instalarlo de forma independiente.\nLa generación de PDF requiere una distribución TeX. En IASI utilizaremos TinyTeX, instalada y gestionada desde Quarto.\n\n\n\n\n\n\nRStudio es el IDE de R, por lo que primero es necesario instalar R:\nCRAN - R for Windows.\nSeguir el procedimiento estándar del instalador y despues verificar en un terminal:\nR --version\nUna vez instalado R, descargar RStudio Desktop desde la página oficial de Posit:\nPosit - RStudio Desktop.\nAl iniciarse, RStudio utilizará normalmente la versión actual de R instalada en el sistema.\nEn Windows tambien es necesario instalar una toolchain:\nRTools\n\n\n\n\nUna vez instalado el software, se necesitan los paquetes de R y las herramientas para genera PDF.\nIniciamos RStudio, y en la ventana de consola ejecutamos:\ninstall.packages(c(\n  \"rmarkdown\",\n  \"remotes\",\n  \"quarto\"\n), dependencies=TRUE)\nY por ultimo desde la ventana Terminal\nquarto install tinytex",
+    "crumbs": [
+      "Chapters",
+      "Documentación"
+    ]
+  },
+  {
+    "objectID": "chapters/15-documentation.html#por-qué",
+    "href": "chapters/15-documentation.html#por-qué",
+    "title": "Documentación",
+    "section": "",
+    "text": "Para esta función se han elegido dos herramientas principales:\n\nRStudio, como entorno de trabajo para la creación y mantenimiento de la documentación.\nQuarto, como sistema de publicación y generación de los distintos formatos finales.\n\n\n\nRStudio proporciona el entorno de trabajo desde el que se redactan, organizan, revisan y generan los documentos, aunque RStudio está estrechamente ligado a R, y este esta estrechamente ligado al análisis de datos, en IASI su utilización se emplea también como entorno cómodo para trabajar con proyectos documentales basados en Quarto, como herramienta óptima para publicar.\nLa instalación de R es, por tanto, un requisito previo de esta capa.\n\n\n\nQuarto es el sistema de publicación utilizado por IASI, a partir de una misma fuente permite generar diferentes artefactos, entre ellos HTML,PDF,eBook, Gitdoc, etc, manteniendo una estructura común y separando el contenido de su presentación.\nQuarto incorpora además Pandoc, por lo que no es necesario instalarlo de forma independiente.\nLa generación de PDF requiere una distribución TeX. En IASI utilizaremos TinyTeX, instalada y gestionada desde Quarto.",
+    "crumbs": [
+      "Chapters",
+      "Documentación"
+    ]
+  },
+  {
+    "objectID": "chapters/15-documentation.html#instalacion",
+    "href": "chapters/15-documentation.html#instalacion",
+    "title": "Documentación",
+    "section": "",
+    "text": "RStudio es el IDE de R, por lo que primero es necesario instalar R:\nCRAN - R for Windows.\nSeguir el procedimiento estándar del instalador y despues verificar en un terminal:\nR --version\nUna vez instalado R, descargar RStudio Desktop desde la página oficial de Posit:\nPosit - RStudio Desktop.\nAl iniciarse, RStudio utilizará normalmente la versión actual de R instalada en el sistema.\nEn Windows tambien es necesario instalar una toolchain:\nRTools",
+    "crumbs": [
+      "Chapters",
+      "Documentación"
+    ]
+  },
+  {
+    "objectID": "chapters/15-documentation.html#configuracion",
+    "href": "chapters/15-documentation.html#configuracion",
+    "title": "Documentación",
+    "section": "",
+    "text": "Una vez instalado el software, se necesitan los paquetes de R y las herramientas para genera PDF.\nIniciamos RStudio, y en la ventana de consola ejecutamos:\ninstall.packages(c(\n  \"rmarkdown\",\n  \"remotes\",\n  \"quarto\"\n), dependencies=TRUE)\nY por ultimo desde la ventana Terminal\nquarto install tinytex",
+    "crumbs": [
+      "Chapters",
+      "Documentación"
+    ]
+  },
+  {
+    "objectID": "chapters/12-vm.html",
+    "href": "chapters/12-vm.html",
+    "title": "Windows sin cuenta ni pin",
+    "section": "",
+    "text": "Si no quieres crear una cuenta de Microsoft ni configurar un PIN dentro de la máquina virtual de Windows 11, puedes saltarte ambos bloqueos fácilmente durante la instalación inicial (la pantalla azul de configuración inicial o OOBE). Sigue estos trucos para instalar el sistema de forma 100 % local y anónima:\n\nEvitar la cuenta de Microsoft (Iniciar sesión) Cuando el instalador te obligue a conectarte a internet o a iniciar sesión con un correo, haz lo siguiente: En la pantalla donde te pide el correo, presiona la combinación de teclas Shift + F10 (en algunas laptops es Fn + Shift + F10). Se abrirá una ventana negra de comandos (Símbolo del sistema). Escribe exactamente este comando y presiona Enter: OOBE La máquina virtual se reiniciará automáticamente.Al volver a la pantalla de red, aparecerá un nuevo botón que dice “No tengo internet”. Haz clic ahí.Selecciona “Continuar con la configuración limitada”. Ahora te dejará escribir cualquier nombre de usuario local sin pedirte correos ni contraseñas obligatorias.\nEvitar la creación del PINS si el instalador te obliga a crear un PIN de seguridad de Windows Hello después de poner tu contraseña, usa este atajo: Cuando aparezca la ventana flotante que te obliga a configurar el PIN, haz clic en Cancelar o cierra esa ventana específica si te da la opción. Si no te deja cancelar, deja los campos del PIN completamente vacíos. Presiona la tecla Esc (Escape) en tu teclado o haz clic en la flecha de “Atrás” en la esquina superior izquierda de la pantalla. El sistema se saltará el paso del PIN y te llevará directamente al escritorio de Windows .Con estos dos pasos tendrás un Windows 11 virtualizado totalmente limpio, que iniciará directamente al escritorio sin pedirte contraseñas, PINs ni cuentas de correo.",
+    "crumbs": [
+      "Chapters",
+      "Windows sin cuenta ni pin"
+    ]
+  },
+  {
+    "objectID": "chapters/11-intro.html",
+    "href": "chapters/11-intro.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "Introducción\nDescargar IASI no es suficiente para disponer de un entorno IASI operativo.\nLos distintos componentes del ecosistema dependen de una infraestructura que permita ejecutarlos, construirlos, probarlos y mantenerlos de forma reproducible. Esa infraestructura incluye el sistema operativo, las herramientas de desarrollo, los runtimes, los servicios auxiliares y la configuración necesaria para que todo funcione de manera coherente.\niasi-infra documenta esa capa.\nEl objetivo no es describir paso a paso cómo instalar cada programa. Ese tipo de documentación ya existe y, además, cambia con mucha más frecuencia que la arquitectura que queremos definir aquí.\nSiempre que sea posible, nos limitaremos a:\n\nidentificar el software o servicio necesario;\nexplicar para qué se utiliza dentro del entorno IASI;\nindicar las decisiones de configuración relevantes;\nenlazar a su documentación o sitio oficial.\n\nSolo detallaremos un procedimiento de instalación cuando exista algún requisito, configuración o particularidad específica de IASI que haga necesario hacerlo.\nDe este modo, este documento no pretende sustituir la documentación de Windows, Linux, Quarto, R, Docker, Java, Git o cualquier otra herramienta utilizada. Su función es explicar cómo encajan esas piezas para formar un entorno IASI reproducible.\nLa infraestructura no es un añadido posterior al proyecto. Forma parte de él.\nUn repositorio puede contener todo el código necesario y, aun así, no ser reproducible si nadie sabe con precisión qué entorno necesita para funcionar. iasi-infra intenta cerrar precisamente esa brecha.",
+    "crumbs": [
+      "Chapters",
+      "Introducción"
+    ]
+  },
+  {
+    "objectID": "01-manifesto-bilingual.html",
+    "href": "01-manifesto-bilingual.html",
+    "title": "Manifesto / Manifiesto",
+    "section": "",
+    "text": "Manifesto / Manifiesto\nThis book is deliberately written in Spanish.\nThere are two main reasons:\n\nThe first one is simple; Spanish is one of the most widely spoken native languages in the world, second only to Mandarin Chinese. It is therefore not a marginal language for thinking, explaining, or building technical knowledge.\nThe second is personal, but also methodological: it is the language I use and the one in which I can express myself with the greatest precision and consistency.\n\nThis is not a rejection of English, nor does it ignore the fact that much of technology is first developed and documented in English. It is a choice to work in the language in which I can think, question, discuss, and capture nuance most accurately.\nAnd in engineering, nuance matters.\nTranslations can come later. Original thought cannot.\nNevertheless, if you need any part of this work translated into English, we will be happy to provide it.\n\nEste libro está escrito conscientemente en castellano.\nHay dos razones principales:\n\nLa primera es sencilla: el castellano es una de las lenguas maternas más habladas del mundo, solo por detrás del chino mandarín. No es, por tanto, una lengua marginal para pensar, explicar o construir conocimiento técnico.\nLa segunda es personal, pero también metodológica: es la lengua que uso y en la que puedo expresarme con mayor exactitud y coherencia.\n\nNo se trata de rechazar el inglés ni de ignorar que gran parte de la tecnología se desarrolla y documenta primero en ese idioma. Se trata de elegir la lengua en la que puedo pensar, dudar, discutir y encontrar mejor los matices.\nY en ingeniería, los matices importan.\nLas traducciones podrán venir después. El pensamiento original, no.",
+    "crumbs": [
+      "Manifesto / Manifiesto"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html",
+    "href": "chapters/12-isolation.html",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "En un entorno profesional es habitual trabajar para uno o varios clientes y participar, simultánea o sucesivamente, en distintos proyectos.\nDurante años fue frecuente que cada empresa proporcionara a sus profesionales un ordenador corporativo completamente gestionado por ella. En determinados entornos de consultoría podía incluso ocurrir que una misma persona dispusiera de varios equipos: uno perteneciente a su empresa y otros entregados por diferentes clientes, ese modelo sigue existiendo, aunque hoy es menos habitual.\nActualmente es frecuente trabajar desde un único ordenador corporativo, o incluso desde un ordenador personal, y acceder a los entornos de los clientes mediante mecanismos como VPN, Citrix, escritorios remotos o infraestructuras VDI.\nEstos mecanismos resuelven el acceso al entorno del cliente, pero no resuelven necesariamente un problema distinto: cómo protegemos nuestro propio entorno de trabajo de las necesidades particulares de cada proyecto.\n\nUna VPN para un cliente.\nUn certificado para otro.\nUna determinada versión de Java.\nUn runtime específico.\nVariables de entorno.\nClientes corporativos.\nConfiguraciones de red.\nCredenciales.\nExtensiones.\nSDK.\nHerramientas de seguridad.\nConfiguraciones particulares de Git.\n…\n\nCon el tiempo, el ordenador desde el que trabajamos puede terminar convertido en la suma histórica de todos los proyectos en los que hemos participado. IASI evita deliberadamente ese modelo.\n\n\nEl ordenador personal o corporativo desde el que trabajamos debería mantenerse, en la medida de lo posible, estable y limpio y dedicado a su función corporativa.\nSu función no es absorber las herramientas, dependencias y configuraciones particulares de todos nuestros clientes.\nCuando cada nuevo proyecto instala directamente sobre el ordenador todo aquello que necesita, terminamos construyendo algo parecido a esto:\nDespués de suficiente tiempo resulta difícil determinar qué pertenece realmente al entorno base y qué fue incorporado únicamente porque un proyecto concreto lo necesitaba, y el problema no es solo el desorden.\nLos proyectos empiezan a contaminarse entre sí, una actualización necesaria para un proyecto puede romper otro. Una nueva versión de una herramienta puede modificar un comportamiento anterior. Una VPN puede alterar rutas de red. Una variable de entorno puede afectar a programas aparentemente independientes. Una configuración realizada meses atrás puede seguir actuando cuando ya hemos olvidado por qué estaba allí.\nTambién desaparece la reproducibilidad, si un proyecto funciona porque nuestro ordenador ha acumulado durante años pequeñas modificaciones cuyo origen ya no conocemos, entonces no tenemos realmente un entorno definido.\nTenemos una máquina que funciona por acumulación histórica.\n\n\n\nIASI aplica por tanto un principio sencillo:\n\nCada proyecto, y cada cliente cuando constituya un contexto independiente, vive en su propia máquina virtual.\n\nLa máquina virtual constituye la frontera principal de aislamiento.\nOrdenador personal o corporativo\n│\n├── Máquina virtual · Cliente A / Proyecto A\n├── Máquina virtual · Cliente A / Proyecto B\n├── Máquina virtual · Cliente B / Proyecto C\n└── Máquina virtual · IASI\nCada entorno dispone de sus propias herramientas, versiones, configuraciones, certificados, credenciales y mecanismos de acceso, una VPN necesaria para el cliente A se instala en la máquina virtual correspondiente al cliente A, una versión determinada de Java necesaria para el proyecto B pertenece a la máquina virtual del proyecto B, una configuración particular de Git pertenece a ese entorno, una herramienta que queremos evaluar para IASI se instala en el entorno IASI.\nEl ordenador físico queda fuera de esas decisiones, su función es proporcionar los recursos necesarios para ejecutar las máquinas virtuales, no convertirse en el recipiente de todas ellas.\nPodemos resumirlo así:\n\nEl ordenador físico no es el entorno de trabajo. Es la infraestructura que aloja los entornos de trabajo.\n\n\n\n\nLa expresión «una máquina virtual por proyecto» debe entenderse como una regla de aislamiento, no como una obligación administrativa rígida, en algunos clientes varios proyectos pueden compartir exactamente el mismo contexto, las mismas herramientas y las mismas restricciones. En ese caso puede resultar razonable que compartan también una máquina virtual, en otros casos, dos proyectos del mismo cliente pueden tener requisitos suficientemente diferentes como para necesitar entornos independientes.\nLa pregunta relevante es:\n\n¿Puede un cambio necesario para este trabajo afectar a otro trabajo distinto?\n\nSi la respuesta es sí, existe una frontera que debemos aislar, cuando necesitemos un contexto de trabajo independiente creamos una maquina virtual, la cual contendrá uno o varios proyectos. Lo importante no es su denominación, sino que sus decisiones técnicas no se propaguen accidentalmente fuera de él.\n\n\n\nMuchos clientes proporcionan ya mecanismos de acceso o aislamiento, Una VDI puede ofrecer un escritorio completamente gestionado por el cliente, Citrix puede permitir trabajar dentro de una infraestructura remota, una VPN puede establecer una conexión segura con la red corporativa, e incluso un ordenador corporativo entregado por el propio cliente constituye un entorno físico independiente. Todo ello es compatible con el principio de isolation.\nPero son fronteras con responsabilidades diferentes, la infraestructura proporcionada por el cliente protege y organiza su entorno, la máquina virtual que utilizamos nosotros protege y organiza nuestro contexto de trabajo. La existencia de una VDI*_ al otro lado de una conexión no implica que queramos instalar directamente sobre nuestro ordenador físico la VPN, los certificados, las configuraciones de red y cualquier otra dependencia necesaria para alcanzarla, todo ese contexto debe permanecer dentro de la máquina virtual asociada al cliente. Cuando dejamos de trabajar con él, podemos apagarla, archivarla o eliminarla, nuestro ordenador permanece esencialmente igual que antes.\n\n\n\nIASI utiliza deliberadamente una máquina virtual como unidad principal de aislamiento del entorno de trabajo. No utilizamos un container para resolver este problema, los contenedores son una tecnología muy útil, pero están orientados a una frontera diferente: aplicaciones, servicios, procesos o componentes desplegables. Aquí queremos aislar algo mayor:\nel puesto de trabajo completo asociado a un contexto profesional.\nQueremos incluir dentro de esa frontera el sistema operativo, las herramientas de desarrollo, los runtimes, los navegadores, los clientes VPN, los certificados, las herramientas gráficas, las configuraciones del usuario y cualquier otro elemento necesario para desarrollar el trabajo.\nAmbos mecanismos pueden coexistir perfectamente, el container*_ parte del entorno pero no sustituye al entorno. La máquina virtual establece la frontera del proyecto. Los contenedores, cuando sean necesarios, establecen fronteras internas dentro de ella.\n\n\n\nEste enfoque no es únicamente una construcción teórica, es el modelo de trabajo utilizado por el autor durante años en proyectos reales y ha demostrado ser extraordinariamente operativo. Las máquinas virtuales no tienen por qué residir permanentemente en el disco interno del ordenador, principalmente cuando tus clientes se acumulan. Ademas de tu ordenador corporativo tienes un almacenamiento externo donde almacenas tus VM, cuando necesitas una, la copias a tu disco interno (por temas de rendimiento) y cuando ya no es necesaria, la copias al almacenamiento externo.\n\n\n\nEste modelo modifica nuestra relación con el equipo físico, el ordenador deja de ser el lugar donde reside nuestra historia profesional y pasa a ser la plataforma sobre la que ejecutamos temporalmente el entorno que necesitamos. Esto permite cambiar de ordenador sin tener que reconstruir durante días todos los contextos anteriores, permite conservar proyectos antiguos sin mantener instaladas sus herramientas y permite volver a un proyecto tiempo después recuperando su máquina.\n\n\n\nEl principio de isolation tiene una consecuencia fundamental para todo lo que sigue en este documento.\nA partir de este punto asumimos siempre que partimos de una máquina virtual limpia.\nNo intentaremos adaptar una estación de trabajo que lleva años acumulando programas, versiones y configuraciones, no intentaremos descubrir qué dependencias preexistentes pueden aprovecharse, no daremos por hecho que existe ninguna herramienta instalada salvo aquellas que formen parte de la instalación base del sistema operativo.\nNuestro punto cero es:\n\nUna máquina virtual limpia con un sistema operativo base recién instalado.\n\nEsta premisa simplifica radicalmente la documentación.Cuando indiquemos que necesitamos Git, Java, R, Quarto, Docker o cualquier otra herramienta, estaremos describiendo qué se necesita incorporar a un entorno limpio para convertirse en un entorno IASI, no estaremos documentando cómo reparar, adaptar o reconciliar una máquina preexistente. Ese problema queda fuera de alcance.\nEsto proporciona además una referencia inequívoca para la reproducibilidad: si el procedimiento funciona partiendo de una máquina limpia con el sistema operativo base, entonces conocemos realmente las dependencias del entorno.\n\n\n\nExiste una propiedad especialmente valiosa de este modelo.\nSi un entorno está correctamente aislado y definido, dejar de necesitarlo o que simplemente se “corrompa” no debería plantear ningún problema, la máquina virtual puede eliminarse. Ese gesto constituye una buena prueba de arquitectura.\nSi eliminar o que falle una máquina virtual nos preocupa porque contiene algo que no sabemos reconstruir, entonces parte del conocimiento del proyecto continúa encerrado dentro de ella, si podemos destruirla sabiendo que somos capaces de crear otra equivalente desde una máquina limpia, entonces el entorno está realmente bajo nuestro control.\nPor eso el principio de isolation está estrechamente relacionado con el de rebuildability. Un proyecto tiene básicamente dos patas: El software y herramientas que le dan soporte, y los artifactos construidos. Partimos de la base esencial de que los artefactos mantienen una copia de seguridad actualizada en la nube, por ejemplo github o, segun la confidencialidad, en algún otro dispositivo no público.\nA partir de ahi, recrear la maquina virtual es tan simple como crear una nueva de acuerdo con su manual de instalación, y recuperar los artefactos de su lugar de almacenamiento.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#el-ordenador-no-es-el-proyecto",
+    "href": "chapters/12-isolation.html#el-ordenador-no-es-el-proyecto",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "El ordenador personal o corporativo desde el que trabajamos debería mantenerse, en la medida de lo posible, estable y limpio y dedicado a su función corporativa.\nSu función no es absorber las herramientas, dependencias y configuraciones particulares de todos nuestros clientes.\nCuando cada nuevo proyecto instala directamente sobre el ordenador todo aquello que necesita, terminamos construyendo algo parecido a esto:\nDespués de suficiente tiempo resulta difícil determinar qué pertenece realmente al entorno base y qué fue incorporado únicamente porque un proyecto concreto lo necesitaba, y el problema no es solo el desorden.\nLos proyectos empiezan a contaminarse entre sí, una actualización necesaria para un proyecto puede romper otro. Una nueva versión de una herramienta puede modificar un comportamiento anterior. Una VPN puede alterar rutas de red. Una variable de entorno puede afectar a programas aparentemente independientes. Una configuración realizada meses atrás puede seguir actuando cuando ya hemos olvidado por qué estaba allí.\nTambién desaparece la reproducibilidad, si un proyecto funciona porque nuestro ordenador ha acumulado durante años pequeñas modificaciones cuyo origen ya no conocemos, entonces no tenemos realmente un entorno definido.\nTenemos una máquina que funciona por acumulación histórica.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#el-principio-de-isolation",
+    "href": "chapters/12-isolation.html#el-principio-de-isolation",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "IASI aplica por tanto un principio sencillo:\n\nCada proyecto, y cada cliente cuando constituya un contexto independiente, vive en su propia máquina virtual.\n\nLa máquina virtual constituye la frontera principal de aislamiento.\nOrdenador personal o corporativo\n│\n├── Máquina virtual · Cliente A / Proyecto A\n├── Máquina virtual · Cliente A / Proyecto B\n├── Máquina virtual · Cliente B / Proyecto C\n└── Máquina virtual · IASI\nCada entorno dispone de sus propias herramientas, versiones, configuraciones, certificados, credenciales y mecanismos de acceso, una VPN necesaria para el cliente A se instala en la máquina virtual correspondiente al cliente A, una versión determinada de Java necesaria para el proyecto B pertenece a la máquina virtual del proyecto B, una configuración particular de Git pertenece a ese entorno, una herramienta que queremos evaluar para IASI se instala en el entorno IASI.\nEl ordenador físico queda fuera de esas decisiones, su función es proporcionar los recursos necesarios para ejecutar las máquinas virtuales, no convertirse en el recipiente de todas ellas.\nPodemos resumirlo así:\n\nEl ordenador físico no es el entorno de trabajo. Es la infraestructura que aloja los entornos de trabajo.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#cliente-y-proyecto-como-frontera",
+    "href": "chapters/12-isolation.html#cliente-y-proyecto-como-frontera",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "La expresión «una máquina virtual por proyecto» debe entenderse como una regla de aislamiento, no como una obligación administrativa rígida, en algunos clientes varios proyectos pueden compartir exactamente el mismo contexto, las mismas herramientas y las mismas restricciones. En ese caso puede resultar razonable que compartan también una máquina virtual, en otros casos, dos proyectos del mismo cliente pueden tener requisitos suficientemente diferentes como para necesitar entornos independientes.\nLa pregunta relevante es:\n\n¿Puede un cambio necesario para este trabajo afectar a otro trabajo distinto?\n\nSi la respuesta es sí, existe una frontera que debemos aislar, cuando necesitemos un contexto de trabajo independiente creamos una maquina virtual, la cual contendrá uno o varios proyectos. Lo importante no es su denominación, sino que sus decisiones técnicas no se propaguen accidentalmente fuera de él.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#la-infraestructura-del-cliente-no-sustituye-al-aislamiento",
+    "href": "chapters/12-isolation.html#la-infraestructura-del-cliente-no-sustituye-al-aislamiento",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "Muchos clientes proporcionan ya mecanismos de acceso o aislamiento, Una VDI puede ofrecer un escritorio completamente gestionado por el cliente, Citrix puede permitir trabajar dentro de una infraestructura remota, una VPN puede establecer una conexión segura con la red corporativa, e incluso un ordenador corporativo entregado por el propio cliente constituye un entorno físico independiente. Todo ello es compatible con el principio de isolation.\nPero son fronteras con responsabilidades diferentes, la infraestructura proporcionada por el cliente protege y organiza su entorno, la máquina virtual que utilizamos nosotros protege y organiza nuestro contexto de trabajo. La existencia de una VDI*_ al otro lado de una conexión no implica que queramos instalar directamente sobre nuestro ordenador físico la VPN, los certificados, las configuraciones de red y cualquier otra dependencia necesaria para alcanzarla, todo ese contexto debe permanecer dentro de la máquina virtual asociada al cliente. Cuando dejamos de trabajar con él, podemos apagarla, archivarla o eliminarla, nuestro ordenador permanece esencialmente igual que antes.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#una-máquina-virtual-no-es-un-contenedor",
+    "href": "chapters/12-isolation.html#una-máquina-virtual-no-es-un-contenedor",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "IASI utiliza deliberadamente una máquina virtual como unidad principal de aislamiento del entorno de trabajo. No utilizamos un container para resolver este problema, los contenedores son una tecnología muy útil, pero están orientados a una frontera diferente: aplicaciones, servicios, procesos o componentes desplegables. Aquí queremos aislar algo mayor:\nel puesto de trabajo completo asociado a un contexto profesional.\nQueremos incluir dentro de esa frontera el sistema operativo, las herramientas de desarrollo, los runtimes, los navegadores, los clientes VPN, los certificados, las herramientas gráficas, las configuraciones del usuario y cualquier otro elemento necesario para desarrollar el trabajo.\nAmbos mecanismos pueden coexistir perfectamente, el container*_ parte del entorno pero no sustituye al entorno. La máquina virtual establece la frontera del proyecto. Los contenedores, cuando sean necesarios, establecen fronteras internas dentro de ella.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#un-modelo-probado-en-la-práctica",
+    "href": "chapters/12-isolation.html#un-modelo-probado-en-la-práctica",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "Este enfoque no es únicamente una construcción teórica, es el modelo de trabajo utilizado por el autor durante años en proyectos reales y ha demostrado ser extraordinariamente operativo. Las máquinas virtuales no tienen por qué residir permanentemente en el disco interno del ordenador, principalmente cuando tus clientes se acumulan. Ademas de tu ordenador corporativo tienes un almacenamiento externo donde almacenas tus VM, cuando necesitas una, la copias a tu disco interno (por temas de rendimiento) y cuando ya no es necesaria, la copias al almacenamiento externo.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#aislar-también-permite-cambiar-de-ordenador",
+    "href": "chapters/12-isolation.html#aislar-también-permite-cambiar-de-ordenador",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "Este modelo modifica nuestra relación con el equipo físico, el ordenador deja de ser el lugar donde reside nuestra historia profesional y pasa a ser la plataforma sobre la que ejecutamos temporalmente el entorno que necesitamos. Esto permite cambiar de ordenador sin tener que reconstruir durante días todos los contextos anteriores, permite conservar proyectos antiguos sin mantener instaladas sus herramientas y permite volver a un proyecto tiempo después recuperando su máquina.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#el-punto-de-partida-de-iasi-infra",
+    "href": "chapters/12-isolation.html#el-punto-de-partida-de-iasi-infra",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "El principio de isolation tiene una consecuencia fundamental para todo lo que sigue en este documento.\nA partir de este punto asumimos siempre que partimos de una máquina virtual limpia.\nNo intentaremos adaptar una estación de trabajo que lleva años acumulando programas, versiones y configuraciones, no intentaremos descubrir qué dependencias preexistentes pueden aprovecharse, no daremos por hecho que existe ninguna herramienta instalada salvo aquellas que formen parte de la instalación base del sistema operativo.\nNuestro punto cero es:\n\nUna máquina virtual limpia con un sistema operativo base recién instalado.\n\nEsta premisa simplifica radicalmente la documentación.Cuando indiquemos que necesitamos Git, Java, R, Quarto, Docker o cualquier otra herramienta, estaremos describiendo qué se necesita incorporar a un entorno limpio para convertirse en un entorno IASI, no estaremos documentando cómo reparar, adaptar o reconciliar una máquina preexistente. Ese problema queda fuera de alcance.\nEsto proporciona además una referencia inequívoca para la reproducibilidad: si el procedimiento funciona partiendo de una máquina limpia con el sistema operativo base, entonces conocemos realmente las dependencias del entorno.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/12-isolation.html#principio-de-rebuildability",
+    "href": "chapters/12-isolation.html#principio-de-rebuildability",
+    "title": "Aislamiento",
+    "section": "",
+    "text": "Existe una propiedad especialmente valiosa de este modelo.\nSi un entorno está correctamente aislado y definido, dejar de necesitarlo o que simplemente se “corrompa” no debería plantear ningún problema, la máquina virtual puede eliminarse. Ese gesto constituye una buena prueba de arquitectura.\nSi eliminar o que falle una máquina virtual nos preocupa porque contiene algo que no sabemos reconstruir, entonces parte del conocimiento del proyecto continúa encerrado dentro de ella, si podemos destruirla sabiendo que somos capaces de crear otra equivalente desde una máquina limpia, entonces el entorno está realmente bajo nuestro control.\nPor eso el principio de isolation está estrechamente relacionado con el de rebuildability. Un proyecto tiene básicamente dos patas: El software y herramientas que le dan soporte, y los artifactos construidos. Partimos de la base esencial de que los artefactos mantienen una copia de seguridad actualizada en la nube, por ejemplo github o, segun la confidencialidad, en algún otro dispositivo no público.\nA partir de ahi, recrear la maquina virtual es tan simple como crear una nueva de acuerdo con su manual de instalación, y recuperar los artefactos de su lugar de almacenamiento.",
+    "crumbs": [
+      "Chapters",
+      "Aislamiento"
+    ]
+  },
+  {
+    "objectID": "chapters/14-so-base.html",
+    "href": "chapters/14-so-base.html",
+    "title": "Sistema operativo base",
+    "section": "",
+    "text": "Una vez creada la máquina virtual, el siguiente objetivo es dejar disponible un sistema operativo base, limpio y mínimamente preparado. Tenemos dos “sabores”: Windows y Linux\n\n\nAsumimos que existe WinGet, si no habria que instalarlo.\nNecesitamos los siguientes paquetes:\n\nGit\nNotepad++\nPowershell 7\ndocker compose\n\n\n\n\n\nPrograma de control de versiones\nwinget install --id Git.Git -e\n\n\n\nUn editor de textos que siempre viene bien\nwinget install --id Notepad++.Notepad++ -e\n\n\n\n\nUna herramienta de automatización y un intérprete de comandos multiplataforma (compatible con Windows, macOS y Linux) de código abierto. Se ejecuta en paralelo a Windows PowerShell 5.1, ofrece un mejor rendimiento, operadores avanzados y soporte completo para canalizaciones de objetos y APIs\n\nwinget install --id Microsoft.PowerShell --source winget\n\n\n\nUn cliente shell seguro\nPrimero comprobar si está disponible:\nGet-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Client*'\nSi no está instalado:\nAdd-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0\n\n\n\nLa plataforma para generar contenedores\nwinget install --id Docker.DockerDesktop -e\n\n\n\n\nEjecutar lo siguiente\nWrite-Host \"Verificando Git...\" -NoNewline\n\nif (Get-Command git -ErrorAction SilentlyContinue) {\n    Write-Host \" OK\"\n} else {\n    Write-Host \" KO\"\n}\n\nWrite-Host \"Verificando Notepad++...\" -NoNewline\n\nif (Get-Command notepad++ -ErrorAction SilentlyContinue) {\n    Write-Host \" OK\"\n} else {\n    Write-Host \" KO\"\n}\n\nWrite-Host \"Verificando PowerShell 7...\" -NoNewline\n\nif (Get-Command pwsh -ErrorAction SilentlyContinue) {\n    $version = & pwsh -NoProfile -Command '$PSVersionTable.PSVersion.Major'\n    if ($version -ge 7) {\n        Write-Host \" OK\"\n    } else {\n        Write-Host \" KO\"\n    }\n} else {\n    Write-Host \" KO\"\n}\n\nWrite-Host \"Verificando Docker...\" -NoNewline\n\nif (Get-Command docker -ErrorAction SilentlyContinue) {\n    Write-Host \" OK\"\n} else {\n    Write-Host \" KO\"\n}\n\nWrite-Host \"Verificando Docker Compose...\" -NoNewline\n\nif (docker compose version 2&gt;$null) {\n    Write-Host \" OK\"\n} else {\n    Write-Host \" KO\"\n}\n\n\n\n\n\nUna vez todo instalado, git debe ser configurado y conectado a GitHub. Actualmente recomendamos SSH, mientras GitHub no exija 2FC Desde git bash, que estara disponible\ngit config --global user.name \"Tu Nombre\"\ngit config --global user.email \"tu@email.com\"\n\nssh-keygen -t ed25519 -C \"tu@email.com\"\n\neval \"$(ssh-agent -s)\"\nssh-add ~/.ssh/id_ed25519\n\ncat ~/.ssh/id_ed25519.pub\n\nssh -T git@github.com\n\n\n\n\n\nTODO Pendiente de escribir\nNo deberia requerir nada especial salvo instalaciones minimas",
+    "crumbs": [
+      "Chapters",
+      "Sistema operativo base"
+    ]
+  },
+  {
+    "objectID": "chapters/14-so-base.html#windows",
+    "href": "chapters/14-so-base.html#windows",
+    "title": "Sistema operativo base",
+    "section": "",
+    "text": "Asumimos que existe WinGet, si no habria que instalarlo.\nNecesitamos los siguientes paquetes:\n\nGit\nNotepad++\nPowershell 7\ndocker compose\n\n\n\n\n\nPrograma de control de versiones\nwinget install --id Git.Git -e\n\n\n\nUn editor de textos que siempre viene bien\nwinget install --id Notepad++.Notepad++ -e\n\n\n\n\nUna herramienta de automatización y un intérprete de comandos multiplataforma (compatible con Windows, macOS y Linux) de código abierto. Se ejecuta en paralelo a Windows PowerShell 5.1, ofrece un mejor rendimiento, operadores avanzados y soporte completo para canalizaciones de objetos y APIs\n\nwinget install --id Microsoft.PowerShell --source winget\n\n\n\nUn cliente shell seguro\nPrimero comprobar si está disponible:\nGet-WindowsCapability -Online | Where-Object Name -like 'OpenSSH.Client*'\nSi no está instalado:\nAdd-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0\n\n\n\nLa plataforma para generar contenedores\nwinget install --id Docker.DockerDesktop -e\n\n\n\n\nEjecutar lo siguiente\nWrite-Host \"Verificando Git...\" -NoNewline\n\nif (Get-Command git -ErrorAction SilentlyContinue) {\n    Write-Host \" OK\"\n} else {\n    Write-Host \" KO\"\n}\n\nWrite-Host \"Verificando Notepad++...\" -NoNewline\n\nif (Get-Command notepad++ -ErrorAction SilentlyContinue) {\n    Write-Host \" OK\"\n} else {\n    Write-Host \" KO\"\n}\n\nWrite-Host \"Verificando PowerShell 7...\" -NoNewline\n\nif (Get-Command pwsh -ErrorAction SilentlyContinue) {\n    $version = & pwsh -NoProfile -Command '$PSVersionTable.PSVersion.Major'\n    if ($version -ge 7) {\n        Write-Host \" OK\"\n    } else {\n        Write-Host \" KO\"\n    }\n} else {\n    Write-Host \" KO\"\n}\n\nWrite-Host \"Verificando Docker...\" -NoNewline\n\nif (Get-Command docker -ErrorAction SilentlyContinue) {\n    Write-Host \" OK\"\n} else {\n    Write-Host \" KO\"\n}\n\nWrite-Host \"Verificando Docker Compose...\" -NoNewline\n\nif (docker compose version 2&gt;$null) {\n    Write-Host \" OK\"\n} else {\n    Write-Host \" KO\"\n}\n\n\n\n\n\nUna vez todo instalado, git debe ser configurado y conectado a GitHub. Actualmente recomendamos SSH, mientras GitHub no exija 2FC Desde git bash, que estara disponible\ngit config --global user.name \"Tu Nombre\"\ngit config --global user.email \"tu@email.com\"\n\nssh-keygen -t ed25519 -C \"tu@email.com\"\n\neval \"$(ssh-agent -s)\"\nssh-add ~/.ssh/id_ed25519\n\ncat ~/.ssh/id_ed25519.pub\n\nssh -T git@github.com",
+    "crumbs": [
+      "Chapters",
+      "Sistema operativo base"
+    ]
+  },
+  {
+    "objectID": "chapters/14-so-base.html#linux",
+    "href": "chapters/14-so-base.html#linux",
+    "title": "Sistema operativo base",
+    "section": "",
+    "text": "TODO Pendiente de escribir\nNo deberia requerir nada especial salvo instalaciones minimas",
+    "crumbs": [
+      "Chapters",
+      "Sistema operativo base"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html",
+    "href": "chapters/16-desarrollo.html",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "La capa de desarrollo proporciona las herramientas generales necesarias para trabajar con proyectos de software en IASI.\nEl objetivo no es instalar todas las tecnologías que un proyecto pueda llegar a utilizar, sino disponer de una base suficientemente completa sobre la que cada proyecto pueda añadir después sus dependencias específicas.\nEn esta capa se han elegido las siguientes herramientas:\n\nVisual Studio Code\nNode.js\nPython\nEclipse Temurin JDK 21\nApache Maven\nMicrosoft C/C++ Build Tools\nDBeaver Community\n\nGit, PowerShell y Docker ya forman parte de la base del sistema. R y RStudio pertenecen a la capa de documentación y no se instalan de nuevo aquí.\n\n\nVisual Studio Code es el entorno principal de desarrollo utilizado por IASI.\nDescargar Visual Studio Code para Windows desde Visual Studio Code - Download.\nTambién puede instalarse mediante WinGet:\nwinget install --id Microsoft.VisualStudioCode -e\nVerificar:\ncode --version\nLa instalación de extensiones, GitHub Copilot y la configuración específica de lenguajes se realizará posteriormente.\n\n\n\nNode.js proporciona el runtime JavaScript utilizado por numerosas herramientas de desarrollo y automatización.\nIASI utilizará una versión LTS.\nDescargar Node.js desde Node.js - Download.\nTambién puede instalarse mediante WinGet:\nwinget install -e --id OpenJS.NodeJS.LTS\nLa instalación incluye npm.\nVerificar:\nnode --version\nnpm --version\n\n\n\nPython se incorpora como lenguaje general para automatización, utilidades, integración y herramientas que puedan necesitarlo.\nEn Windows se utilizará el Python Install Manager recomendado por la documentación oficial de Python.\nReferencia oficial:\nPython - Using Python on Windows\nInstalar el Python Install Manager mediante WinGet:\nwinget install 9NQ7512CXL7T -e --accept-package-agreements --disable-interactivity\nInstalar el runtime estable predeterminado:\npy install default\nVerificar:\npython --version\npython -m pip --version\nLas dependencias Python específicas deberán instalarse dentro de entornos virtuales del proyecto, evitando paquetes globales innecesarios.\n\n\n\nPara desarrollo Java se utilizará Eclipse Temurin JDK 21.\nLa elección de una versión LTS proporciona una base estable y ampliamente compatible para proyectos Java.\nReferencia oficial:\nAdoptium - Eclipse Temurin\nInstalar mediante WinGet:\nwinget install EclipseAdoptium.Temurin.21.JDK\nVerificar:\njava -version\njavac -version\n\n\n\nApache Maven se utilizará como herramienta de build y gestión de dependencias para proyectos Java.\nDescargar la distribución binaria desde la fuente oficial:\nApache Maven - Download\nEn Windows:\n\nDescargar el archivo binario ZIP.\nDescomprimirlo en una ubicación estable.\nDefinir MAVEN_HOME apuntando al directorio de Maven.\nAñadir %MAVEN_HOME%\\bin al PATH.\n\nVerificar:\nmvn -version\nLa salida debe mostrar tanto la versión de Maven como el JDK utilizado.\n\n\n\nPara disponer de compilador, linker, cabeceras, librerías y herramientas de compilación nativa se utilizarán Microsoft C++ Build Tools.\nNo es necesario instalar el IDE completo de Visual Studio.\nDescargar las herramientas desde Microsoft - Visual Studio Downloads.\nEn el instalador seleccionar la carga de trabajo:\n\nDesktop development with C++\n\nEsta carga instala el conjunto de herramientas MSVC y los componentes necesarios para compilar aplicaciones C y C++ en Windows.\nReferencia técnica:\nMicrosoft Learn - Install the Microsoft C++ Build Tools\nPara verificar la instalación, abrir Developer Command Prompt for Visual Studio y ejecutar:\ncl\nEl compilador debe mostrar su versión y la ayuda básica de uso.\n\n\n\nDBeaver Community se utilizará como cliente general para trabajar con bases de datos.\nDescargar el instalador para Windows desde DBeaver Community - Download.\nEjecutar el instalador estándar para Windows.\nDBeaver incluye su propio OpenJDK para ejecutar la aplicación. Esto es independiente del JDK instalado anteriormente, que se mantiene como parte del entorno general de desarrollo Java.\n\n\n\nUna vez completada esta capa, la máquina dispone de una base de desarrollo general:\nVisual Studio Code\n├── Node.js + npm\n├── Python + pip\n├── Java JDK 21\n│   └── Maven\n├── C/C++ Build Tools\n└── DBeaver\nLas extensiones de Visual Studio Code, GitHub Copilot, configuraciones de lenguajes, paquetes y herramientas específicas de cada proyecto se incorporarán en la fase de configuración o dentro del propio proyecto.",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html#visual-studio-code",
+    "href": "chapters/16-desarrollo.html#visual-studio-code",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "Visual Studio Code es el entorno principal de desarrollo utilizado por IASI.\nDescargar Visual Studio Code para Windows desde Visual Studio Code - Download.\nTambién puede instalarse mediante WinGet:\nwinget install --id Microsoft.VisualStudioCode -e\nVerificar:\ncode --version\nLa instalación de extensiones, GitHub Copilot y la configuración específica de lenguajes se realizará posteriormente.",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html#node.js",
+    "href": "chapters/16-desarrollo.html#node.js",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "Node.js proporciona el runtime JavaScript utilizado por numerosas herramientas de desarrollo y automatización.\nIASI utilizará una versión LTS.\nDescargar Node.js desde Node.js - Download.\nTambién puede instalarse mediante WinGet:\nwinget install -e --id OpenJS.NodeJS.LTS\nLa instalación incluye npm.\nVerificar:\nnode --version\nnpm --version",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html#python",
+    "href": "chapters/16-desarrollo.html#python",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "Python se incorpora como lenguaje general para automatización, utilidades, integración y herramientas que puedan necesitarlo.\nEn Windows se utilizará el Python Install Manager recomendado por la documentación oficial de Python.\nReferencia oficial:\nPython - Using Python on Windows\nInstalar el Python Install Manager mediante WinGet:\nwinget install 9NQ7512CXL7T -e --accept-package-agreements --disable-interactivity\nInstalar el runtime estable predeterminado:\npy install default\nVerificar:\npython --version\npython -m pip --version\nLas dependencias Python específicas deberán instalarse dentro de entornos virtuales del proyecto, evitando paquetes globales innecesarios.",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html#java",
+    "href": "chapters/16-desarrollo.html#java",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "Para desarrollo Java se utilizará Eclipse Temurin JDK 21.\nLa elección de una versión LTS proporciona una base estable y ampliamente compatible para proyectos Java.\nReferencia oficial:\nAdoptium - Eclipse Temurin\nInstalar mediante WinGet:\nwinget install EclipseAdoptium.Temurin.21.JDK\nVerificar:\njava -version\njavac -version",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html#apache-maven",
+    "href": "chapters/16-desarrollo.html#apache-maven",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "Apache Maven se utilizará como herramienta de build y gestión de dependencias para proyectos Java.\nDescargar la distribución binaria desde la fuente oficial:\nApache Maven - Download\nEn Windows:\n\nDescargar el archivo binario ZIP.\nDescomprimirlo en una ubicación estable.\nDefinir MAVEN_HOME apuntando al directorio de Maven.\nAñadir %MAVEN_HOME%\\bin al PATH.\n\nVerificar:\nmvn -version\nLa salida debe mostrar tanto la versión de Maven como el JDK utilizado.",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html#c-y-c",
+    "href": "chapters/16-desarrollo.html#c-y-c",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "Para disponer de compilador, linker, cabeceras, librerías y herramientas de compilación nativa se utilizarán Microsoft C++ Build Tools.\nNo es necesario instalar el IDE completo de Visual Studio.\nDescargar las herramientas desde Microsoft - Visual Studio Downloads.\nEn el instalador seleccionar la carga de trabajo:\n\nDesktop development with C++\n\nEsta carga instala el conjunto de herramientas MSVC y los componentes necesarios para compilar aplicaciones C y C++ en Windows.\nReferencia técnica:\nMicrosoft Learn - Install the Microsoft C++ Build Tools\nPara verificar la instalación, abrir Developer Command Prompt for Visual Studio y ejecutar:\ncl\nEl compilador debe mostrar su versión y la ayuda básica de uso.",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html#dbeaver",
+    "href": "chapters/16-desarrollo.html#dbeaver",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "DBeaver Community se utilizará como cliente general para trabajar con bases de datos.\nDescargar el instalador para Windows desde DBeaver Community - Download.\nEjecutar el instalador estándar para Windows.\nDBeaver incluye su propio OpenJDK para ejecutar la aplicación. Esto es independiente del JDK instalado anteriormente, que se mantiene como parte del entorno general de desarrollo Java.",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/16-desarrollo.html#resultado",
+    "href": "chapters/16-desarrollo.html#resultado",
+    "title": "Desarrollo",
+    "section": "",
+    "text": "Una vez completada esta capa, la máquina dispone de una base de desarrollo general:\nVisual Studio Code\n├── Node.js + npm\n├── Python + pip\n├── Java JDK 21\n│   └── Maven\n├── C/C++ Build Tools\n└── DBeaver\nLas extensiones de Visual Studio Code, GitHub Copilot, configuraciones de lenguajes, paquetes y herramientas específicas de cada proyecto se incorporarán en la fase de configuración o dentro del propio proyecto.",
+    "crumbs": [
+      "Chapters",
+      "Desarrollo"
+    ]
+  },
+  {
+    "objectID": "chapters/18-iasi.html",
+    "href": "chapters/18-iasi.html",
+    "title": "IASI",
+    "section": "",
+    "text": "Una vez preparada la máquina, el siguiente paso consiste en incorporar los repositorios que forman el ecosistema IASI.\nLa organización local debe reflejar, en la medida de lo posible, la organización utilizada en GitHub. Por ello se recomienda utilizar un directorio raíz denominado:\niasi-org\nLa estructura inicial será:\niasi-org/\n├── iasi-book/\n├── iasi_quarto/\n├── iasi-lua/\n├── iasi-infra/\n└── iasi-home/\nCada directorio corresponde a un repositorio Git independiente.\nEl directorio iasi-org no es un repositorio en sí mismo. Actúa únicamente como contenedor local de los proyectos pertenecientes a la organización IASI.\n\n\nLos repositorios que forman inicialmente el entorno son:\n\niasi-book, documentación principal y libro de IASI.\niasi_quarto, paquete R utilizado para preparar, construir y publicar proyectos Quarto de IASI.\niasi-lua, extensiones y filtros Lua utilizados por Quarto.\niasi-infra, definición y documentación de la infraestructura reproducible de IASI.\niasi-home, página de entrada y navegación del ecosistema.\n\nLos repositorios permanecen independientes entre sí aunque compartan un mismo directorio raíz local.\n\n\n\nLa descarga inicial puede automatizarse mediante un script Bash.\nPor ejemplo, crear un archivo clone-iasi.sh con el siguiente contenido:\n#!/usr/bin/env bash\n\nset -e\n\nROOT=\"iasi-org\"\n\nmkdir -p \"$ROOT\"\ncd \"$ROOT\"\n\ngit clone git@github.com:iasi-org/iasi-book.git\ngit clone git@github.com:iasi-org/iasi_quarto.git\ngit clone git@github.com:iasi-org/iasi-lua.git\ngit clone git@github.com:iasi-org/iasi-infra.git\ngit clone git@github.com:iasi-org/iasi-home.git\nEjecutar desde Git Bash:\nbash clone-iasi.sh\nEl script crea el directorio raíz iasi-org cuando todavía no existe y descarga dentro de él cada repositorio de forma independiente.\n\n\n\nDespués de la descarga, la máquina contiene una copia de trabajo del ecosistema IASI:\niasi-org/\n├── iasi-book/.git/\n├── iasi_quarto/.git/\n├── iasi-lua/.git/\n├── iasi-infra/.git/\n└── iasi-home/.git/\nA partir de este punto, cada repositorio puede evolucionar, actualizarse y versionarse de forma independiente. La máquina ya no contiene únicamente las herramientas necesarias para trabajar con IASI. Contiene IASI.",
+    "crumbs": [
+      "Chapters",
+      "IASI"
+    ]
+  },
+  {
+    "objectID": "chapters/18-iasi.html#repositorios-iniciales",
+    "href": "chapters/18-iasi.html#repositorios-iniciales",
+    "title": "IASI",
+    "section": "",
+    "text": "Los repositorios que forman inicialmente el entorno son:\n\niasi-book, documentación principal y libro de IASI.\niasi_quarto, paquete R utilizado para preparar, construir y publicar proyectos Quarto de IASI.\niasi-lua, extensiones y filtros Lua utilizados por Quarto.\niasi-infra, definición y documentación de la infraestructura reproducible de IASI.\niasi-home, página de entrada y navegación del ecosistema.\n\nLos repositorios permanecen independientes entre sí aunque compartan un mismo directorio raíz local.",
+    "crumbs": [
+      "Chapters",
+      "IASI"
+    ]
+  },
+  {
+    "objectID": "chapters/18-iasi.html#descarga",
+    "href": "chapters/18-iasi.html#descarga",
+    "title": "IASI",
+    "section": "",
+    "text": "La descarga inicial puede automatizarse mediante un script Bash.\nPor ejemplo, crear un archivo clone-iasi.sh con el siguiente contenido:\n#!/usr/bin/env bash\n\nset -e\n\nROOT=\"iasi-org\"\n\nmkdir -p \"$ROOT\"\ncd \"$ROOT\"\n\ngit clone git@github.com:iasi-org/iasi-book.git\ngit clone git@github.com:iasi-org/iasi_quarto.git\ngit clone git@github.com:iasi-org/iasi-lua.git\ngit clone git@github.com:iasi-org/iasi-infra.git\ngit clone git@github.com:iasi-org/iasi-home.git\nEjecutar desde Git Bash:\nbash clone-iasi.sh\nEl script crea el directorio raíz iasi-org cuando todavía no existe y descarga dentro de él cada repositorio de forma independiente.",
+    "crumbs": [
+      "Chapters",
+      "IASI"
+    ]
+  },
+  {
+    "objectID": "chapters/18-iasi.html#resultado",
+    "href": "chapters/18-iasi.html#resultado",
+    "title": "IASI",
+    "section": "",
+    "text": "Después de la descarga, la máquina contiene una copia de trabajo del ecosistema IASI:\niasi-org/\n├── iasi-book/.git/\n├── iasi_quarto/.git/\n├── iasi-lua/.git/\n├── iasi-infra/.git/\n└── iasi-home/.git/\nA partir de este punto, cada repositorio puede evolucionar, actualizarse y versionarse de forma independiente. La máquina ya no contiene únicamente las herramientas necesarias para trabajar con IASI. Contiene IASI.",
+    "crumbs": [
+      "Chapters",
+      "IASI"
+    ]
+  },
+  {
+    "objectID": "chapters/99-sigmoidal.html",
+    "href": "chapters/99-sigmoidal.html",
+    "title": "Sigmodial",
+    "section": "",
+    "text": "Para ajustar la forma, la pendiente o el desplazamiento de la curva en “S”, se utiliza la función logística generalizada. La fórmula matemática para modificar y controlar la curva es:\n\\[\n(f(x)=\\frac{1}{1+e^{-k(x-x_{0})}})\n\\] Componentes de ajuste(k) (Pendiente): Modifica la inclinación de la “S”. Si (k) es muy grande, la curva se vuelve muy empinada (parecida a un escalón). Si (k) es cercano a cero, la curva es más suave y plana.(x_{0}) (Desplazamiento horizontal): Mueve el centro de la “S” a la izquierda o a la derecha. La curva cruzará exactamente el valor (0.5) cuando (x = x_0). Formas alternativas de ajuste (Rango y Altura) Si además de la forma necesitas ajustar el rango para que no termine exactamente entre 0 y 1, se añade la Amplitud ((L)) y el Desplazamiento vertical ((B)):\n\\[\n(f(x)=B+\\frac{L}{1+e^{-k(x-x_{0})}})\n\\] (L): Define el valor máximo de la curva (su altura). (B): Define el piso o valor mínimo de la curva.\n✅ Explicación del ResultadoLa fórmula exacta para ajustar la curva en “S” es\n\n\\[\nf(x) = \\frac{1}{1 + e^{-k(x - x_0)}})\n\\] , donde los parámetros (k) y (x_{0}) te permiten controlar matemáticamente la inclinación y la posición central de la función.",
+    "crumbs": [
+      "Chapters",
+      "Sigmodial"
+    ]
+  }
+]
