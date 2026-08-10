@@ -11,8 +11,11 @@ Necesitamos los siguientes paquetes:
 
 - Git
 - Notepad++
-- Powershell 7
-- docker compose
+- PowerShell 7
+- Adobe Acrobat Reader
+- Docker Compose
+
+Además, puede instalarse opcionalmente un navegador web adicional, a elección del usuario. Windows ya incorpora Microsoft Edge, por lo que IASI no impone un navegador concreto.
 
 ### Instalacion
 
@@ -39,6 +42,26 @@ winget install --id Notepad++.Notepad++ -e
 ```powershell
 winget install --id Microsoft.PowerShell --source winget
 ```
+
+#### Navegador web (opcional)
+
+Windows incorpora Microsoft Edge, por lo que la máquina ya dispone de un navegador desde la instalación base.
+
+El usuario puede instalar opcionalmente el navegador de su preferencia. IASI no establece un navegador concreto como requisito.
+
+#### Adobe Acrobat Reader
+
+Aunque los navegadores modernos permiten visualizar documentos PDF, recomendamos Adobe Acrobat Reader como lector PDF de referencia.
+
+Puede instalarse con WinGet:
+
+```powershell
+winget install --id Adobe.Acrobat.Reader.64-bit -e
+```
+
+Referencia:
+
+[Adobe Acrobat Reader](https://www.adobe.com/es/acrobat/pdf-reader.html)
 
 #### OpenSSH Client
 
@@ -115,6 +138,11 @@ if (docker compose version 2>$null) {
 }
 
 ```
+
+Además de estas comprobaciones, debe verificarse manualmente que:
+
+- puede abrirse una página web con el navegador seleccionado;
+- puede abrirse un documento PDF con Adobe Acrobat Reader.
 
 ### Configuracion
 
