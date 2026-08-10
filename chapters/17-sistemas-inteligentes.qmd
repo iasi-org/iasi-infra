@@ -1,0 +1,128 @@
+# Sistemas inteligentes
+
+IASI incorpora una plataforma local de sistemas inteligentes basada en una separación clara entre interfaz, motor de ejecución y modelos. Existen asistentes externos como ChatGPT o GitHub Copilot que pueden participar en el proceso de ingeniería. Pueden resultar útiles para análisis, diseño, documentación o desarrollo, pero no forman parte de la infraestructura local definida en esta sección. La plataforma local elegida para IASI es:
+
+```text
+Open WebUI
+    ↓
+Ollama
+    ↓
+├── Llama
+├── Qwen
+└── DeepSeek
+```
+
+## Open WebUI
+
+Open WebUI proporciona la interfaz desde la que se utilizan los modelos.
+
+Su función es ofrecer un punto único de interacción con las distintas familias de modelos disponibles, de forma que el usuario no tenga que trabajar directamente con el motor que los ejecuta.
+
+Referencia oficial:
+
+[Open WebUI - Documentation](https://docs.openwebui.com/)
+
+## Ollama
+
+Ollama proporciona el *runtime* encargado de descargar, gestionar y ejecutar los modelos.
+
+Open WebUI actúa como interfaz y Ollama como motor de ejecución.
+
+Referencia oficial:
+
+[Ollama - Documentation](https://docs.ollama.com/)
+
+Esta separación permite cambiar los modelos sin modificar la interfaz ni la arquitectura general.
+
+## Llama
+
+Llama es una familia de modelos desarrollada por Meta.
+
+En IASI se utiliza como una de las familias generalistas de referencia. Resulta adecuada para conversación, análisis, redacción, resumen y generación de contenido.
+
+Referencia en Ollama:
+
+[Llama - Ollama](https://ollama.com/library/llama3.2)
+
+Llama representa una primera perspectiva dentro de la plataforma, pero no se considera el modelo único ni el modelo por defecto para todos los problemas.
+
+## Qwen
+
+Qwen es una familia de modelos desarrollada por Alibaba.
+
+IASI la incorpora como otra familia generalista con la que contrastar resultados y comportamiento.
+
+Referencia en Ollama:
+
+[Qwen - Ollama](https://ollama.com/library/qwen3)
+
+Qwen dispone de diferentes variantes y tamaños, lo que permite adaptar su uso a los recursos disponibles y al tipo de tarea.
+
+## DeepSeek
+
+DeepSeek es una familia especialmente interesante para tareas de razonamiento, programación y resolución de problemas técnicos. IASI la incorpora como tercera familia de referencia, complementando a Llama y Qwen.
+
+Referencia en Ollama:
+
+[DeepSeek - Ollama](https://ollama.com/library/deepseek-r1)
+
+Su presencia permite comparar no solo respuestas finales, sino también el comportamiento de distintos modelos ante problemas complejos.
+
+## Varios modelos, una misma plataforma
+
+IASI no parte de la idea de que exista un único modelo adecuado para todos los problemas. La misma infraestructura permite utilizar diferentes modelos:
+
+```text
+Open WebUI
+    ↓
+Ollama
+    ↓
+├── Llama
+├── Qwen
+└── DeepSeek
+```
+
+Una misma cuestión puede contrastarse entre varios modelos y el usuario puede elegir cuál resulta más adecuado para cada tarea.
+
+Los modelos son sustituibles. La infraestructura permanece.
+
+## Otros sistemas inteligentes
+
+IASI puede utilizar también sistemas externos como ChatGPT o GitHub Copilot.
+
+Estos sistemas forman parte del ecosistema de trabajo asistido por IA, pero quedan fuera de la plataforma local descrita aquí.
+
+La plataforma local de referencia de IASI es:
+
+```text
+Open WebUI
+    ↓
+Ollama
+    ↓
+Llama / Qwen / DeepSeek
+```
+
+## Despliegue
+
+La instalación concreta mediante Docker y Docker Compose se tratará posteriormente.
+
+En esta sección únicamente se fija la arquitectura y la selección inicial de componentes.
+
+## Resultado
+
+La capa de sistemas inteligentes queda formada por:
+
+```text
+Interfaz
+└── Open WebUI
+
+Runtime
+└── Ollama
+
+Modelos
+├── Llama
+├── Qwen
+└── DeepSeek
+```
+
+El modelo puede cambiar. La infraestructura permanece.

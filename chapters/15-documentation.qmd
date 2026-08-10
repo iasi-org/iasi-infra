@@ -23,15 +23,17 @@ Quarto incorpora además Pandoc, por lo que no es necesario instalarlo de forma 
 
 La generación de PDF requiere una distribución TeX. En IASI utilizaremos TinyTeX, instalada y gestionada desde Quarto.
 
-## R/RStudio
+## Instalacion
+
+### R/RStudio
 
 RStudio es el IDE de R, por lo que primero es necesario instalar R:
 
 [CRAN - R for Windows](https://cran.r-project.org/bin/windows/base/).
 
-Seguir el procedimiento estándar del instalador y despues verificar:
+Seguir el procedimiento estándar del instalador y despues verificar en un terminal:
 
-```powershell
+```
 R --version
 ```
 
@@ -40,5 +42,30 @@ Una vez instalado R, descargar RStudio Desktop desde la página oficial de Posit
 [Posit - RStudio Desktop](https://posit.co/download/rstudio-desktop/).
 
 Al iniciarse, RStudio utilizará normalmente la versión actual de R instalada en el sistema.
+
+
+En Windows tambien es necesario instalar una _toolchain_: 
+
+[RTools](https://cran.r-project.org/bin/windows/Rtools/)
+
+## Configuracion
+
+Una vez instalado el software, se necesitan los paquetes de R y las herramientas para genera PDF. 
+
+Iniciamos RStudio, y en la ventana de **consola** ejecutamos:
+
+```R
+install.packages(c(
+  "rmarkdown",
+  "remotes",
+  "quarto"
+), dependencies=TRUE)
+```
+
+Y por ultimo desde la ventana **Terminal**
+
+```
+quarto install tinytex
+```
 
 
