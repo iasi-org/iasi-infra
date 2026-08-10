@@ -1,0 +1,85 @@
+# IASI
+
+Una vez preparada la máquina, el siguiente paso consiste en incorporar los repositorios que forman el ecosistema IASI.
+
+La organización local debe reflejar, en la medida de lo posible, la organización utilizada en GitHub. Por ello se recomienda utilizar un directorio raíz denominado:
+
+```text
+iasi-org
+```
+
+La estructura inicial será:
+
+```text
+iasi-org/
+├── iasi-book/
+├── iasi_quarto/
+├── iasi-lua/
+├── iasi-infra/
+└── iasi-home/
+```
+
+Cada directorio corresponde a un repositorio Git independiente.
+
+El directorio `iasi-org` no es un repositorio en sí mismo. Actúa únicamente como contenedor local de los proyectos pertenecientes a la organización IASI.
+
+## Repositorios iniciales
+
+Los repositorios que forman inicialmente el entorno son:
+
+- `iasi-book`, documentación principal y libro de IASI.
+- `iasi_quarto`, paquete R utilizado para preparar, construir y publicar proyectos Quarto de IASI.
+- `iasi-lua`, extensiones y filtros Lua utilizados por Quarto.
+- `iasi-infra`, definición y documentación de la infraestructura reproducible de IASI.
+- `iasi-home`, página de entrada y navegación del ecosistema.
+
+Los repositorios permanecen independientes entre sí aunque compartan un mismo directorio raíz local.
+
+## Descarga
+
+La descarga inicial puede automatizarse mediante un script Bash.
+
+Por ejemplo, crear un archivo `clone-iasi.sh` con el siguiente contenido:
+
+```bash
+#!/usr/bin/env bash
+
+set -e
+
+ROOT="iasi-org"
+
+mkdir -p "$ROOT"
+cd "$ROOT"
+
+git clone git@github.com:iasi-org/iasi-book.git
+git clone git@github.com:iasi-org/iasi_quarto.git
+git clone git@github.com:iasi-org/iasi-lua.git
+git clone git@github.com:iasi-org/iasi-infra.git
+git clone git@github.com:iasi-org/iasi-home.git
+```
+
+Ejecutar desde Git Bash:
+
+```bash
+bash clone-iasi.sh
+```
+
+El script crea el directorio raíz `iasi-org` cuando todavía no existe y descarga dentro de él cada repositorio de forma independiente.
+
+## Resultado
+
+Después de la descarga, la máquina contiene una copia de trabajo del ecosistema IASI:
+
+```text
+iasi-org/
+├── iasi-book/.git/
+├── iasi_quarto/.git/
+├── iasi-lua/.git/
+├── iasi-infra/.git/
+└── iasi-home/.git/
+```
+
+A partir de este punto, cada repositorio puede evolucionar, actualizarse y versionarse de forma independiente. 
+La máquina ya no contiene únicamente las herramientas necesarias para trabajar con IASI.
+Contiene IASI.
+
