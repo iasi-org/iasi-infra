@@ -1,6 +1,10 @@
 # IASI
 
-Una vez preparada la máquina, el siguiente paso consiste en incorporar los repositorios que forman el ecosistema IASI.
+Una vez preparada la máquina, el siguiente paso consiste en incorporar IASI.
+
+La instalación no se realiza clonando manualmente cada uno de los repositorios del ecosistema. El punto de entrada es `iasi-tools`, que contiene las herramientas utilizadas para crear, reconstruir y mantener una instalación de IASI.
+
+## Directorio de trabajo
 
 La organización local debe reflejar, en la medida de lo posible, la organización utilizada en GitHub. Por ello se recomienda utilizar un directorio raíz denominado:
 
@@ -8,10 +12,76 @@ La organización local debe reflejar, en la medida de lo posible, la organizaci�
 iasi-org
 ```
 
-La estructura inicial será:
+Este directorio no es un repositorio Git. Actúa como contenedor local de los repositorios pertenecientes a la organización IASI.
+
+El primer repositorio que se incorpora es `iasi-tools`:
 
 ```text
 iasi-org/
+└── iasi-tools/
+```
+
+A partir de él se reconstruirá el resto del entorno.
+
+## Descargar `iasi-tools`
+
+Crear el directorio raíz y descargar el repositorio de herramientas:
+
+```bash
+mkdir -p iasi-org
+cd iasi-org
+
+git clone git@github.com:iasi-org/iasi-tools.git
+```
+
+`iasi-tools` es el repositorio de bootstrap de IASI. Contiene en `bin/` los comandos necesarios para trabajar con el ecosistema, entre ellos `iasi-init`.
+
+## Añadir las herramientas al `PATH`
+
+Aunque las herramientas pueden ejecutarse indicando su ruta completa, se recomienda añadir `iasi-tools/bin` al `PATH`.
+
+De esta forma los comandos de IASI pueden utilizarse directamente desde cualquier directorio:
+
+```bash
+export PATH="/ruta/a/iasi-org/iasi-tools/bin:$PATH"
+```
+
+La configuración debe añadirse al archivo de inicio correspondiente del shell para que sea persistente, por ejemplo `~/.profile` cuando se utiliza Bash.
+
+Después de actualizar la configuración puede comprobarse que la herramienta está disponible:
+
+```bash
+command -v iasi-init
+```
+
+## Inicializar IASI
+
+Para una instalación nueva se utiliza:
+
+```bash
+iasi-init
+```
+
+`iasi-init` reconstruye el entorno IASI a partir de una máquina preparada. Su responsabilidad no es únicamente descargar repositorios: establece la estructura local necesaria y utiliza las herramientas de `iasi-tools` para dejar disponible el ecosistema de trabajo.
+
+La secuencia de arranque queda, por tanto, reducida a tres pasos:
+
+1. Descargar `iasi-tools`.
+2. Incorporar `iasi-tools/bin` al `PATH`.
+3. Ejecutar `iasi-init`.
+
+A partir de ese momento, la creación del entorno deja de depender de una lista de comandos `git clone` mantenida manualmente. Esa responsabilidad pertenece a las propias herramientas de IASI.
+
+## Resultado
+
+Tras ejecutar `iasi-init`, el directorio `iasi-org` contiene `iasi-tools` y los repositorios que forman la instalación de IASI.
+
+Conceptualmente:
+
+```text
+iasi-org/
+├── iasi-tools/
+├── iasi-init/
 ├── iasi-book/
 ├── iasi_quarto/
 ├── iasi-lua/
@@ -19,67 +89,10 @@ iasi-org/
 └── iasi-home/
 ```
 
-Cada directorio corresponde a un repositorio Git independiente.
+Cada directorio continúa siendo un repositorio Git independiente. `iasi-org` únicamente los agrupa y proporciona una ubicación común para trabajar con el ecosistema.
 
-El directorio `iasi-org` no es un repositorio en sí mismo. Actúa únicamente como contenedor local de los proyectos pertenecientes a la organización IASI.
+La diferencia es importante: la instalación ya no describe una serie de repositorios que el usuario debe reconstruir manualmente. IASI proporciona sus propias herramientas para hacerlo.
 
-## Repositorios iniciales
+Una máquina preparada contiene las dependencias necesarias.
 
-Los repositorios que forman inicialmente el entorno son:
-
-- `iasi-book`, documentación principal y libro de IASI.
-- `iasi_quarto`, paquete R utilizado para preparar, construir y publicar proyectos Quarto de IASI.
-- `iasi-lua`, extensiones y filtros Lua utilizados por Quarto.
-- `iasi-infra`, definición y documentación de la infraestructura reproducible de IASI.
-- `iasi-home`, página de entrada y navegación del ecosistema.
-
-Los repositorios permanecen independientes entre sí aunque compartan un mismo directorio raíz local.
-
-## Descarga
-
-La descarga inicial puede automatizarse mediante un script Bash.
-
-Por ejemplo, crear un archivo `clone-iasi.sh` con el siguiente contenido:
-
-```bash
-#!/usr/bin/env bash
-
-set -e
-
-ROOT="iasi-org"
-
-mkdir -p "$ROOT"
-cd "$ROOT"
-
-git clone git@github.com:iasi-org/iasi-book.git
-git clone git@github.com:iasi-org/iasi_quarto.git
-git clone git@github.com:iasi-org/iasi-lua.git
-git clone git@github.com:iasi-org/iasi-infra.git
-git clone git@github.com:iasi-org/iasi-home.git
-```
-
-Ejecutar desde Git Bash:
-
-```bash
-bash clone-iasi.sh
-```
-
-El script crea el directorio raíz `iasi-org` cuando todavía no existe y descarga dentro de él cada repositorio de forma independiente.
-
-## Resultado
-
-Después de la descarga, la máquina contiene una copia de trabajo del ecosistema IASI:
-
-```text
-iasi-org/
-├── iasi-book/.git/
-├── iasi_quarto/.git/
-├── iasi-lua/.git/
-├── iasi-infra/.git/
-└── iasi-home/.git/
-```
-
-A partir de este punto, cada repositorio puede evolucionar, actualizarse y versionarse de forma independiente. 
-La máquina ya no contiene únicamente las herramientas necesarias para trabajar con IASI.
-Contiene IASI.
-
+Después de `iasi-tools` e `iasi-init`, contiene **IASI**.

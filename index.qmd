@@ -7,7 +7,7 @@ number-sections: false
 
 Infraestructura reproducible para crear, configurar y preparar entornos de trabajo IASI desde cero.
 
-![](resources/images/portada.png)
+![](resources/images/portada2.png)
 
 :::
 

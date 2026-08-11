@@ -10,12 +10,14 @@ Tenemos dos "sabores": Windows y Linux
 Necesitamos los siguientes paquetes:
 
 - Git
+- Github CLI
 - Notepad++
-- PowerShell 7
 - Adobe Acrobat Reader
 - Docker Compose
 
 Además, puede instalarse opcionalmente un navegador web adicional, a elección del usuario. Windows ya incorpora Microsoft Edge, por lo que IASI no impone un navegador concreto.
+
+**Se recomienda ejecutar los comandos como Administrador**
 
 ### Instalacion
 
@@ -26,21 +28,21 @@ Programa de control de versiones
 ```powershell
 winget install --id Git.Git -e
 ```
+
+#### GitHub CLI
+
+GitHub CLI (`gh`) permite utilizar GitHub desde la línea de comandos y automatizar operaciones sobre repositorios y organizaciones.
+
+```powershell
+winget install --id GitHub.cli -e
+```
+
 #### Notepad++
 
 Un editor de textos que siempre viene bien
 
 ```powershell
 winget install --id Notepad++.Notepad++ -e
-```
-
-#### PowerShell 7
-
-> Una herramienta de automatización y un intérprete de comandos multiplataforma (compatible con Windows, macOS y Linux) de código abierto. 
-> Se ejecuta en paralelo a Windows PowerShell 5.1, ofrece un mejor rendimiento, operadores avanzados y soporte completo para canalizaciones de objetos y APIs 
-
-```powershell
-winget install --id Microsoft.PowerShell --source winget
 ```
 
 #### Navegador web (opcional)
@@ -148,7 +150,9 @@ Además de estas comprobaciones, debe verificarse manualmente que:
 
 #### Git
 
-Una vez todo instalado, git debe ser configurado y conectado a GitHub. Actualmente recomendamos SSH, mientras GitHub no exija 2FC
+Una vez todo instalado, git debe ser configurado y conectado a GitHub. Actualmente recomendamos SSH, mientras GitHub no exija 2FC. La configuración de Git se hace en tres pasos:
+
+
 Desde git bash, que estara disponible
 
 ```bash
@@ -164,6 +168,24 @@ cat ~/.ssh/id_ed25519.pub
 
 ssh -T git@github.com
 ```
+
+Y copiamos la clave publica que empezara por ssh-ed25519 al portapapeles.
+
+Nos conectamos a Github, Settings de usuario (El icono del usuario) | SSH and GPG Keys
+
+Creamos una nueva clave SSH:
+
+- Le damos un nombre descriptivo
+- Pegamos la clave que hemos obtenido de la maquina virtual
+
+En git bash ejecutamos
+
+```
+ssh -T git@github.com
+```
+
+La primera vez preguntará si se confia en esa clave: Yes
+
 
 ## Linux
 
