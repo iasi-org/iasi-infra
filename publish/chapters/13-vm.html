@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Windows sin cuenta ni pin – IASI Infra</title>
+<title>vm – IASI Infra</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -42,13 +42,13 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-eeed3a052222707b7df0979316f918a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-93eaeac7181d9b7c96adf50a42bded44.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -74,16 +74,82 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">IASI Infra</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../chapters/12-isolation.html" aria-current="page"> 
+<span class="menu-text">Aislamiento</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/13-vm.html"> 
+<span class="menu-text">VM</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/14-so-base.html"> 
+<span class="menu-text">Sistema operativo</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/15-documentation.html"> 
+<span class="menu-text">Documentación</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/16-desarrollo.html"> 
+<span class="menu-text">Desarrollo</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/17-sistemas-inteligentes.html"> 
+<span class="menu-text">SS II</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/18-iasi.html"> 
+<span class="menu-text">IASI</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/19-postinstalacion.html"> 
+<span class="menu-text">Post</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/20-docker.html"> 
+<span class="menu-text">Docker</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/iasi-org/iasi-infra"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/12-vm.html">Windows sin cuenta ni pin</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/13-vm.html">Maquina virtual</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -93,14 +159,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">IASI Infra</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Buscar"></div>
@@ -137,8 +198,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-vm.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Windows sin cuenta ni pin</span></a>
+  <a href="../chapters/13-vm.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Maquina virtual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -179,6 +240,18 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/20-docker.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Docker y Docker Compose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IASI Commands</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/99-sigmoidal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sigmodial</span></a>
   </div>
@@ -190,38 +263,112 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#maquina-virtual" id="toc-maquina-virtual" class="nav-link active" data-scroll-target="#maquina-virtual">Maquina virtual</a>
+  <ul class="collapse">
+  <li><a href="#configuración-recomendada" id="toc-configuración-recomendada" class="nav-link" data-scroll-target="#configuración-recomendada">Configuración recomendada</a></li>
+  <li><a href="#trick-windows-sin-cuenta-ni-pin" id="toc-trick-windows-sin-cuenta-ni-pin" class="nav-link" data-scroll-target="#trick-windows-sin-cuenta-ni-pin">Trick: Windows sin cuenta ni pin”</a>
+  <ul class="collapse">
+  <li><a href="#evitar-la-cuenta-de-microsoft-iniciar-sesión" id="toc-evitar-la-cuenta-de-microsoft-iniciar-sesión" class="nav-link" data-scroll-target="#evitar-la-cuenta-de-microsoft-iniciar-sesión">Evitar la cuenta de Microsoft (Iniciar sesión)</a></li>
+  <li><a href="#evitar-la-creación-del-pins" id="toc-evitar-la-creación-del-pins" class="nav-link" data-scroll-target="#evitar-la-creación-del-pins">Evitar la creación del PINS</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/12-vm.html">Windows sin cuenta ni pin</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Windows sin cuenta ni pin</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/13-vm.html">Maquina virtual</a></li></ol></nav></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
+<section id="maquina-virtual" class="level1">
+<h1>Maquina virtual</h1>
+<p>Como se ha indicado, el principio de <em>isolation</em> dice que cada proyecto vive en su propia maquina virtual.</p>
+<p>El hipervisor puede ser cualquiera de los disponibles en el mercado.</p>
+<section id="configuración-recomendada" class="level2">
+<h2 class="anchored" data-anchor-id="configuración-recomendada">Configuración recomendada</h2>
+<p>La capacidad de la máquina virtual dependerá principalmente de si los modelos de inteligencia artificial se ejecutan en la propia máquina o mediante servicios externos.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: right;">🖥️ Sin IA local</th>
+<th style="text-align: right;">🧠 Con IA local</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>⚙️ <strong>CPU</strong></td>
+<td style="text-align: right;">4 vCPU</td>
+<td style="text-align: right;">8 vCPU</td>
+</tr>
+<tr class="even">
+<td>🧮 <strong>Memoria</strong></td>
+<td style="text-align: right;">16 GB RAM</td>
+<td style="text-align: right;">32 GB RAM</td>
+</tr>
+<tr class="odd">
+<td>💾 <strong>Disco</strong></td>
+<td style="text-align: right;">150 GB</td>
+<td style="text-align: right;">250 GB</td>
+</tr>
+<tr class="even">
+<td>📦 <strong>Tipo de disco</strong></td>
+<td style="text-align: right;">Dinámico</td>
+<td style="text-align: right;">Dinámico</td>
+</tr>
+<tr class="odd">
+<td>🪟 <strong>Sistema operativo</strong></td>
+<td style="text-align: right;">Windows 11</td>
+<td style="text-align: right;">Windows 11</td>
+</tr>
+<tr class="even">
+<td>🌐 <strong>Red</strong></td>
+<td style="text-align: right;">Acceso a Internet</td>
+<td style="text-align: right;">Acceso a Internet</td>
+</tr>
+<tr class="odd">
+<td>🖥️ <strong>Resolución</strong></td>
+<td style="text-align: right;">1920 × 1080</td>
+<td style="text-align: right;">1920 × 1080</td>
+</tr>
+</tbody>
+</table>
+<p>La configuración <strong>sin IA local</strong> es la recomendada para una máquina IASI estándar cuando los servicios de inteligencia artificial se ejecutan externamente. La configuración <strong>con IA local</strong> proporciona recursos adicionales para ejecutar Ollama y modelos locales dentro de la propia máquina.</p>
+<blockquote class="blockquote">
+<p><strong>Estas configuraciones son puntos de partida recomendados, no requisitos de IASI.</strong></p>
+</blockquote>
+<p>Normalmente, los recursos pueden ajustarse posteriormente sin modificar la definición funcional del entorno en todas los hipervisores.</p>
+</section>
+<section id="trick-windows-sin-cuenta-ni-pin" class="level2">
+<h2 class="anchored" data-anchor-id="trick-windows-sin-cuenta-ni-pin">Trick: Windows sin cuenta ni pin”</h2>
+<p>A la hora de realizar las pruebas se ha detectado que ls ultimas versiones de Windows 11, aparentemente, exigen tener una cuenta de Microsoft y configurar un PIN. Hacerlo o no hacerlo es decision del usuario, este es un trick para evitarlo.</p>
+<section id="evitar-la-cuenta-de-microsoft-iniciar-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="evitar-la-cuenta-de-microsoft-iniciar-sesión">Evitar la cuenta de Microsoft (Iniciar sesión)</h3>
+<p>Cuando el instalador te obligue a conectarte a internet o a iniciar sesión con un correo, haz lo siguiente:</p>
+<p>En la pantalla donde te pide el correo, presiona la combinación de teclas Shift + F10 (en algunas laptops es Fn + Shift + F10).</p>
+<p>Se abrirá una ventana negra de comandos (Símbolo del sistema).</p>
+<p>Escribe exactamente este comando y presiona Enter: **OOBE*</p>
+<p>La máquina virtual se reiniciará automáticamente, al volver a la pantalla de red, aparecerá un nuevo botón que dice “No tengo internet”.</p>
+<p>Haz clic ahí.Selecciona “Continuar con la configuración limitada”.</p>
+<p>Ahora te dejará escribir cualquier nombre de usuario local sin pedirte correos ni contraseñas obligatorias.</p>
+</section>
+<section id="evitar-la-creación-del-pins" class="level3">
+<h3 class="anchored" data-anchor-id="evitar-la-creación-del-pins">Evitar la creación del PINS</h3>
+<p>si el instalador te obliga a crear un PIN de seguridad de Windows Hello después de poner tu contraseña, usa este atajo:</p>
+<p>Cuando aparezca la ventana flotante que te obliga a configurar el PIN, haz clic en Cancelar o cierra esa ventana específica si te da la opción. Si no te deja cancelar, deja los campos del PIN completamente vacíos.</p>
+<p>Presiona la tecla Esc (Escape) en tu teclado o haz clic en la flecha de “Atrás” en la esquina superior izquierda de la pantalla.</p>
+<p>El sistema se saltará el paso del PIN y te llevará directamente al escritorio de Windows</p>
 
 
-</header>
-
-
-<p>Si no quieres crear una cuenta de Microsoft ni configurar un PIN dentro de la máquina virtual de Windows 11, puedes saltarte ambos bloqueos fácilmente durante la instalación inicial (la pantalla azul de configuración inicial o OOBE). Sigue estos trucos para instalar el sistema de forma 100 % local y anónima:</p>
-<ol type="1">
-<li>Evitar la cuenta de Microsoft (Iniciar sesión) Cuando el instalador te obligue a conectarte a internet o a iniciar sesión con un correo, haz lo siguiente: En la pantalla donde te pide el correo, presiona la combinación de teclas Shift + F10 (en algunas laptops es Fn + Shift + F10). Se abrirá una ventana negra de comandos (Símbolo del sistema). Escribe exactamente este comando y presiona Enter: OOBE La máquina virtual se reiniciará automáticamente.Al volver a la pantalla de red, aparecerá un nuevo botón que dice “No tengo internet”. Haz clic ahí.Selecciona “Continuar con la configuración limitada”. Ahora te dejará escribir cualquier nombre de usuario local sin pedirte correos ni contraseñas obligatorias.</li>
-<li>Evitar la creación del PINS si el instalador te obliga a crear un PIN de seguridad de Windows Hello después de poner tu contraseña, usa este atajo: Cuando aparezca la ventana flotante que te obliga a configurar el PIN, haz clic en Cancelar o cierra esa ventana específica si te da la opción. Si no te deja cancelar, deja los campos del PIN completamente vacíos. Presiona la tecla Esc (Escape) en tu teclado o haz clic en la flecha de “Atrás” en la esquina superior izquierda de la pantalla. El sistema se saltará el paso del PIN y te llevará directamente al escritorio de Windows .Con estos dos pasos tendrás un Windows 11 virtualizado totalmente limpio, que iniciará directamente al escritorio sin pedirte contraseñas, PINs ni cuentas de correo.</li>
-</ol>
-
-
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -625,6 +772,25 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>IASI · Ingeniería Asistida por Sistemas Inteligentes</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/iasi-org">
+<p>GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

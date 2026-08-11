@@ -77,13 +77,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-eeed3a052222707b7df0979316f918a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-93eaeac7181d9b7c96adf50a42bded44.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -109,10 +109,76 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">IASI Infra</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../chapters/12-isolation.html" aria-current="page"> 
+<span class="menu-text">Aislamiento</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/13-vm.html"> 
+<span class="menu-text">VM</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/14-so-base.html"> 
+<span class="menu-text">Sistema operativo</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/15-documentation.html"> 
+<span class="menu-text">Documentación</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/16-desarrollo.html"> 
+<span class="menu-text">Desarrollo</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/17-sistemas-inteligentes.html"> 
+<span class="menu-text">SS II</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/18-iasi.html"> 
+<span class="menu-text">IASI</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/19-postinstalacion.html"> 
+<span class="menu-text">Post</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/20-docker.html"> 
+<span class="menu-text">Docker</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/iasi-org/iasi-infra"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -128,14 +194,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">IASI Infra</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Buscar"></div>
@@ -172,8 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-vm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Windows sin cuenta ni pin</span></a>
+  <a href="../chapters/13-vm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maquina virtual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -210,6 +271,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../chapters/19-postinstalacion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Postinstalación</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/20-docker.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Docker y Docker Compose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IASI Commands</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -258,10 +331,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Necesitamos los siguientes paquetes:</p>
 <ul>
 <li>Git</li>
+<li>Github CLI</li>
 <li>Notepad++</li>
-<li>Powershell 7</li>
-<li>docker compose</li>
+<li>Adobe Acrobat Reader</li>
+<li>Docker Compose</li>
 </ul>
+<p>Además, puede instalarse opcionalmente un navegador web adicional, a elección del usuario. Windows ya incorpora Microsoft Edge, por lo que IASI no impone un navegador concreto.</p>
+<p><strong>Se recomienda ejecutar los comandos como Administrador</strong></p>
 <section id="instalacion" class="level3">
 <h3 class="anchored" data-anchor-id="instalacion">Instalacion</h3>
 <section id="git" class="level4">
@@ -269,96 +345,123 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Programa de control de versiones</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id Git<span class="op">.</span><span class="fu">Git</span> <span class="op">-</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
+<section id="github-cli" class="level4">
+<h4 class="anchored" data-anchor-id="github-cli">GitHub CLI</h4>
+<p>GitHub CLI (<code>gh</code>) permite utilizar GitHub desde la línea de comandos y automatizar operaciones sobre repositorios y organizaciones.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id GitHub<span class="op">.</span><span class="fu">cli</span> <span class="op">-</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 <section id="notepad" class="level4">
 <h4 class="anchored" data-anchor-id="notepad">Notepad++</h4>
 <p>Un editor de textos que siempre viene bien</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id Notepad<span class="op">++.</span><span class="fu">Notepad</span><span class="op">++</span> <span class="op">-</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id Notepad<span class="op">++.</span><span class="fu">Notepad</span><span class="op">++</span> <span class="op">-</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="powershell-7" class="level4">
-<h4 class="anchored" data-anchor-id="powershell-7">PowerShell 7</h4>
-<blockquote class="blockquote">
-<p>Una herramienta de automatización y un intérprete de comandos multiplataforma (compatible con Windows, macOS y Linux) de código abierto. Se ejecuta en paralelo a Windows PowerShell 5.1, ofrece un mejor rendimiento, operadores avanzados y soporte completo para canalizaciones de objetos y APIs</p>
-</blockquote>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id Microsoft<span class="op">.</span><span class="fu">PowerShell</span> <span class="op">--</span>source winget</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="navegador-web-opcional" class="level4">
+<h4 class="anchored" data-anchor-id="navegador-web-opcional">Navegador web (opcional)</h4>
+<p>Windows incorpora Microsoft Edge, por lo que la máquina ya dispone de un navegador desde la instalación base.</p>
+<p>El usuario puede instalar opcionalmente el navegador de su preferencia. IASI no establece un navegador concreto como requisito.</p>
+</section>
+<section id="adobe-acrobat-reader" class="level4">
+<h4 class="anchored" data-anchor-id="adobe-acrobat-reader">Adobe Acrobat Reader</h4>
+<p>Aunque los navegadores modernos permiten visualizar documentos PDF, recomendamos Adobe Acrobat Reader como lector PDF de referencia.</p>
+<p>Puede instalarse con WinGet:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id Adobe<span class="op">.</span><span class="fu">Acrobat</span><span class="op">.</span><span class="fu">Reader</span><span class="op">.</span><span class="dv">64</span><span class="op">-</span>bit <span class="op">-</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Referencia:</p>
+<p><a href="https://www.adobe.com/es/acrobat/pdf-reader.html">Adobe Acrobat Reader</a></p>
 </section>
 <section id="openssh-client" class="level4">
 <h4 class="anchored" data-anchor-id="openssh-client">OpenSSH Client</h4>
 <p>Un cliente <em>shell</em> seguro</p>
 <p>Primero comprobar si está disponible:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Get-WindowsCapability <span class="op">-</span>Online <span class="op">|</span> <span class="fu">Where-Object</span> Name <span class="op">-like</span> <span class="st">'OpenSSH.Client*'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Get-WindowsCapability <span class="op">-</span>Online <span class="op">|</span> <span class="fu">Where-Object</span> Name <span class="op">-like</span> <span class="st">'OpenSSH.Client*'</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Si no está instalado:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Add-WindowsCapability <span class="op">-</span>Online <span class="op">-</span>Name OpenSSH<span class="op">.</span><span class="fu">Client</span><span class="op">~~~~</span><span class="dv">0.0</span><span class="op">.</span><span class="dv">1.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>Add-WindowsCapability <span class="op">-</span>Online <span class="op">-</span>Name OpenSSH<span class="op">.</span><span class="fu">Client</span><span class="op">~~~~</span><span class="dv">0.0</span><span class="op">.</span><span class="dv">1.0</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="docker" class="level4">
 <h4 class="anchored" data-anchor-id="docker">Docker</h4>
 <p>La plataforma para generar contenedores</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id Docker<span class="op">.</span><span class="fu">DockerDesktop</span> <span class="op">-</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id Docker<span class="op">.</span><span class="fu">DockerDesktop</span> <span class="op">-</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="verfificacion" class="level3">
 <h3 class="anchored" data-anchor-id="verfificacion">Verfificacion</h3>
 <p>Ejecutar lo siguiente</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando Git..."</span> <span class="op">-</span>NoNewline</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="fu">Get-Command</span> git <span class="op">-</span>ErrorAction SilentlyContinue<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando Notepad++..."</span> <span class="op">-</span>NoNewline</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="fu">Get-Command</span> notepad<span class="op">++</span> <span class="op">-</span>ErrorAction SilentlyContinue<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando PowerShell 7..."</span> <span class="op">-</span>NoNewline</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="fu">Get-Command</span> pwsh <span class="op">-</span>ErrorAction SilentlyContinue<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="va">$version</span> <span class="op">=</span> <span class="op">&amp;</span> pwsh <span class="op">-</span>NoProfile <span class="op">-</span>Command <span class="st">'$PSVersionTable.PSVersion.Major'</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span><span class="va">$version</span> <span class="op">-ge</span> <span class="dv">7</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando Docker..."</span> <span class="op">-</span>NoNewline</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="fu">Get-Command</span> docker <span class="op">-</span>ErrorAction SilentlyContinue<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando Docker Compose..."</span> <span class="op">-</span>NoNewline</span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>docker compose version <span class="dv">2</span><span class="op">&gt;</span><span class="va">$null</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando Git..."</span> <span class="op">-</span>NoNewline</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="fu">Get-Command</span> git <span class="op">-</span>ErrorAction SilentlyContinue<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando Notepad++..."</span> <span class="op">-</span>NoNewline</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="fu">Get-Command</span> notepad<span class="op">++</span> <span class="op">-</span>ErrorAction SilentlyContinue<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando PowerShell 7..."</span> <span class="op">-</span>NoNewline</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="fu">Get-Command</span> pwsh <span class="op">-</span>ErrorAction SilentlyContinue<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    <span class="va">$version</span> <span class="op">=</span> <span class="op">&amp;</span> pwsh <span class="op">-</span>NoProfile <span class="op">-</span>Command <span class="st">'$PSVersionTable.PSVersion.Major'</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span><span class="va">$version</span> <span class="op">-ge</span> <span class="dv">7</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>        <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando Docker..."</span> <span class="op">-</span>NoNewline</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span><span class="fu">Get-Command</span> docker <span class="op">-</span>ErrorAction SilentlyContinue<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="fu">Write-Host</span> <span class="st">"Verificando Docker Compose..."</span> <span class="op">-</span>NoNewline</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>docker compose version <span class="dv">2</span><span class="op">&gt;</span><span class="va">$null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" OK"</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">" KO"</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Además de estas comprobaciones, debe verificarse manualmente que:</p>
+<ul>
+<li>puede abrirse una página web con el navegador seleccionado;</li>
+<li>puede abrirse un documento PDF con Adobe Acrobat Reader.</li>
+</ul>
 </section>
 <section id="configuracion" class="level3">
 <h3 class="anchored" data-anchor-id="configuracion">Configuracion</h3>
 <section id="git-1" class="level4">
 <h4 class="anchored" data-anchor-id="git-1">Git</h4>
-<p>Una vez todo instalado, git debe ser configurado y conectado a GitHub. Actualmente recomendamos SSH, mientras GitHub no exija 2FC Desde git bash, que estara disponible</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Tu Nombre"</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"tu@email.com"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"tu@email.com"</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span><span class="st">"</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> ~/.ssh/id_ed25519</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Una vez todo instalado, git debe ser configurado y conectado a GitHub. Actualmente recomendamos SSH, mientras GitHub no exija 2FC. La configuración de Git se hace en tres pasos:</p>
+<p>Desde git bash, que estara disponible</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Tu Nombre"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"tu@email.com"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> ed25519 <span class="at">-C</span> <span class="st">"tu@email.com"</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">"</span><span class="va">$(</span><span class="fu">ssh-agent</span> <span class="at">-s</span><span class="va">)</span><span class="st">"</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-add</span> ~/.ssh/id_ed25519</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> ~/.ssh/id_ed25519.pub</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-T</span> git@github.com</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Y copiamos la clave publica que empezara por ssh-ed25519 al portapapeles.</p>
+<p>Nos conectamos a Github, Settings de usuario (El icono del usuario) | SSH and GPG Keys</p>
+<p>Creamos una nueva clave SSH:</p>
+<ul>
+<li>Le damos un nombre descriptivo</li>
+<li>Pegamos la clave que hemos obtenido de la maquina virtual</li>
+</ul>
+<p>En git bash ejecutamos</p>
+<pre><code>ssh -T git@github.com</code></pre>
+<p>La primera vez preguntará si se confia en esa clave: Yes</p>
 </section>
 </section>
 </section>
@@ -773,6 +876,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>IASI · Ingeniería Asistida por Sistemas Inteligentes</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/iasi-org">
+<p>GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

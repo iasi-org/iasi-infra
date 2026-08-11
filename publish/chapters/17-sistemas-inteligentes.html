@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -42,13 +77,13 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-eeed3a052222707b7df0979316f918a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-93eaeac7181d9b7c96adf50a42bded44.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -74,10 +109,76 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">IASI Infra</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../chapters/12-isolation.html" aria-current="page"> 
+<span class="menu-text">Aislamiento</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/13-vm.html"> 
+<span class="menu-text">VM</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/14-so-base.html"> 
+<span class="menu-text">Sistema operativo</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/15-documentation.html"> 
+<span class="menu-text">Documentación</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/16-desarrollo.html"> 
+<span class="menu-text">Desarrollo</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/17-sistemas-inteligentes.html"> 
+<span class="menu-text">SS II</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/18-iasi.html"> 
+<span class="menu-text">IASI</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/19-postinstalacion.html"> 
+<span class="menu-text">Post</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chapters/20-docker.html"> 
+<span class="menu-text">Docker</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/iasi-org/iasi-infra"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -93,14 +194,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">IASI Infra</a> 
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Buscar"></div>
@@ -137,8 +233,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/12-vm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Windows sin cuenta ni pin</span></a>
+  <a href="../chapters/13-vm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maquina virtual</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -179,6 +275,18 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../chapters/20-docker.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Docker y Docker Compose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-commands.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">IASI Commands</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../chapters/99-sigmoidal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sigmodial</span></a>
   </div>
@@ -197,14 +305,11 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#sistemas-inteligentes" id="toc-sistemas-inteligentes" class="nav-link active" data-scroll-target="#sistemas-inteligentes">Sistemas inteligentes</a>
   <ul class="collapse">
-  <li><a href="#open-webui" id="toc-open-webui" class="nav-link" data-scroll-target="#open-webui">Open WebUI</a></li>
+  <li><a href="#chatgpt" id="toc-chatgpt" class="nav-link" data-scroll-target="#chatgpt">ChatGPT</a></li>
+  <li><a href="#github-copilot" id="toc-github-copilot" class="nav-link" data-scroll-target="#github-copilot">GitHub Copilot</a></li>
+  <li><a href="#trabajo-con-varias-ia" id="toc-trabajo-con-varias-ia" class="nav-link" data-scroll-target="#trabajo-con-varias-ia">Trabajo con varias IA</a></li>
   <li><a href="#ollama" id="toc-ollama" class="nav-link" data-scroll-target="#ollama">Ollama</a></li>
-  <li><a href="#llama" id="toc-llama" class="nav-link" data-scroll-target="#llama">Llama</a></li>
-  <li><a href="#qwen" id="toc-qwen" class="nav-link" data-scroll-target="#qwen">Qwen</a></li>
-  <li><a href="#deepseek" id="toc-deepseek" class="nav-link" data-scroll-target="#deepseek">DeepSeek</a></li>
-  <li><a href="#varios-modelos-una-misma-plataforma" id="toc-varios-modelos-una-misma-plataforma" class="nav-link" data-scroll-target="#varios-modelos-una-misma-plataforma">Varios modelos, una misma plataforma</a></li>
-  <li><a href="#otros-sistemas-inteligentes" id="toc-otros-sistemas-inteligentes" class="nav-link" data-scroll-target="#otros-sistemas-inteligentes">Otros sistemas inteligentes</a></li>
-  <li><a href="#despliegue" id="toc-despliegue" class="nav-link" data-scroll-target="#despliegue">Despliegue</a></li>
+  <li><a href="#separación-entre-sistema-y-modelo" id="toc-separación-entre-sistema-y-modelo" class="nav-link" data-scroll-target="#separación-entre-sistema-y-modelo">Separación entre sistema y modelo</a></li>
   <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
   </ul></li>
   </ul>
@@ -218,95 +323,79 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sistemas-inteligentes" class="level1">
 <h1>Sistemas inteligentes</h1>
-<p>IASI incorpora una plataforma local de sistemas inteligentes basada en una separación clara entre interfaz, motor de ejecución y modelos. Existen asistentes externos como ChatGPT o GitHub Copilot que pueden participar en el proceso de ingeniería. Pueden resultar útiles para análisis, diseño, documentación o desarrollo, pero no forman parte de la infraestructura local definida en esta sección. La plataforma local elegida para IASI es:</p>
-<pre class="text"><code>Open WebUI
-    ↓
-Ollama
-    ↓
-├── Llama
-├── Qwen
-└── DeepSeek</code></pre>
-<section id="open-webui" class="level2">
-<h2 class="anchored" data-anchor-id="open-webui">Open WebUI</h2>
-<p>Open WebUI proporciona la interfaz desde la que se utilizan los modelos.</p>
-<p>Su función es ofrecer un punto único de interacción con las distintas familias de modelos disponibles, de forma que el usuario no tenga que trabajar directamente con el motor que los ejecuta.</p>
+<p>IASI no plantea el trabajo asistido por inteligencia artificial como la utilización de un único asistente.</p>
+<p>El entorno se prepara para trabajar con <strong>varios sistemas inteligentes</strong>, cada uno con capacidades, contexto y formas de interacción diferentes.</p>
+<p>La primera configuración de referencia utiliza:</p>
+<ul>
+<li>ChatGPT, como asistente general de razonamiento, análisis, diseño y elaboración.</li>
+<li>GitHub Copilot, integrado directamente en Visual Studio Code y orientado al trabajo sobre el código y el proyecto.</li>
+<li>Ollama, de forma opcional, como <em>runtime</em> para modelos locales o para servicios de modelos disponibles dentro de la infraestructura.</li>
+</ul>
+<p>La idea no es acumular modelos. El objetivo es disponer de <strong>varios sistemas que puedan participar en el mismo proceso de ingeniería</strong>.</p>
+<section id="chatgpt" class="level2">
+<h2 class="anchored" data-anchor-id="chatgpt">ChatGPT</h2>
+<p>ChatGPT se utiliza como asistente general dentro del proceso IASI.</p>
+<p>Puede utilizarse directamente desde la web o mediante la aplicación oficial para Windows.</p>
 <p>Referencia oficial:</p>
-<p><a href="https://docs.openwebui.com/">Open WebUI - Documentation</a></p>
+<p><a href="https://help.openai.com/es-es/articles/9982051-using-the-chatgpt-windows-app">OpenAI - ChatGPT para Windows</a></p>
+<p>La aplicación para Windows puede instalarse desde Microsoft Store.</p>
+<p>No existe una dependencia técnica entre ChatGPT y el entorno de desarrollo. Su papel es acompañar el trabajo de análisis, diseño, documentación, revisión y construcción del proyecto.</p>
+</section>
+<section id="github-copilot" class="level2">
+<h2 class="anchored" data-anchor-id="github-copilot">GitHub Copilot</h2>
+<p>GitHub Copilot se integra en Visual Studio Code, instalado previamente en la capa de desarrollo.</p>
+<p>Referencia oficial:</p>
+<p><a href="https://docs.github.com/en/copilot/get-started/quickstart?tool=vscode">GitHub - GitHub Copilot en Visual Studio Code</a></p>
+<p>Para utilizarlo:</p>
+<ol type="1">
+<li>Abrir Visual Studio Code.</li>
+<li>Iniciar sesión con la cuenta de GitHub.</li>
+<li>Configurar GitHub Copilot desde el propio entorno.</li>
+</ol>
+<p>La configuración inicial de Copilot en Visual Studio Code instala automáticamente las extensiones necesarias.</p>
+<p>GitHub Copilot aporta asistencia directamente sobre el proyecto abierto en el editor: código, archivos, diagnósticos y contexto de trabajo.</p>
+</section>
+<section id="trabajo-con-varias-ia" class="level2">
+<h2 class="anchored" data-anchor-id="trabajo-con-varias-ia">Trabajo con varias IA</h2>
+<p>IASI considera especialmente valioso que distintos sistemas inteligentes puedan trabajar sobre un mismo problema.</p>
+<pre class="text"><code>Ingeniero
+├── ChatGPT
+│   └── análisis, diseño, razonamiento, documentación
+│
+└── GitHub Copilot
+    └── código, proyecto, editor, implementación</code></pre>
+<p>No se trata de sustituir un sistema por otro.</p>
+<p>Cada sistema observa el problema desde un contexto diferente. La interacción entre ellos permite contrastar decisiones, repartir tareas y utilizar la herramienta más adecuada en cada momento.</p>
+<p>El ingeniero mantiene la dirección del trabajo, decide qué contexto recibe cada sistema y evalúa las propuestas obtenidas.</p>
 </section>
 <section id="ollama" class="level2">
 <h2 class="anchored" data-anchor-id="ollama">Ollama</h2>
-<p>Ollama proporciona el <em>runtime</em> encargado de descargar, gestionar y ejecutar los modelos.</p>
-<p>Open WebUI actúa como interfaz y Ollama como motor de ejecución.</p>
+<p>Cuando se necesite ejecutar modelos localmente, IASI puede utilizar Ollama como <em>runtime</em> de modelos.</p>
 <p>Referencia oficial:</p>
-<p><a href="https://docs.ollama.com/">Ollama - Documentation</a></p>
-<p>Esta separación permite cambiar los modelos sin modificar la interfaz ni la arquitectura general.</p>
+<p><a href="https://docs.ollama.com/windows">Ollama - Windows</a></p>
+<p>Ollama puede instalarse en la propia máquina o ejecutarse como servicio en otra máquina accesible por red.</p>
+<p>En Windows, una instalación local expone normalmente su <em>API</em> en:</p>
+<pre class="text"><code>http://localhost:11434</code></pre>
+<p>Verificar la instalación:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ollama <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La descarga de modelos no forma parte de la instalación base. Los modelos concretos dependerán del propósito del entorno y de los recursos disponibles.</p>
 </section>
-<section id="llama" class="level2">
-<h2 class="anchored" data-anchor-id="llama">Llama</h2>
-<p>Llama es una familia de modelos desarrollada por Meta.</p>
-<p>En IASI se utiliza como una de las familias generalistas de referencia. Resulta adecuada para conversación, análisis, redacción, resumen y generación de contenido.</p>
-<p>Referencia en Ollama:</p>
-<p><a href="https://ollama.com/library/llama3.2">Llama - Ollama</a></p>
-<p>Llama representa una primera perspectiva dentro de la plataforma, pero no se considera el modelo único ni el modelo por defecto para todos los problemas.</p>
-</section>
-<section id="qwen" class="level2">
-<h2 class="anchored" data-anchor-id="qwen">Qwen</h2>
-<p>Qwen es una familia de modelos desarrollada por Alibaba.</p>
-<p>IASI la incorpora como otra familia generalista con la que contrastar resultados y comportamiento.</p>
-<p>Referencia en Ollama:</p>
-<p><a href="https://ollama.com/library/qwen3">Qwen - Ollama</a></p>
-<p>Qwen dispone de diferentes variantes y tamaños, lo que permite adaptar su uso a los recursos disponibles y al tipo de tarea.</p>
-</section>
-<section id="deepseek" class="level2">
-<h2 class="anchored" data-anchor-id="deepseek">DeepSeek</h2>
-<p>DeepSeek es una familia especialmente interesante para tareas de razonamiento, programación y resolución de problemas técnicos. IASI la incorpora como tercera familia de referencia, complementando a Llama y Qwen.</p>
-<p>Referencia en Ollama:</p>
-<p><a href="https://ollama.com/library/deepseek-r1">DeepSeek - Ollama</a></p>
-<p>Su presencia permite comparar no solo respuestas finales, sino también el comportamiento de distintos modelos ante problemas complejos.</p>
-</section>
-<section id="varios-modelos-una-misma-plataforma" class="level2">
-<h2 class="anchored" data-anchor-id="varios-modelos-una-misma-plataforma">Varios modelos, una misma plataforma</h2>
-<p>IASI no parte de la idea de que exista un único modelo adecuado para todos los problemas. La misma infraestructura permite utilizar diferentes modelos:</p>
-<pre class="text"><code>Open WebUI
-    ↓
-Ollama
-    ↓
-├── Llama
-├── Qwen
-└── DeepSeek</code></pre>
-<p>Una misma cuestión puede contrastarse entre varios modelos y el usuario puede elegir cuál resulta más adecuado para cada tarea.</p>
-<p>Los modelos son sustituibles. La infraestructura permanece.</p>
-</section>
-<section id="otros-sistemas-inteligentes" class="level2">
-<h2 class="anchored" data-anchor-id="otros-sistemas-inteligentes">Otros sistemas inteligentes</h2>
-<p>IASI puede utilizar también sistemas externos como ChatGPT o GitHub Copilot.</p>
-<p>Estos sistemas forman parte del ecosistema de trabajo asistido por IA, pero quedan fuera de la plataforma local descrita aquí.</p>
-<p>La plataforma local de referencia de IASI es:</p>
-<pre class="text"><code>Open WebUI
-    ↓
-Ollama
-    ↓
-Llama / Qwen / DeepSeek</code></pre>
-</section>
-<section id="despliegue" class="level2">
-<h2 class="anchored" data-anchor-id="despliegue">Despliegue</h2>
-<p>La instalación concreta mediante Docker y Docker Compose se tratará posteriormente.</p>
-<p>En esta sección únicamente se fija la arquitectura y la selección inicial de componentes.</p>
+<section id="separación-entre-sistema-y-modelo" class="level2">
+<h2 class="anchored" data-anchor-id="separación-entre-sistema-y-modelo">Separación entre sistema y modelo</h2>
+<p>IASI distingue entre el <strong>sistema inteligente</strong> con el que se trabaja y el <strong>modelo</strong> que ese sistema pueda utilizar.</p>
+<p>Por ejemplo, ChatGPT o GitHub Copilot pueden ofrecer distintos modelos sin dejar de ser sistemas de trabajo diferentes.</p>
+<p>Esta distinción es importante porque IASI pretende trabajar con varias IA, no simplemente cambiar de modelo dentro de una misma herramienta.</p>
 </section>
 <section id="resultado" class="level2">
 <h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
-<p>La capa de sistemas inteligentes queda formada por:</p>
-<pre class="text"><code>Interfaz
-└── Open WebUI
-
-Runtime
+<p>La capa inicial de sistemas inteligentes queda formada por:</p>
+<pre class="text"><code>Sistemas inteligentes
+├── ChatGPT
+├── GitHub Copilot
 └── Ollama
-
-Modelos
-├── Llama
-├── Qwen
-└── DeepSeek</code></pre>
-<p>El modelo puede cambiar. La infraestructura permanece.</p>
+    └── modelos locales, cuando sean necesarios</code></pre>
+<p>ChatGPT y GitHub Copilot constituyen la configuración inicial de trabajo asistido por varias IA.</p>
+<p>Ollama proporciona una vía adicional para incorporar modelos locales o servicios propios cuando el proyecto lo requiera.</p>
 
 
 </section>
@@ -714,6 +803,25 @@ Modelos
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>IASI · Ingeniería Asistida por Sistemas Inteligentes</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://github.com/iasi-org">
+<p>GitHub</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 

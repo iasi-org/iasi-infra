@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>desarrollo – IASI Infra</title>
+<title>docker – IASI Infra</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/16-desarrollo.html">Desarrollo</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/20-docker.html">Docker y Docker Compose</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -251,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/16-desarrollo.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/16-desarrollo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Desarrollo</span></a>
   </div>
 </li>
@@ -275,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/20-docker.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/20-docker.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Docker y Docker Compose</span></a>
   </div>
 </li>
@@ -303,140 +303,296 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#desarrollo" id="toc-desarrollo" class="nav-link active" data-scroll-target="#desarrollo">Desarrollo</a>
+  <li><a href="#docker-y-docker-compose" id="toc-docker-y-docker-compose" class="nav-link active" data-scroll-target="#docker-y-docker-compose">Docker y Docker Compose</a>
   <ul class="collapse">
-  <li><a href="#visual-studio-code" id="toc-visual-studio-code" class="nav-link" data-scroll-target="#visual-studio-code">Visual Studio Code</a></li>
-  <li><a href="#node.js" id="toc-node.js" class="nav-link" data-scroll-target="#node.js">Node.js</a></li>
-  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python">Python</a></li>
-  <li><a href="#java" id="toc-java" class="nav-link" data-scroll-target="#java">Java</a></li>
-  <li><a href="#apache-maven" id="toc-apache-maven" class="nav-link" data-scroll-target="#apache-maven">Apache Maven</a></li>
-  <li><a href="#c-y-c" id="toc-c-y-c" class="nav-link" data-scroll-target="#c-y-c">C y C++</a></li>
-  <li><a href="#dbeaver" id="toc-dbeaver" class="nav-link" data-scroll-target="#dbeaver">DBeaver</a></li>
+  <li><a href="#requisito" id="toc-requisito" class="nav-link" data-scroll-target="#requisito">Requisito</a></li>
+  <li><a href="#servicios-iasi" id="toc-servicios-iasi" class="nav-link" data-scroll-target="#servicios-iasi">Servicios IASI</a></li>
+  <li><a href="#red-iasi" id="toc-red-iasi" class="nav-link" data-scroll-target="#red-iasi">Red IASI</a></li>
+  <li><a href="#convención-de-puertos" id="toc-convención-de-puertos" class="nav-link" data-scroll-target="#convención-de-puertos">Convención de puertos</a></li>
+  <li><a href="#compose.yml" id="toc-compose.yml" class="nav-link" data-scroll-target="#compose.yml">compose.yml</a></li>
+  <li><a href="#modelos-ollama" id="toc-modelos-ollama" class="nav-link" data-scroll-target="#modelos-ollama">Modelos Ollama</a></li>
+  <li><a href="#comunicación-interna" id="toc-comunicación-interna" class="nav-link" data-scroll-target="#comunicación-interna">Comunicación interna</a></li>
+  <li><a href="#acceso-desde-la-máquina-iasi" id="toc-acceso-desde-la-máquina-iasi" class="nav-link" data-scroll-target="#acceso-desde-la-máquina-iasi">Acceso desde la máquina IASI</a></li>
+  <li><a href="#acceso-desde-otra-máquina" id="toc-acceso-desde-otra-máquina" class="nav-link" data-scroll-target="#acceso-desde-otra-máquina">Acceso desde otra máquina</a></li>
+  <li><a href="#arranque" id="toc-arranque" class="nav-link" data-scroll-target="#arranque">Arranque</a></li>
+  <li><a href="#persistencia" id="toc-persistencia" class="nav-link" data-scroll-target="#persistencia">Persistencia</a></li>
+  <li><a href="#actualización" id="toc-actualización" class="nav-link" data-scroll-target="#actualización">Actualización</a></li>
+  <li><a href="#verificación" id="toc-verificación" class="nav-link" data-scroll-target="#verificación">Verificación</a>
+  <ul class="collapse">
+  <li><a href="#plantuml" id="toc-plantuml" class="nav-link" data-scroll-target="#plantuml">PlantUML</a></li>
+  <li><a href="#ollama" id="toc-ollama" class="nav-link" data-scroll-target="#ollama">Ollama</a></li>
+  <li><a href="#open-webui" id="toc-open-webui" class="nav-link" data-scroll-target="#open-webui">Open WebUI</a></li>
+  </ul></li>
   <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/16-desarrollo.html">Desarrollo</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/20-docker.html">Docker y Docker Compose</a></li></ol></nav></header>
 
 
 
 
-<section id="desarrollo" class="level1">
-<h1>Desarrollo</h1>
-<p>La capa de desarrollo proporciona las herramientas generales necesarias para trabajar con proyectos de software en IASI.</p>
-<p>El objetivo no es instalar todas las tecnologías que un proyecto pueda llegar a utilizar, sino disponer de una base suficientemente completa sobre la que cada proyecto pueda añadir después sus dependencias específicas.</p>
-<p>En esta capa se han elegido las siguientes herramientas:</p>
+<section id="docker-y-docker-compose" class="level1">
+<h1>Docker y Docker Compose</h1>
+<p>IASI utiliza Docker para ejecutar determinados servicios de infraestructura sin incorporarlos directamente a la instalación de la máquina.</p>
+<p>Este capítulo no pretende enseñar Docker ni Docker Compose. Su objetivo es definir la convención utilizada por IASI para ejecutar, agrupar y publicar sus servicios.</p>
+<p>Para aprender Docker desde cero se recomienda utilizar la documentación oficial:</p>
 <ul>
-<li>Visual Studio Code</li>
-<li>Node.js</li>
-<li>Python</li>
-<li>Eclipse Temurin <em>JDK</em> 21</li>
-<li>Apache Maven</li>
-<li>Microsoft C/C++ Build Tools</li>
-<li>DBeaver Community</li>
+<li><a href="https://docs.docker.com/get-started/">Docker - Get started</a></li>
+<li><a href="https://docs.docker.com/compose/gettingstarted/">Docker Compose - Quickstart</a></li>
 </ul>
-<p>Git, PowerShell y Docker ya forman parte de la base del sistema. R y RStudio pertenecen a la capa de documentación y no se instalan de nuevo aquí.</p>
-<section id="visual-studio-code" class="level2">
-<h2 class="anchored" data-anchor-id="visual-studio-code">Visual Studio Code</h2>
-<p>Visual Studio Code es el entorno principal de desarrollo utilizado por IASI.</p>
-<p>Descargar Visual Studio Code para Windows desde <a href="https://code.visualstudio.com/download">Visual Studio Code - Download</a>.</p>
-<p>También puede instalarse mediante <em>WinGet</em>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">--</span>id Microsoft<span class="op">.</span><span class="fu">VisualStudioCode</span> <span class="op">-</span>e</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="requisito" class="level2">
+<h2 class="anchored" data-anchor-id="requisito">Requisito</h2>
+<p>La máquina debe disponer de Docker y Docker Compose.</p>
+<p>En Windows puede utilizarse Docker Desktop:</p>
+<p><a href="https://docs.docker.com/get-started/get-docker/">Docker - Get Docker</a></p>
 <p>Verificar:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>La instalación de extensiones, GitHub Copilot y la configuración específica de lenguajes se realizará posteriormente.</p>
+<pre><code>docker --version
+docker compose version</code></pre>
+<p>A partir de este punto asumimos que ambos comandos funcionan correctamente.</p>
 </section>
-<section id="node.js" class="level2">
-<h2 class="anchored" data-anchor-id="node.js">Node.js</h2>
-<p>Node.js proporciona el <em>runtime</em> JavaScript utilizado por numerosas herramientas de desarrollo y automatización.</p>
-<p>IASI utilizará una versión <em>LTS</em>.</p>
-<p>Descargar Node.js desde <a href="https://nodejs.org/en/download">Node.js - Download</a>.</p>
-<p>También puede instalarse mediante <em>WinGet</em>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>winget install <span class="op">-</span>e <span class="op">--</span>id OpenJS<span class="op">.</span><span class="fu">NodeJS</span><span class="op">.</span><span class="fu">LTS</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>La instalación incluye <code>npm</code>.</p>
-<p>Verificar:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>node <span class="op">--</span>version</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>npm <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="servicios-iasi" class="level2">
+<h2 class="anchored" data-anchor-id="servicios-iasi">Servicios IASI</h2>
+<p>La infraestructura inicial utiliza Docker Compose para ejecutar tres servicios:</p>
+<pre class="text"><code>Docker Compose
+├── PlantUML Server
+├── Ollama
+└── Open WebUI</code></pre>
+<p>Cada servicio conserva una responsabilidad distinta:</p>
+<ul>
+<li><strong>PlantUML Server</strong> genera los diagramas utilizados por las publicaciones.</li>
+<li><strong>Ollama</strong> proporciona el <em>runtime</em> local de modelos.</li>
+<li><strong>Open WebUI</strong> proporciona la interfaz web para utilizar esos modelos.</li>
+</ul>
 </section>
-<section id="python" class="level2">
-<h2 class="anchored" data-anchor-id="python">Python</h2>
-<p>Python se incorpora como lenguaje general para automatización, utilidades, integración y herramientas que puedan necesitarlo.</p>
-<p>En Windows se utilizará el Python Install Manager recomendado por la documentación oficial de Python.</p>
-<p>Referencia oficial:</p>
-<p><a href="https://docs.python.org/3/using/windows.html">Python - Using Python on Windows</a></p>
-<p>Instalar el Python Install Manager mediante <em>WinGet</em>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>winget install 9NQ7512CXL7T <span class="op">-</span>e <span class="op">--</span>accept-package-agreements <span class="op">--</span>disable-interactivity</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Instalar el <em>runtime</em> estable predeterminado:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>py install default</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Verificar:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m pip <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Las dependencias Python específicas deberán instalarse dentro de entornos virtuales del proyecto, evitando paquetes globales innecesarios.</p>
+<section id="red-iasi" class="level2">
+<h2 class="anchored" data-anchor-id="red-iasi">Red IASI</h2>
+<p>Todos los contenedores de la infraestructura se incorporan a una red Docker común denominada:</p>
+<pre class="text"><code>iasi</code></pre>
+<p>Dentro de esa red, los servicios se localizan mediante su nombre y su puerto interno.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>http://ollama:11434
+http://plantuml:8080
+http://open-webui:8080</code></pre>
+<p>Esta red pertenece al ámbito interno de Docker.</p>
+<p>Desde fuera de Docker no es necesario conocerla. El acceso se realiza mediante los puertos publicados por la máquina anfitriona.</p>
 </section>
-<section id="java" class="level2">
-<h2 class="anchored" data-anchor-id="java">Java</h2>
-<p>Para desarrollo Java se utilizará Eclipse Temurin <em>JDK</em> 21.</p>
-<p>La elección de una versión <em>LTS</em> proporciona una base estable y ampliamente compatible para proyectos Java.</p>
-<p>Referencia oficial:</p>
-<p><a href="https://adoptium.net/temurin/">Adoptium - Eclipse Temurin</a></p>
-<p>Instalar mediante <em>WinGet</em>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>winget install EclipseAdoptium<span class="op">.</span><span class="fu">Temurin</span><span class="op">.</span><span class="dv">21.</span><span class="dt">JDK</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Verificar:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>java <span class="op">-</span>version</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>javac <span class="op">-</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="convención-de-puertos" class="level2">
+<h2 class="anchored" data-anchor-id="convención-de-puertos">Convención de puertos</h2>
+<p>IASI reserva el rango:</p>
+<pre class="text"><code>10000-10999</code></pre>
+<p>para los servicios publicados por su infraestructura local.</p>
+<p>Esta reserva permite reconocer inmediatamente que un puerto pertenece a IASI.</p>
+<p>Siempre que sea posible, los tres últimos dígitos del puerto IASI reproducen los tres últimos dígitos del puerto característico del servicio.</p>
+<p>Por ejemplo, Ollama utiliza normalmente:</p>
+<pre class="text"><code>11434</code></pre>
+<p>y en IASI se publica como:</p>
+<pre class="text"><code>10434</code></pre>
+<p>De este modo, el puerto informa simultáneamente de dos cosas:</p>
+<pre class="text"><code>10434
+│ └── 434  referencia al puerto característico del servicio
+└──── 10   rango reservado para IASI</code></pre>
+<p>Los puertos genéricos como <code>80</code>, <code>443</code> o <code>8080</code> no proporcionan información suficiente para aplicar esta regla. En esos casos se asigna un puerto IASI específico.</p>
+<p>También deberá utilizarse otro puerto cuando exista una colisión dentro del rango reservado.</p>
+<p>La asignación inicial es:</p>
+<pre class="text"><code>Servicio          Puerto interno   Puerto IASI
+------------------------------------------------
+PlantUML Server    8080            10025
+Open WebUI         8080            10300
+Ollama            11434            10434</code></pre>
 </section>
-<section id="apache-maven" class="level2">
-<h2 class="anchored" data-anchor-id="apache-maven">Apache Maven</h2>
-<p>Apache Maven se utilizará como herramienta de <em>build</em> y gestión de dependencias para proyectos Java.</p>
-<p>Descargar la distribución binaria desde la fuente oficial:</p>
-<p><a href="https://maven.apache.org/download.cgi">Apache Maven - Download</a></p>
-<p>En Windows:</p>
-<ol type="1">
-<li>Descargar el archivo binario ZIP.</li>
-<li>Descomprimirlo en una ubicación estable.</li>
-<li>Definir <code>MAVEN_HOME</code> apuntando al directorio de Maven.</li>
-<li>Añadir <code>%MAVEN_HOME%\bin</code> al <code>PATH</code>.</li>
-</ol>
-<p>Verificar:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mvn <span class="op">-</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p>La salida debe mostrar tanto la versión de Maven como el <em>JDK</em> utilizado.</p>
+<section id="compose.yml" class="level2">
+<h2 class="anchored" data-anchor-id="compose.yml">compose.yml</h2>
+<p>La composición inicial es:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">plantuml</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> plantuml/plantuml-server:jetty</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> plantuml-server</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"10025:8080"</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> iasi</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> unless-stopped</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ollama</span><span class="kw">:</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ollama/ollama</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> ollama</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"10434:11434"</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ollama:/root/.ollama</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> iasi</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> unless-stopped</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">open-webui</span><span class="kw">:</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> ghcr.io/open-webui/open-webui:main</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">container_name</span><span class="kw">:</span><span class="at"> open-webui</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">depends_on</span><span class="kw">:</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> ollama</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">ports</span><span class="kw">:</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="st">"10300:8080"</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">environment</span><span class="kw">:</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">OLLAMA_BASE_URL</span><span class="kw">:</span><span class="at"> http://ollama:11434</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> open-webui:/app/backend/data</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> iasi</span></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">restart</span><span class="kw">:</span><span class="at"> unless-stopped</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="fu">networks</span><span class="kw">:</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">iasi</span><span class="kw">:</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">name</span><span class="kw">:</span><span class="at"> iasi</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="fu">volumes</span><span class="kw">:</span></span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ollama</span><span class="kw">:</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">open-webui</span><span class="kw">:</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La red <code>iasi</code> es explícita para que forme parte de la definición de la infraestructura y no dependa del nombre generado automáticamente por Docker Compose.</p>
 </section>
-<section id="c-y-c" class="level2">
-<h2 class="anchored" data-anchor-id="c-y-c">C y C++</h2>
-<p>Para disponer de compilador, <em>linker</em>, cabeceras, librerías y herramientas de compilación nativa se utilizarán Microsoft C++ Build Tools.</p>
-<p>No es necesario instalar el <em>IDE</em> completo de Visual Studio.</p>
-<p>Descargar las herramientas desde <a href="https://visualstudio.microsoft.com/downloads/">Microsoft - Visual Studio Downloads</a>.</p>
-<p>En el instalador seleccionar la carga de trabajo:</p>
-<blockquote class="blockquote">
-<p><strong>Desktop development with C++</strong></p>
-</blockquote>
-<p>Esta carga instala el conjunto de herramientas MSVC y los componentes necesarios para compilar aplicaciones C y C++ en Windows.</p>
-<p>Referencia técnica:</p>
-<p><a href="https://learn.microsoft.com/en-us/cpp/overview/acquire-msvc">Microsoft Learn - Install the Microsoft C++ Build Tools</a></p>
-<p>Para verificar la instalación, abrir <strong>Developer Command Prompt for Visual Studio</strong> y ejecutar:</p>
-<pre class="text"><code>cl</code></pre>
-<p>El compilador debe mostrar su versión y la ayuda básica de uso.</p>
+<section id="modelos-ollama" class="level2">
+<h2 class="anchored" data-anchor-id="modelos-ollama">Modelos Ollama</h2>
+<p>Llama, Qwen y DeepSeek no constituyen servicios Docker independientes.</p>
+<p>Son modelos gestionados por Ollama y, por tanto, comparten el mismo contenedor, la misma <em>API</em> y el mismo puerto publicado:</p>
+<pre class="text"><code>Ollama
+└── 10434 -&gt; 11434
+    ├── Llama
+    ├── Qwen
+    └── DeepSeek</code></pre>
+<p>Una vez arrancado Ollama, los modelos pueden incorporarse desde la máquina IASI.</p>
+<p>Por ejemplo:</p>
+<pre><code>docker exec -it ollama ollama pull llama3.2
+docker exec -it ollama ollama pull qwen3
+docker exec -it ollama ollama pull deepseek-r1</code></pre>
+<p>Las variantes concretas deberán seleccionarse en función de los recursos disponibles y de las necesidades del entorno.</p>
+<p>Añadir, sustituir o eliminar un modelo no modifica la topología Docker ni requiere reservar un nuevo puerto IASI.</p>
 </section>
-<section id="dbeaver" class="level2">
-<h2 class="anchored" data-anchor-id="dbeaver">DBeaver</h2>
-<p>DBeaver Community se utilizará como cliente general para trabajar con bases de datos.</p>
-<p>Descargar el instalador para Windows desde <a href="https://dbeaver.io/download/">DBeaver Community - Download</a>.</p>
-<p>Ejecutar el instalador estándar para Windows.</p>
-<p>DBeaver incluye su propio OpenJDK para ejecutar la aplicación. Esto es independiente del <em>JDK</em> instalado anteriormente, que se mantiene como parte del entorno general de desarrollo Java.</p>
+<section id="comunicación-interna" class="level2">
+<h2 class="anchored" data-anchor-id="comunicación-interna">Comunicación interna</h2>
+<p>Los contenedores conectados a la red <code>iasi</code> se comunican mediante sus nombres de servicio.</p>
+<p>Open WebUI utiliza:</p>
+<pre class="text"><code>http://ollama:11434</code></pre>
+<p>No utiliza:</p>
+<pre class="text"><code>http://localhost:10434</code></pre>
+<p>porque <code>localhost</code>, dentro del contenedor de Open WebUI, representa al propio contenedor.</p>
+<p>La comunicación interna utiliza el puerto nativo del servicio.</p>
+<pre class="text"><code>Open WebUI
+    |
+    | http://ollama:11434
+    v
+Ollama</code></pre>
+<p>Los puertos <code>10xxx</code> se utilizan para acceder a los servicios desde fuera de Docker.</p>
+</section>
+<section id="acceso-desde-la-máquina-iasi" class="level2">
+<h2 class="anchored" data-anchor-id="acceso-desde-la-máquina-iasi">Acceso desde la máquina IASI</h2>
+<p>Cuando Docker se ejecuta en la propia máquina IASI, los servicios quedan disponibles mediante:</p>
+<pre class="text"><code>PlantUML Server   http://localhost:10025
+Ollama API        http://localhost:10434
+Open WebUI        http://localhost:10300</code></pre>
+<p>Por ejemplo, la configuración de PlantUML utilizará:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter-options</span><span class="kw">:</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">plantuml</span><span class="kw">:</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">server</span><span class="kw">:</span><span class="at"> http://localhost:10025</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="acceso-desde-otra-máquina" class="level2">
+<h2 class="anchored" data-anchor-id="acceso-desde-otra-máquina">Acceso desde otra máquina</h2>
+<p><code>localhost</code> significa siempre la máquina desde la que se realiza la conexión.</p>
+<p>La documentación común de IASI supone una instalación local y utiliza <code>localhost</code> como referencia.</p>
+<p>Si los servicios Docker se ejecutan en otra máquina virtual, otro equipo o un servidor compartido, las URL deberán adaptarse a la topología real.</p>
+<p>Por ejemplo:</p>
+<pre class="text"><code>http://localhost:10025</code></pre>
+<p>podría convertirse en:</p>
+<pre class="text"><code>http://&lt;host-servicios&gt;:10025</code></pre>
+<p>La misma regla se aplica al resto de servicios.</p>
+<p>Por tanto:</p>
+<pre class="text"><code>misma máquina
+    -&gt; localhost:10xxx
+
+otra máquina
+    -&gt; host-servicios:10xxx</code></pre>
+<p>La red Docker <code>iasi</code> sigue siendo interna a la máquina que ejecuta los contenedores y no modifica esta regla.</p>
+</section>
+<section id="arranque" class="level2">
+<h2 class="anchored" data-anchor-id="arranque">Arranque</h2>
+<p>Desde el directorio que contiene <code>compose.yml</code>:</p>
+<pre><code>docker compose up -d</code></pre>
+<p>Verificar el estado:</p>
+<pre><code>docker compose ps</code></pre>
+<p>Consultar los mensajes:</p>
+<pre><code>docker compose logs</code></pre>
+<p>Seguirlos mientras se producen:</p>
+<pre><code>docker compose logs -f</code></pre>
+<p>Detener y retirar los contenedores:</p>
+<pre><code>docker compose down</code></pre>
+<p>Los volúmenes persistentes no se eliminan con este comando.</p>
+</section>
+<section id="persistencia" class="level2">
+<h2 class="anchored" data-anchor-id="persistencia">Persistencia</h2>
+<p>La composición define dos volúmenes:</p>
+<pre class="text"><code>ollama
+open-webui</code></pre>
+<p>El primero conserva los modelos y datos gestionados por Ollama.</p>
+<p>El segundo conserva la configuración y los datos de Open WebUI.</p>
+<p>PlantUML Server no necesita persistencia para la configuración inicial.</p>
+<p>Esto permite destruir y recrear los contenedores sin perder los datos que deben sobrevivir a su ciclo de vida.</p>
+</section>
+<section id="actualización" class="level2">
+<h2 class="anchored" data-anchor-id="actualización">Actualización</h2>
+<p>Las imágenes pueden actualizarse mediante:</p>
+<pre><code>docker compose pull
+docker compose up -d</code></pre>
+<p>Durante el desarrollo pueden utilizarse las etiquetas indicadas en la composición.</p>
+<p>Para una versión cerrada y reproducible de la infraestructura deberán fijarse versiones concretas de las imágenes utilizadas.</p>
+</section>
+<section id="verificación" class="level2">
+<h2 class="anchored" data-anchor-id="verificación">Verificación</h2>
+<section id="plantuml" class="level3">
+<h3 class="anchored" data-anchor-id="plantuml">PlantUML</h3>
+<pre><code>curl http://localhost:10025</code></pre>
+</section>
+<section id="ollama" class="level3">
+<h3 class="anchored" data-anchor-id="ollama">Ollama</h3>
+<pre><code>curl http://localhost:10434</code></pre>
+</section>
+<section id="open-webui" class="level3">
+<h3 class="anchored" data-anchor-id="open-webui">Open WebUI</h3>
+<p>Abrir en el navegador:</p>
+<pre class="text"><code>http://localhost:10300</code></pre>
+</section>
 </section>
 <section id="resultado" class="level2">
 <h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
-<p>Una vez completada esta capa, la máquina dispone de una base de desarrollo general:</p>
-<pre class="text"><code>Visual Studio Code
-├── Node.js + npm
-├── Python + pip
-├── Java JDK 21
-│   └── Maven
-├── C/C++ Build Tools
-└── DBeaver</code></pre>
-<p>Las extensiones de Visual Studio Code, GitHub Copilot, configuraciones de lenguajes, paquetes y herramientas específicas de cada proyecto se incorporarán en la fase de configuración o dentro del propio proyecto.</p>
+<p>Al finalizar esta etapa, la máquina dispone de una capa de servicios identificable y reproducible:</p>
+<pre class="text"><code>Máquina IASI
+│
+├── puertos IASI 10000-10999
+│
+└── Docker
+    │
+    └── red iasi
+        ├── PlantUML Server
+        │   └── 10025 -&gt; 8080
+        │
+        ├── Ollama
+        │   ├── 10434 -&gt; 11434
+        │   ├── volumen ollama
+        │   └── modelos
+        │       ├── Llama
+        │       ├── Qwen
+        │       └── DeepSeek
+        │
+        └── Open WebUI
+            ├── 10300 -&gt; 8080
+            └── volumen open-webui</code></pre>
+<p>La convención distingue claramente tres niveles:</p>
+<pre class="text"><code>nombre del servicio   -&gt; comunicación dentro de Docker
+puerto interno        -&gt; contrato del contenedor
+puerto 10xxx          -&gt; publicación IASI hacia el exterior</code></pre>
+<p>La definición pertenece a la infraestructura.</p>
+<p>La ubicación física puede cambiar.</p>
+<p>Las direcciones utilizadas por cada consumidor deben reflejar siempre la topología real del entorno.</p>
 
 
 </section>
