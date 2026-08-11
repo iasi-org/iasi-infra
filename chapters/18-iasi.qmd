@@ -59,7 +59,7 @@ command -v iasi-init
 Para una instalación nueva se utiliza:
 
 ```bash
-iasi-init
+iasi init
 ```
 
 `iasi-init` reconstruye el entorno IASI a partir de una máquina preparada. Su responsabilidad no es únicamente descargar repositorios: establece la estructura local necesaria y utiliza las herramientas de `iasi-tools` para dejar disponible el ecosistema de trabajo.
@@ -86,7 +86,8 @@ iasi-org/
 ├── iasi_quarto/
 ├── iasi-lua/
 ├── iasi-infra/
-└── iasi-home/
+├── iasi-home/
+└── .../
 ```
 
 Cada directorio continúa siendo un repositorio Git independiente. `iasi-org` únicamente los agrupa y proporciona una ubicación común para trabajar con el ecosistema.
@@ -95,4 +96,4 @@ La diferencia es importante: la instalación ya no describe una serie de reposit
 
 Una máquina preparada contiene las dependencias necesarias.
 
-Después de `iasi-tools` e `iasi-init`, contiene **IASI**.
+Después de `iasi-tools` e `iasi init`, contiene **IASI**.
