@@ -357,15 +357,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Se recomienda utilizar una ubicación dedicada al SDK, por ejemplo:</p>
 <pre class="text"><code>C:\SDK\R\R-4.6.1</code></pre>
 <p>Los paquetes instalados por el usuario deben mantenerse en una biblioteca separada, por ejemplo:</p>
-<pre class="text"><code>C:\SDK\R\library\4.6</code></pre>
+<pre class="text"><code>C:\SDK\R\library</code></pre>
 <p>Esta biblioteca puede definirse mediante la variable de entorno <code>R_LIBS_USER</code>. La separación evita modificar la instalación base de R y facilita actualizar o sustituir una versión sin perder los paquetes del usuario.</p>
+<p>Después de actualizar R, deben revisarse los paquetes de esta biblioteca y reinstalarse los que hayan sido construidos con una versión anterior:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">update.packages</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">lib.loc =</span> <span class="st">"C:/SDK/R/library"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">ask =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">checkBuilt =</span> <span class="cn">TRUE</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Mantener una ruta estable para la biblioteca evita tener que cambiar <code>R_LIBS_USER</code> con cada versión de R. Algunos paquetes, especialmente los que contienen código compilado, pueden necesitar ser reconstruidos durante la actualización.</p>
 <p>Durante la instalación, cambiar por tanto el directorio de destino propuesto por el instalador. Después, añadir el subdirectorio <code>bin</code> de R al <code>PATH</code>; para el ejemplo anterior:</p>
 <pre class="text"><code>C:\SDK\R\R-4.6.1\bin</code></pre>
 <p>Verificar en un terminal:</p>
 <pre><code>R --version</code></pre>
 <p>Desde R puede comprobarse la biblioteca activa con:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">"R_LIBS_USER"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>(<span class="st">"R_LIBS_USER"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">.libPaths</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Una vez instalado R, descargar RStudio Desktop desde la página oficial de Posit:</p>
 <p><a href="https://posit.co/download/rstudio-desktop/">Posit - RStudio Desktop</a>.</p>
 <p>Al iniciarse, RStudio utilizará normalmente la versión actual de R instalada en el sistema.</p>
@@ -377,11 +384,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="configuracion">Configuracion</h2>
 <p>Una vez instalado el software, se necesitan los paquetes de R y las herramientas para genera PDF.</p>
 <p>Iniciamos RStudio, y en la ventana de <strong>consola</strong> ejecutamos:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rmarkdown"</span>,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"remotes"</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"quarto"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>), <span class="at">dependencies=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rmarkdown"</span>,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"remotes"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"quarto"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>), <span class="at">dependencies=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Y por ultimo desde la ventana <strong>Terminal</strong></p>
 <pre><code>quarto install tinytex</code></pre>
 

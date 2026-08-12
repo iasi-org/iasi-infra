@@ -42,10 +42,22 @@ C:\SDK\R\R-4.6.1
 Los paquetes instalados por el usuario deben mantenerse en una biblioteca separada, por ejemplo:
 
 ```text
-C:\SDK\R\library\4.6
+C:\SDK\R\library
 ```
 
 Esta biblioteca puede definirse mediante la variable de entorno `R_LIBS_USER`. La separación evita modificar la instalación base de R y facilita actualizar o sustituir una versión sin perder los paquetes del usuario.
+
+Después de actualizar R, deben revisarse los paquetes de esta biblioteca y reinstalarse los que hayan sido construidos con una versión anterior:
+
+```r
+update.packages(
+  lib.loc = "C:/SDK/R/library",
+  ask = FALSE,
+  checkBuilt = TRUE
+)
+```
+
+Mantener una ruta estable para la biblioteca evita tener que cambiar `R_LIBS_USER` con cada versión de R. Algunos paquetes, especialmente los que contienen código compilado, pueden necesitar ser reconstruidos durante la actualización.
 
 Durante la instalación, cambiar por tanto el directorio de destino propuesto por el instalador. Después, añadir el subdirectorio `bin` de R al `PATH`; para el ejemplo anterior:
 
