@@ -2,7 +2,7 @@
 
 Una vez preparada la máquina, el siguiente paso consiste en incorporar IASI.
 
-La instalación no se realiza clonando manualmente cada uno de los repositorios del ecosistema. El punto de entrada es `iasi-tools`, que contiene las herramientas utilizadas para crear, reconstruir y mantener una instalación de IASI.
+La instalación no se realiza clonando manualmente cada uno de los repositorios del ecosistema. El punto de entrada es `iasi-tools-dev`, que contiene las herramientas utilizadas para crear, reconstruir y mantener una instalación de IASI.
 
 ## Directorio de trabajo
 
@@ -14,16 +14,16 @@ iasi-org
 
 Este directorio no es un repositorio Git. Actúa como contenedor local de los repositorios pertenecientes a la organización IASI.
 
-El primer repositorio que se incorpora es `iasi-tools`:
+El primer repositorio que se incorpora es `iasi-tools-dev`:
 
 ```text
 iasi-org/
-└── iasi-tools/
+└── iasi-tools-dev/
 ```
 
 A partir de él se reconstruirá el resto del entorno.
 
-## Descargar `iasi-tools`
+## Descargar `iasi-tools-dev`
 
 Crear el directorio raíz y descargar el repositorio de herramientas:
 
@@ -31,19 +31,19 @@ Crear el directorio raíz y descargar el repositorio de herramientas:
 mkdir -p iasi-org
 cd iasi-org
 
-git clone git@github.com:iasi-org/iasi-tools.git
+git clone git@github.com:iasi-org/iasi-tools-dev.git
 ```
 
-`iasi-tools` es el repositorio de bootstrap de IASI. Contiene en `bin/` los comandos necesarios para trabajar con el ecosistema, entre ellos `iasi-init`.
+`iasi-tools-dev` es el repositorio de bootstrap de IASI. Contiene en `bin/` los comandos necesarios para trabajar con el ecosistema, entre ellos `iasi-init`.
 
 ## Añadir las herramientas al `PATH`
 
-Aunque las herramientas pueden ejecutarse indicando su ruta completa, se recomienda añadir `iasi-tools/bin` al `PATH`.
+Aunque las herramientas pueden ejecutarse indicando su ruta completa, se recomienda añadir `iasi-tools-dev/bin` al `PATH`.
 
 De esta forma los comandos de IASI pueden utilizarse directamente desde cualquier directorio:
 
 ```bash
-export PATH="/ruta/a/iasi-org/iasi-tools/bin:$PATH"
+export PATH="/ruta/a/iasi-org/iasi-tools-dev/bin:$PATH"
 ```
 
 La configuración debe añadirse al archivo de inicio correspondiente del shell para que sea persistente, por ejemplo `~/.profile` cuando se utiliza Bash.
@@ -62,25 +62,25 @@ Para una instalación nueva se utiliza:
 iasi init
 ```
 
-`iasi-init` reconstruye el entorno IASI a partir de una máquina preparada. Su responsabilidad no es únicamente descargar repositorios: establece la estructura local necesaria y utiliza las herramientas de `iasi-tools` para dejar disponible el ecosistema de trabajo.
+`iasi-init` reconstruye el entorno IASI a partir de una máquina preparada. Su responsabilidad no es únicamente descargar repositorios: establece la estructura local necesaria y utiliza las herramientas de `iasi-tools-dev` para dejar disponible el ecosistema de trabajo.
 
 La secuencia de arranque queda, por tanto, reducida a tres pasos:
 
-1. Descargar `iasi-tools`.
-2. Incorporar `iasi-tools/bin` al `PATH`.
+1. Descargar `iasi-tools-dev`.
+2. Incorporar `iasi-tools-dev/bin` al `PATH`.
 3. Ejecutar `iasi-init`.
 
 A partir de ese momento, la creación del entorno deja de depender de una lista de comandos `git clone` mantenida manualmente. Esa responsabilidad pertenece a las propias herramientas de IASI.
 
 ## Resultado
 
-Tras ejecutar `iasi-init`, el directorio `iasi-org` contiene `iasi-tools` y los repositorios que forman la instalación de IASI.
+Tras ejecutar `iasi-init`, el directorio `iasi-org` contiene `iasi-tools-dev` y los repositorios que forman la instalación de IASI.
 
 Conceptualmente:
 
 ```text
 iasi-org/
-├── iasi-tools/
+├── iasi-tools-dev/
 ├── iasi-init/
 ├── iasi-book/
 ├── iasi_quarto/
@@ -96,4 +96,4 @@ La diferencia es importante: la instalación ya no describe una serie de reposit
 
 Una máquina preparada contiene las dependencias necesarias.
 
-Después de `iasi-tools` e `iasi init`, contiene **IASI**.
+Después de `iasi-tools-dev` e `iasi init`, contiene **IASI**.

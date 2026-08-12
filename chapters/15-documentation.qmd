@@ -31,10 +31,39 @@ RStudio es el IDE de R, por lo que primero es necesario instalar R:
 
 [CRAN - R for Windows](https://cran.r-project.org/bin/windows/base/).
 
-Seguir el procedimiento estándar del instalador y despues verificar en un terminal:
+En los entornos IASI se recomienda **no instalar R en `C:\Program Files`**. Aunque esa es una ubicación válida para una instalación convencional, Windows protege el directorio y puede exigir permisos de administrador cuando herramientas y automatizaciones intentan instalar paquetes en la biblioteca incluida con R.
+
+Se recomienda utilizar una ubicación dedicada al SDK, por ejemplo:
+
+```text
+C:\SDK\R\R-4.6.1
+```
+
+Los paquetes instalados por el usuario deben mantenerse en una biblioteca separada, por ejemplo:
+
+```text
+C:\SDK\R\library\4.6
+```
+
+Esta biblioteca puede definirse mediante la variable de entorno `R_LIBS_USER`. La separación evita modificar la instalación base de R y facilita actualizar o sustituir una versión sin perder los paquetes del usuario.
+
+Durante la instalación, cambiar por tanto el directorio de destino propuesto por el instalador. Después, añadir el subdirectorio `bin` de R al `PATH`; para el ejemplo anterior:
+
+```text
+C:\SDK\R\R-4.6.1\bin
+```
+
+Verificar en un terminal:
 
 ```
 R --version
+```
+
+Desde R puede comprobarse la biblioteca activa con:
+
+```r
+Sys.getenv("R_LIBS_USER")
+.libPaths()
 ```
 
 Una vez instalado R, descargar RStudio Desktop desde la página oficial de Posit:

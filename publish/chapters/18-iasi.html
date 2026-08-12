@@ -306,7 +306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#iasi" id="toc-iasi" class="nav-link active" data-scroll-target="#iasi">IASI</a>
   <ul class="collapse">
   <li><a href="#directorio-de-trabajo" id="toc-directorio-de-trabajo" class="nav-link" data-scroll-target="#directorio-de-trabajo">Directorio de trabajo</a></li>
-  <li><a href="#descargar-iasi-tools" id="toc-descargar-iasi-tools" class="nav-link" data-scroll-target="#descargar-iasi-tools">Descargar <code>iasi-tools</code></a></li>
+  <li><a href="#descargar-iasi-tools-dev" id="toc-descargar-iasi-tools-dev" class="nav-link" data-scroll-target="#descargar-iasi-tools-dev">Descargar <code>iasi-tools-dev</code></a></li>
   <li><a href="#añadir-las-herramientas-al-path" id="toc-añadir-las-herramientas-al-path" class="nav-link" data-scroll-target="#añadir-las-herramientas-al-path">Añadir las herramientas al <code>PATH</code></a></li>
   <li><a href="#inicializar-iasi" id="toc-inicializar-iasi" class="nav-link" data-scroll-target="#inicializar-iasi">Inicializar IASI</a></li>
   <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
@@ -323,31 +323,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="iasi" class="level1">
 <h1>IASI</h1>
 <p>Una vez preparada la máquina, el siguiente paso consiste en incorporar IASI.</p>
-<p>La instalación no se realiza clonando manualmente cada uno de los repositorios del ecosistema. El punto de entrada es <code>iasi-tools</code>, que contiene las herramientas utilizadas para crear, reconstruir y mantener una instalación de IASI.</p>
+<p>La instalación no se realiza clonando manualmente cada uno de los repositorios del ecosistema. El punto de entrada es <code>iasi-tools-dev</code>, que contiene las herramientas utilizadas para crear, reconstruir y mantener una instalación de IASI.</p>
 <section id="directorio-de-trabajo" class="level2">
 <h2 class="anchored" data-anchor-id="directorio-de-trabajo">Directorio de trabajo</h2>
 <p>La organización local debe reflejar, en la medida de lo posible, la organización utilizada en GitHub. Por ello se recomienda utilizar un directorio raíz denominado:</p>
 <pre class="text"><code>iasi-org</code></pre>
 <p>Este directorio no es un repositorio Git. Actúa como contenedor local de los repositorios pertenecientes a la organización IASI.</p>
-<p>El primer repositorio que se incorpora es <code>iasi-tools</code>:</p>
+<p>El primer repositorio que se incorpora es <code>iasi-tools-dev</code>:</p>
 <pre class="text"><code>iasi-org/
-└── iasi-tools/</code></pre>
+└── iasi-tools-dev/</code></pre>
 <p>A partir de él se reconstruirá el resto del entorno.</p>
 </section>
-<section id="descargar-iasi-tools" class="level2">
-<h2 class="anchored" data-anchor-id="descargar-iasi-tools">Descargar <code>iasi-tools</code></h2>
+<section id="descargar-iasi-tools-dev" class="level2">
+<h2 class="anchored" data-anchor-id="descargar-iasi-tools-dev">Descargar <code>iasi-tools-dev</code></h2>
 <p>Crear el directorio raíz y descargar el repositorio de herramientas:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> iasi-org</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> iasi-org</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:iasi-org/iasi-tools.git</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>iasi-tools</code> es el repositorio de bootstrap de IASI. Contiene en <code>bin/</code> los comandos necesarios para trabajar con el ecosistema, entre ellos <code>iasi-init</code>.</p>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git@github.com:iasi-org/iasi-tools-dev.git</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>iasi-tools-dev</code> es el repositorio de bootstrap de IASI. Contiene en <code>bin/</code> los comandos necesarios para trabajar con el ecosistema, entre ellos <code>iasi-init</code>.</p>
 </section>
 <section id="añadir-las-herramientas-al-path" class="level2">
 <h2 class="anchored" data-anchor-id="añadir-las-herramientas-al-path">Añadir las herramientas al <code>PATH</code></h2>
-<p>Aunque las herramientas pueden ejecutarse indicando su ruta completa, se recomienda añadir <code>iasi-tools/bin</code> al <code>PATH</code>.</p>
+<p>Aunque las herramientas pueden ejecutarse indicando su ruta completa, se recomienda añadir <code>iasi-tools-dev/bin</code> al <code>PATH</code>.</p>
 <p>De esta forma los comandos de IASI pueden utilizarse directamente desde cualquier directorio:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"/ruta/a/iasi-org/iasi-tools/bin:</span><span class="va">$PATH</span><span class="st">"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="st">"/ruta/a/iasi-org/iasi-tools-dev/bin:</span><span class="va">$PATH</span><span class="st">"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>La configuración debe añadirse al archivo de inicio correspondiente del shell para que sea persistente, por ejemplo <code>~/.profile</code> cuando se utiliza Bash.</p>
 <p>Después de actualizar la configuración puede comprobarse que la herramienta está disponible:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">command</span> <span class="at">-v</span> iasi-init</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -356,21 +356,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="inicializar-iasi">Inicializar IASI</h2>
 <p>Para una instalación nueva se utiliza:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<p><code>iasi-init</code> reconstruye el entorno IASI a partir de una máquina preparada. Su responsabilidad no es únicamente descargar repositorios: establece la estructura local necesaria y utiliza las herramientas de <code>iasi-tools</code> para dejar disponible el ecosistema de trabajo.</p>
+<p><code>iasi-init</code> reconstruye el entorno IASI a partir de una máquina preparada. Su responsabilidad no es únicamente descargar repositorios: establece la estructura local necesaria y utiliza las herramientas de <code>iasi-tools-dev</code> para dejar disponible el ecosistema de trabajo.</p>
 <p>La secuencia de arranque queda, por tanto, reducida a tres pasos:</p>
 <ol type="1">
-<li>Descargar <code>iasi-tools</code>.</li>
-<li>Incorporar <code>iasi-tools/bin</code> al <code>PATH</code>.</li>
+<li>Descargar <code>iasi-tools-dev</code>.</li>
+<li>Incorporar <code>iasi-tools-dev/bin</code> al <code>PATH</code>.</li>
 <li>Ejecutar <code>iasi-init</code>.</li>
 </ol>
 <p>A partir de ese momento, la creación del entorno deja de depender de una lista de comandos <code>git clone</code> mantenida manualmente. Esa responsabilidad pertenece a las propias herramientas de IASI.</p>
 </section>
 <section id="resultado" class="level2">
 <h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
-<p>Tras ejecutar <code>iasi-init</code>, el directorio <code>iasi-org</code> contiene <code>iasi-tools</code> y los repositorios que forman la instalación de IASI.</p>
+<p>Tras ejecutar <code>iasi-init</code>, el directorio <code>iasi-org</code> contiene <code>iasi-tools-dev</code> y los repositorios que forman la instalación de IASI.</p>
 <p>Conceptualmente:</p>
 <pre class="text"><code>iasi-org/
-├── iasi-tools/
+├── iasi-tools-dev/
 ├── iasi-init/
 ├── iasi-book/
 ├── iasi_quarto/
@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Cada directorio continúa siendo un repositorio Git independiente. <code>iasi-org</code> únicamente los agrupa y proporciona una ubicación común para trabajar con el ecosistema.</p>
 <p>La diferencia es importante: la instalación ya no describe una serie de repositorios que el usuario debe reconstruir manualmente. IASI proporciona sus propias herramientas para hacerlo.</p>
 <p>Una máquina preparada contiene las dependencias necesarias.</p>
-<p>Después de <code>iasi-tools</code> e <code>iasi init</code>, contiene <strong>IASI</strong>.</p>
+<p>Después de <code>iasi-tools-dev</code> e <code>iasi init</code>, contiene <strong>IASI</strong>.</p>
 
 
 </section>
