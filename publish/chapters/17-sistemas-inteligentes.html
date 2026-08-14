@@ -307,8 +307,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#chatgpt" id="toc-chatgpt" class="nav-link" data-scroll-target="#chatgpt">ChatGPT</a></li>
   <li><a href="#github-copilot" id="toc-github-copilot" class="nav-link" data-scroll-target="#github-copilot">GitHub Copilot</a></li>
+  <li><a href="#openspec" id="toc-openspec" class="nav-link" data-scroll-target="#openspec">OpenSpec</a></li>
   <li><a href="#trabajo-con-varias-ia" id="toc-trabajo-con-varias-ia" class="nav-link" data-scroll-target="#trabajo-con-varias-ia">Trabajo con varias IA</a></li>
   <li><a href="#ollama" id="toc-ollama" class="nav-link" data-scroll-target="#ollama">Ollama</a></li>
+  <li><a href="#open-webui" id="toc-open-webui" class="nav-link" data-scroll-target="#open-webui">Open WebUI</a></li>
   <li><a href="#separación-entre-sistema-y-modelo" id="toc-separación-entre-sistema-y-modelo" class="nav-link" data-scroll-target="#separación-entre-sistema-y-modelo">Separación entre sistema y modelo</a></li>
   <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
   </ul></li>
@@ -331,7 +333,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>GitHub Copilot, integrado directamente en Visual Studio Code y orientado al trabajo sobre el código y el proyecto.</li>
 <li>Ollama, de forma opcional, como <em>runtime</em> para modelos locales o para servicios de modelos disponibles dentro de la infraestructura.</li>
 </ul>
-<p>La idea no es acumular modelos. El objetivo es disponer de <strong>varios sistemas que puedan participar en el mismo proceso de ingeniería</strong>.</p>
+<p>La capa incorpora además herramientas que permiten estructurar el trabajo y acceder a estos sistemas:</p>
+<ul>
+<li>OpenSpec, para mantener especificaciones persistentes que puedan ser utilizadas por distintos asistentes de desarrollo.</li>
+<li>Open WebUI, como interfaz web para trabajar con Ollama y otros proveedores compatibles.</li>
+</ul>
+<p>La idea no es acumular modelos. El objetivo es disponer de <strong>varios sistemas que puedan participar en el mismo proceso de ingeniería</strong>, apoyados por una infraestructura común.</p>
 <section id="chatgpt" class="level2">
 <h2 class="anchored" data-anchor-id="chatgpt">ChatGPT</h2>
 <p>ChatGPT se utiliza como asistente general dentro del proceso IASI.</p>
@@ -355,6 +362,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La configuración inicial de Copilot en Visual Studio Code instala automáticamente las extensiones necesarias.</p>
 <p>GitHub Copilot aporta asistencia directamente sobre el proyecto abierto en el editor: código, archivos, diagnósticos y contexto de trabajo.</p>
 </section>
+<section id="openspec" class="level2">
+<h2 class="anchored" data-anchor-id="openspec">OpenSpec</h2>
+<p>OpenSpec no es un sistema inteligente ni un modelo. Es una herramienta de desarrollo dirigido por especificaciones (<em>Spec-Driven Development</em>, SDD) que permite mantener especificaciones y cambios persistentes para que puedan ser utilizados por distintos asistentes de programación.</p>
+<p>Referencia oficial:</p>
+<p><a href="https://github.com/Fission-AI/OpenSpec/blob/main/docs/installation.md">OpenSpec - Installation</a></p>
+<p>En IASI, OpenSpec se instala como una <strong>herramienta global del entorno de desarrollo</strong>. La inicialización y configuración de OpenSpec dentro de cada proyecto pertenece al uso de la metodología y no a la preparación de la infraestructura.</p>
+<p>OpenSpec requiere Node.js 20.19.0 o superior.</p>
+<p>Comprobar la versión instalada:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>node <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Instalar OpenSpec globalmente mediante <code>npm</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>npm install <span class="op">-</span>g @fission-ai<span class="op">/</span>openspec@latest <span class="op">--</span>allow-scripts<span class="op">=</span>@fission-ai<span class="op">/</span>openspec</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Verificar la instalación:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>openspec <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Si Node.js se gestiona mediante <code>nvm</code>, los paquetes globales se instalan dentro del entorno del usuario y no es necesario utilizar <code>sudo</code>.</p>
+<p>La instalación de infraestructura termina en este punto. Comandos como <code>openspec init</code> actúan sobre un proyecto concreto y forman parte del flujo de trabajo de IASI.</p>
+</section>
 <section id="trabajo-con-varias-ia" class="level2">
 <h2 class="anchored" data-anchor-id="trabajo-con-varias-ia">Trabajo con varias IA</h2>
 <p>IASI considera especialmente valioso que distintos sistemas inteligentes puedan trabajar sobre un mismo problema.</p>
@@ -377,8 +400,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En Windows, una instalación local expone normalmente su <em>API</em> en:</p>
 <pre class="text"><code>http://localhost:11434</code></pre>
 <p>Verificar la instalación:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ollama <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ollama <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <p>La descarga de modelos no forma parte de la instalación base. Los modelos concretos dependerán del propósito del entorno y de los recursos disponibles.</p>
+</section>
+<section id="open-webui" class="level2">
+<h2 class="anchored" data-anchor-id="open-webui">Open WebUI</h2>
+<p>Open WebUI proporciona una interfaz web para trabajar con modelos y proveedores de inteligencia artificial.</p>
+<p>Referencia oficial:</p>
+<p><a href="https://docs.openwebui.com/getting-started/quick-start/">Open WebUI - Quick Start</a></p>
+<p>En la configuración inicial de IASI se utiliza principalmente como interfaz para los modelos servidos por Ollama. Esta separación mantiene diferenciadas las responsabilidades:</p>
+<pre class="text"><code>Open WebUI
+    ↓
+Ollama
+    ↓
+modelos locales</code></pre>
+<p>Ollama proporciona el <em>runtime</em> y la API. Open WebUI proporciona la interfaz de interacción.</p>
+<p>La instalación recomendada se realiza mediante Docker, instalado previamente en la capa de infraestructura:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>docker pull ghcr<span class="op">.</span><span class="fu">io</span><span class="op">/</span>open-webui<span class="op">/</span>open-webui<span class="op">:</span>main</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Crear el contenedor:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>docker run <span class="op">-</span>d <span class="op">-</span>p <span class="dv">3000</span><span class="op">:</span><span class="dv">8080</span> <span class="op">-</span>e OLLAMA_BASE_URL<span class="op">=</span>http<span class="op">://</span>host<span class="op">.</span><span class="fu">docker</span><span class="op">.</span><span class="fu">internal</span><span class="op">:</span><span class="dv">11434</span> <span class="op">-</span>v open-webui<span class="op">:/</span>app<span class="op">/</span>backend<span class="op">/</span><span class="kw">data</span> <span class="op">--</span>name open-webui <span class="op">--</span>restart always ghcr<span class="op">.</span><span class="fu">io</span><span class="op">/</span>open-webui<span class="op">/</span>open-webui<span class="op">:</span>main</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La opción <code>-v open-webui:/app/backend/data</code> mantiene persistentes la configuración y los datos de Open WebUI aunque el contenedor sea reemplazado.</p>
+<p>En una instalación con Ollama ejecutándose en la máquina anfitriona, Open WebUI accede a su API mediante:</p>
+<pre class="text"><code>http://host.docker.internal:11434</code></pre>
+<p>Comprobar que el contenedor está en ejecución:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>docker <span class="fu">ps</span> <span class="op">--</span>filter <span class="st">"name=open-webui"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La interfaz queda disponible en:</p>
+<pre class="text"><code>http://localhost:3000</code></pre>
+<p>La descarga de modelos continúa siendo responsabilidad de Ollama. Open WebUI no sustituye al <em>runtime</em>: proporciona una interfaz común para utilizarlo y administrarlo.</p>
 </section>
 <section id="separación-entre-sistema-y-modelo" class="level2">
 <h2 class="anchored" data-anchor-id="separación-entre-sistema-y-modelo">Separación entre sistema y modelo</h2>
@@ -388,14 +436,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="resultado" class="level2">
 <h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
-<p>La capa inicial de sistemas inteligentes queda formada por:</p>
+<p>La capa inicial queda organizada en dos grupos:</p>
 <pre class="text"><code>Sistemas inteligentes
 ├── ChatGPT
 ├── GitHub Copilot
 └── Ollama
-    └── modelos locales, cuando sean necesarios</code></pre>
+    └── modelos locales, cuando sean necesarios
+
+Herramientas de apoyo
+├── OpenSpec
+│   └── especificaciones persistentes y flujo de trabajo
+└── Open WebUI
+    └── interfaz para Ollama y otros proveedores compatibles</code></pre>
 <p>ChatGPT y GitHub Copilot constituyen la configuración inicial de trabajo asistido por varias IA.</p>
-<p>Ollama proporciona una vía adicional para incorporar modelos locales o servicios propios cuando el proyecto lo requiera.</p>
+<p>Ollama proporciona una vía adicional para incorporar modelos locales o servicios propios cuando el proyecto lo requiera. Open WebUI ofrece una interfaz común para trabajar con ellos, mientras que OpenSpec aporta la capa de especificación persistente que puede ser compartida por los distintos asistentes de desarrollo.</p>
 
 
 </section>
