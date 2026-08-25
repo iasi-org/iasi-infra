@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>commands – IASI Infra</title>
 <style>
 /* Default styles provided by pandoc.
@@ -62,25 +60,11 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script><script src="../site_libs/quarto-nav/headroom.min.js"></script><script src="../site_libs/clipboard/clipboard.min.js"></script><script src="../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../site_libs/quarto-search/fuse.min.js"></script><script src="../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script><script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../site_libs/quarto-html/popper.min.js"></script><script src="../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../site_libs/quarto-html/anchor.min.js"></script><link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9da87e570ce69d0505e7a2c367561b0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script><link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6aba9db9fa57d6565286cf9ed00b3ee2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,16 +92,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">IASI Infra</span>
@@ -129,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
@@ -170,48 +149,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Docker</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/iasi-org/iasi-infra"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/21-commands.html">IASI Commands</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/21-commands.html">IASI Commands</a></li>
+</ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../01-manifesto-bilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manifesto / Manifiesto</span></a>
-  </div>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--01-manifesto-bilingual-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--01-manifesto-bilingual-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--01-manifesto-bilingual-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../01-manifesto-bilingual.html#manifesto-manifiesto" id="toc-manifesto-manifiesto" class="nav-link active" data-scroll-target="#manifesto-manifiesto">Manifesto / Manifiesto</a></li>
+  </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -221,8 +200,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
@@ -295,49 +274,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#iasi-commands" id="toc-iasi-commands" class="nav-link active" data-scroll-target="#iasi-commands">IASI Commands</a>
+<li>
+<a href="#iasi-commands" id="toc-iasi-commands" class="nav-link active" data-scroll-target="#iasi-commands">IASI Commands</a>
   <ul class="collapse">
-  <li><a href="#una-interfaz-común" id="toc-una-interfaz-común" class="nav-link" data-scroll-target="#una-interfaz-común">Una interfaz común</a></li>
+<li><a href="#una-interfaz-com%C3%BAn" id="toc-una-interfaz-común" class="nav-link" data-scroll-target="#una-interfaz-común">Una interfaz común</a></li>
   <li><a href="#el-comando-iasi" id="toc-el-comando-iasi" class="nav-link" data-scroll-target="#el-comando-iasi">El comando <code>iasi</code></a></li>
   <li><a href="#iasi-init" id="toc-iasi-init" class="nav-link" data-scroll-target="#iasi-init"><code>iasi init</code></a></li>
   <li><a href="#comandos-como-contrato" id="toc-comandos-como-contrato" class="nav-link" data-scroll-target="#comandos-como-contrato">Comandos como contrato</a></li>
   <li><a href="#una-infraestructura-que-se-utiliza" id="toc-una-infraestructura-que-se-utiliza" class="nav-link" data-scroll-target="#una-infraestructura-que-se-utiliza">Una infraestructura que se utiliza</a></li>
-  </ul></li>
   </ul>
-</nav>
-    </div>
+</li>
+  </ul></nav>
+</div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/21-commands.html">IASI Commands</a></li></ol></nav></header>
-
-
-
-
-<section id="iasi-commands" class="level1">
-<h1>IASI Commands</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/21-commands.html">IASI Commands</a></li>
+</ol></nav></header><section id="iasi-commands" class="level1"><h1>IASI Commands</h1>
 <p>Hasta este punto hemos construido la infraestructura de IASI.</p>
 <p>Hemos preparado el workspace, instalado herramientas, configurado el entorno y establecido una forma común de trabajar. Cada una de esas piezas puede tener una implementación diferente, pero todas persiguen el mismo objetivo: proporcionar un entorno de ingeniería coherente, reproducible y sencillo de utilizar.</p>
 <p>Ahora necesitamos una forma igualmente sencilla de operarlo.</p>
 <p>Ahí aparecen los <strong>IASI Commands</strong>.</p>
-<section id="una-interfaz-común" class="level2">
-<h2 class="anchored" data-anchor-id="una-interfaz-común">Una interfaz común</h2>
+<section id="una-interfaz-común" class="level2"><h2 class="anchored" data-anchor-id="una-interfaz-común">Una interfaz común</h2>
 <p>IASI proporciona una interfaz de línea de comandos única:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>El usuario trabaja con IASI.</p>
 <p>IASI se ocupa de lo que hay debajo.</p>
 <p>Un comando puede utilizar scripts, herramientas externas, configuración del workspace o cualquier otro componente de la infraestructura. Ese detalle pertenece a la implementación y no debería trasladarse a quien utiliza el entorno.</p>
 <p>Por ejemplo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>es suficiente para inicializar un workspace IASI.</p>
 <p>No es necesario conocer qué scripts participan, qué herramientas se ejecutan, dónde están instaladas o qué operaciones internas son necesarias para completar la inicialización.</p>
 <p>Esta separación es deliberada:</p>
@@ -354,44 +334,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
               │                 │
               └── herramientas ─┘</code></pre>
 <p>La interfaz permanece estable aunque la implementación evolucione.</p>
-</section>
-<section id="el-comando-iasi" class="level2">
-<h2 class="anchored" data-anchor-id="el-comando-iasi">El comando <code>iasi</code></h2>
+</section><section id="el-comando-iasi" class="level2"><h2 class="anchored" data-anchor-id="el-comando-iasi">El comando <code>iasi</code>
+</h2>
 <p><code>iasi</code> es el punto de entrada común a las operaciones proporcionadas por IASI.</p>
 <p>Su forma general es:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> <span class="pp">[</span><span class="ss">options</span><span class="pp">]</span></span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>Cada comando representa una operación concreta y puede definir sus propias opciones.</p>
 <p>La ayuda está integrada en la propia interfaz:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> <span class="at">--help</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> <span class="at">--help</span></span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>y, cuando un comando dispone de opciones específicas:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> --help</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> <span class="op">&lt;</span>command<span class="op">&gt;</span> --help</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>De esta forma, la línea de comandos es también una puerta de entrada a su propia documentación.</p>
-</section>
-<section id="iasi-init" class="level2">
-<h2 class="anchored" data-anchor-id="iasi-init"><code>iasi init</code></h2>
+</section><section id="iasi-init" class="level2"><h2 class="anchored" data-anchor-id="iasi-init"><code>iasi init</code></h2>
 <p>El primer comando proporcionado por IASI es:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p><code>iasi init</code> prepara el workspace para trabajar con IASI.</p>
 <p>La operación comprueba el entorno existente y realiza las acciones necesarias para dejar disponibles los componentes requeridos por el workspace.</p>
 <p>El proceso está diseñado para ser <strong>repetible</strong>.</p>
 <p>Ejecutar nuevamente:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>no debería destruir ni duplicar una configuración válida. IASI comprueba el estado existente y actúa únicamente cuando es necesario.</p>
 <p>Esto permite utilizar el mismo comando tanto para preparar inicialmente un entorno como para volver a sincronizarlo posteriormente.</p>
-</section>
-<section id="comandos-como-contrato" class="level2">
-<h2 class="anchored" data-anchor-id="comandos-como-contrato">Comandos como contrato</h2>
+</section><section id="comandos-como-contrato" class="level2"><h2 class="anchored" data-anchor-id="comandos-como-contrato">Comandos como contrato</h2>
 <p>Los comandos IASI no son simplemente atajos para ejecutar scripts.</p>
 <p>Constituyen una <strong>interfaz estable entre el usuario y la infraestructura</strong>.</p>
 <p>Detrás de:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>la implementación puede cambiar.</p>
 <p>Puede cambiar un script, una herramienta, una extensión o incluso desaparecer completamente alguno de los mecanismos utilizados actualmente.</p>
 <p>Mientras el contrato del comando permanezca estable, la forma de trabajar no cambia.</p>
 <p>Esta separación permite que la infraestructura evolucione sin trasladar esa evolución al usuario.</p>
-</section>
-<section id="una-infraestructura-que-se-utiliza" class="level2">
-<h2 class="anchored" data-anchor-id="una-infraestructura-que-se-utiliza">Una infraestructura que se utiliza</h2>
+</section><section id="una-infraestructura-que-se-utiliza" class="level2"><h2 class="anchored" data-anchor-id="una-infraestructura-que-se-utiliza">Una infraestructura que se utiliza</h2>
 <p>Los capítulos anteriores han descrito las piezas internas de <code>iasi-infra</code>.</p>
 <p>Los comandos proporcionan la capa final:</p>
 <pre class="text"><code>Infraestructura
@@ -413,14 +404,13 @@ IASI Commands
 <p>La complejidad continúa existiendo.</p>
 <p>Simplemente queda donde debe estar: <strong>dentro de la infraestructura</strong>.</p>
 <p>Para quien utiliza IASI, todo puede comenzar con algo mucho más sencillo:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iasi</span> init</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -821,27 +811,23 @@ IASI Commands
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>IASI · Ingeniería Asistida por Sistemas Inteligentes</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
+       
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com/iasi-org">
 <p>GitHub</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
-
-
-</body></html>
+</body>
+</html>

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>sistemas-inteligentes – IASI Infra</title>
 <style>
 /* Default styles provided by pandoc.
@@ -62,25 +60,11 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script><script src="../site_libs/quarto-nav/headroom.min.js"></script><script src="../site_libs/clipboard/clipboard.min.js"></script><script src="../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../site_libs/quarto-search/fuse.min.js"></script><script src="../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script><script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../site_libs/quarto-html/popper.min.js"></script><script src="../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../site_libs/quarto-html/anchor.min.js"></script><link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9da87e570ce69d0505e7a2c367561b0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script><link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6aba9db9fa57d6565286cf9ed00b3ee2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,16 +92,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">IASI Infra</span>
@@ -129,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
@@ -170,48 +149,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Docker</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/iasi-org/iasi-infra"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/17-sistemas-inteligentes.html">Sistemas inteligentes</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/17-sistemas-inteligentes.html">Sistemas inteligentes</a></li>
+</ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../01-manifesto-bilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manifesto / Manifiesto</span></a>
-  </div>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--01-manifesto-bilingual-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--01-manifesto-bilingual-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--01-manifesto-bilingual-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../01-manifesto-bilingual.html#manifesto-manifiesto" id="toc-manifesto-manifiesto" class="nav-link active" data-scroll-target="#manifesto-manifiesto">Manifesto / Manifiesto</a></li>
+  </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -221,8 +200,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
@@ -295,39 +274,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#sistemas-inteligentes" id="toc-sistemas-inteligentes" class="nav-link active" data-scroll-target="#sistemas-inteligentes">Sistemas inteligentes</a>
+<li>
+<a href="#sistemas-inteligentes" id="toc-sistemas-inteligentes" class="nav-link active" data-scroll-target="#sistemas-inteligentes">Sistemas inteligentes</a>
   <ul class="collapse">
-  <li><a href="#chatgpt" id="toc-chatgpt" class="nav-link" data-scroll-target="#chatgpt">ChatGPT</a></li>
+<li><a href="#chatgpt" id="toc-chatgpt" class="nav-link" data-scroll-target="#chatgpt">ChatGPT</a></li>
   <li><a href="#github-copilot" id="toc-github-copilot" class="nav-link" data-scroll-target="#github-copilot">GitHub Copilot</a></li>
   <li><a href="#openspec" id="toc-openspec" class="nav-link" data-scroll-target="#openspec">OpenSpec</a></li>
   <li><a href="#trabajo-con-varias-ia" id="toc-trabajo-con-varias-ia" class="nav-link" data-scroll-target="#trabajo-con-varias-ia">Trabajo con varias IA</a></li>
   <li><a href="#ollama" id="toc-ollama" class="nav-link" data-scroll-target="#ollama">Ollama</a></li>
   <li><a href="#open-webui" id="toc-open-webui" class="nav-link" data-scroll-target="#open-webui">Open WebUI</a></li>
-  <li><a href="#separación-entre-sistema-y-modelo" id="toc-separación-entre-sistema-y-modelo" class="nav-link" data-scroll-target="#separación-entre-sistema-y-modelo">Separación entre sistema y modelo</a></li>
+  <li><a href="#separaci%C3%B3n-entre-sistema-y-modelo" id="toc-separación-entre-sistema-y-modelo" class="nav-link" data-scroll-target="#separación-entre-sistema-y-modelo">Separación entre sistema y modelo</a></li>
   <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
-  </ul></li>
   </ul>
-</nav>
-    </div>
+</li>
+  </ul></nav>
+</div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/17-sistemas-inteligentes.html">Sistemas inteligentes</a></li></ol></nav></header>
-
-
-
-
-<section id="sistemas-inteligentes" class="level1">
-<h1>Sistemas inteligentes</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/17-sistemas-inteligentes.html">Sistemas inteligentes</a></li>
+</ol></nav></header><section id="sistemas-inteligentes" class="level1"><h1>Sistemas inteligentes</h1>
 <p>IASI no plantea el trabajo asistido por inteligencia artificial como la utilización de un único asistente.</p>
 <p>El entorno se prepara para trabajar con <strong>varios sistemas inteligentes</strong>, cada uno con capacidades, contexto y formas de interacción diferentes.</p>
 <p>La primera configuración de referencia utiliza:</p>
@@ -342,17 +317,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Open WebUI, como interfaz web para trabajar con Ollama y otros proveedores compatibles.</li>
 </ul>
 <p>La idea no es acumular modelos. El objetivo es disponer de <strong>varios sistemas que puedan participar en el mismo proceso de ingeniería</strong>, apoyados por una infraestructura común.</p>
-<section id="chatgpt" class="level2">
-<h2 class="anchored" data-anchor-id="chatgpt">ChatGPT</h2>
+<section id="chatgpt" class="level2"><h2 class="anchored" data-anchor-id="chatgpt">ChatGPT</h2>
 <p>ChatGPT se utiliza como asistente general dentro del proceso IASI.</p>
 <p>Puede utilizarse directamente desde la web o mediante la aplicación oficial para Windows.</p>
 <p>Referencia oficial:</p>
 <p><a href="https://help.openai.com/es-es/articles/9982051-using-the-chatgpt-windows-app">OpenAI - ChatGPT para Windows</a></p>
 <p>La aplicación para Windows puede instalarse desde Microsoft Store.</p>
 <p>No existe una dependencia técnica entre ChatGPT y el entorno de desarrollo. Su papel es acompañar el trabajo de análisis, diseño, documentación, revisión y construcción del proyecto.</p>
-</section>
-<section id="github-copilot" class="level2">
-<h2 class="anchored" data-anchor-id="github-copilot">GitHub Copilot</h2>
+</section><section id="github-copilot" class="level2"><h2 class="anchored" data-anchor-id="github-copilot">GitHub Copilot</h2>
 <p>GitHub Copilot se integra en Visual Studio Code, instalado previamente en la capa de desarrollo.</p>
 <p>Referencia oficial:</p>
 <p><a href="https://docs.github.com/en/copilot/get-started/quickstart?tool=vscode">GitHub - GitHub Copilot en Visual Studio Code</a></p>
@@ -364,25 +336,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p>La configuración inicial de Copilot en Visual Studio Code instala automáticamente las extensiones necesarias.</p>
 <p>GitHub Copilot aporta asistencia directamente sobre el proyecto abierto en el editor: código, archivos, diagnósticos y contexto de trabajo.</p>
-</section>
-<section id="openspec" class="level2">
-<h2 class="anchored" data-anchor-id="openspec">OpenSpec</h2>
+</section><section id="openspec" class="level2"><h2 class="anchored" data-anchor-id="openspec">OpenSpec</h2>
 <p>OpenSpec no es un sistema inteligente ni un modelo. Es una herramienta de desarrollo dirigido por especificaciones (<em>Spec-Driven Development</em>, SDD) que permite mantener especificaciones y cambios persistentes para que puedan ser utilizados por distintos asistentes de programación.</p>
 <p>Referencia oficial:</p>
 <p><a href="https://github.com/Fission-AI/OpenSpec/blob/main/docs/installation.md">OpenSpec - Installation</a></p>
 <p>En IASI, OpenSpec se instala como una <strong>herramienta global del entorno de desarrollo</strong>. La inicialización y configuración de OpenSpec dentro de cada proyecto pertenece al uso de la metodología y no a la preparación de la infraestructura.</p>
 <p>OpenSpec requiere Node.js 20.19.0 o superior.</p>
 <p>Comprobar la versión instalada:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>node <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>node <span class="op">--</span>version</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>Instalar OpenSpec globalmente mediante <code>npm</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>npm install <span class="op">-</span>g @fission-ai<span class="op">/</span>openspec@latest <span class="op">--</span>allow-scripts<span class="op">=</span>@fission-ai<span class="op">/</span>openspec</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>npm install <span class="op">-</span>g @fission-ai<span class="op">/</span>openspec@latest <span class="op">--</span>allow-scripts<span class="op">=</span>@fission-ai<span class="op">/</span>openspec</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>Verificar la instalación:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>openspec <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>openspec <span class="op">--</span>version</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>Si Node.js se gestiona mediante <code>nvm</code>, los paquetes globales se instalan dentro del entorno del usuario y no es necesario utilizar <code>sudo</code>.</p>
 <p>La instalación de infraestructura termina en este punto. Comandos como <code>openspec init</code> actúan sobre un proyecto concreto y forman parte del flujo de trabajo de IASI.</p>
-</section>
-<section id="trabajo-con-varias-ia" class="level2">
-<h2 class="anchored" data-anchor-id="trabajo-con-varias-ia">Trabajo con varias IA</h2>
+</section><section id="trabajo-con-varias-ia" class="level2"><h2 class="anchored" data-anchor-id="trabajo-con-varias-ia">Trabajo con varias IA</h2>
 <p>IASI considera especialmente valioso que distintos sistemas inteligentes puedan trabajar sobre un mismo problema.</p>
 <pre class="text"><code>Ingeniero
 ├── ChatGPT
@@ -393,9 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>No se trata de sustituir un sistema por otro.</p>
 <p>Cada sistema observa el problema desde un contexto diferente. La interacción entre ellos permite contrastar decisiones, repartir tareas y utilizar la herramienta más adecuada en cada momento.</p>
 <p>El ingeniero mantiene la dirección del trabajo, decide qué contexto recibe cada sistema y evalúa las propuestas obtenidas.</p>
-</section>
-<section id="ollama" class="level2">
-<h2 class="anchored" data-anchor-id="ollama">Ollama</h2>
+</section><section id="ollama" class="level2"><h2 class="anchored" data-anchor-id="ollama">Ollama</h2>
 <p>Cuando se necesite ejecutar modelos localmente, IASI puede utilizar Ollama como <em>runtime</em> de modelos.</p>
 <p>Referencia oficial:</p>
 <p><a href="https://docs.ollama.com/windows">Ollama - Windows</a></p>
@@ -403,11 +378,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En Windows, una instalación local expone normalmente su <em>API</em> en:</p>
 <pre class="text"><code>http://localhost:11434</code></pre>
 <p>Verificar la instalación:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ollama <span class="op">--</span>version</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ollama <span class="op">--</span>version</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>La descarga de modelos no forma parte de la instalación base. Los modelos concretos dependerán del propósito del entorno y de los recursos disponibles.</p>
-</section>
-<section id="open-webui" class="level2">
-<h2 class="anchored" data-anchor-id="open-webui">Open WebUI</h2>
+</section><section id="open-webui" class="level2"><h2 class="anchored" data-anchor-id="open-webui">Open WebUI</h2>
 <p>Open WebUI proporciona una interfaz web para trabajar con modelos y proveedores de inteligencia artificial.</p>
 <p>Referencia oficial:</p>
 <p><a href="https://docs.openwebui.com/getting-started/quick-start/">Open WebUI - Quick Start</a></p>
@@ -419,26 +395,31 @@ Ollama
 modelos locales</code></pre>
 <p>Ollama proporciona el <em>runtime</em> y la API. Open WebUI proporciona la interfaz de interacción.</p>
 <p>La instalación recomendada se realiza mediante Docker, instalado previamente en la capa de infraestructura:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>docker pull ghcr<span class="op">.</span><span class="fu">io</span><span class="op">/</span>open-webui<span class="op">/</span>open-webui<span class="op">:</span>main</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>docker pull ghcr<span class="op">.</span><span class="fu">io</span><span class="op">/</span>open-webui<span class="op">/</span>open-webui<span class="op">:</span>main</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>Crear el contenedor:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>docker run <span class="op">-</span>d <span class="op">-</span>p <span class="dv">3000</span><span class="op">:</span><span class="dv">8080</span> <span class="op">-</span>e OLLAMA_BASE_URL<span class="op">=</span>http<span class="op">://</span>host<span class="op">.</span><span class="fu">docker</span><span class="op">.</span><span class="fu">internal</span><span class="op">:</span><span class="dv">11434</span> <span class="op">-</span>v open-webui<span class="op">:/</span>app<span class="op">/</span>backend<span class="op">/</span><span class="kw">data</span> <span class="op">--</span>name open-webui <span class="op">--</span>restart always ghcr<span class="op">.</span><span class="fu">io</span><span class="op">/</span>open-webui<span class="op">/</span>open-webui<span class="op">:</span>main</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>docker run <span class="op">-</span>d <span class="op">-</span>p <span class="dv">3000</span><span class="op">:</span><span class="dv">8080</span> <span class="op">-</span>e OLLAMA_BASE_URL<span class="op">=</span>http<span class="op">://</span>host<span class="op">.</span><span class="fu">docker</span><span class="op">.</span><span class="fu">internal</span><span class="op">:</span><span class="dv">11434</span> <span class="op">-</span>v open-webui<span class="op">:/</span>app<span class="op">/</span>backend<span class="op">/</span><span class="kw">data</span> <span class="op">--</span>name open-webui <span class="op">--</span>restart always ghcr<span class="op">.</span><span class="fu">io</span><span class="op">/</span>open-webui<span class="op">/</span>open-webui<span class="op">:</span>main</span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>La opción <code>-v open-webui:/app/backend/data</code> mantiene persistentes la configuración y los datos de Open WebUI aunque el contenedor sea reemplazado.</p>
 <p>En una instalación con Ollama ejecutándose en la máquina anfitriona, Open WebUI accede a su API mediante:</p>
 <pre class="text"><code>http://host.docker.internal:11434</code></pre>
 <p>Comprobar que el contenedor está en ejecución:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>docker <span class="fu">ps</span> <span class="op">--</span>filter <span class="st">"name=open-webui"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb11"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>docker <span class="fu">ps</span> <span class="op">--</span>filter <span class="st">"name=open-webui"</span></span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>La interfaz queda disponible en:</p>
 <pre class="text"><code>http://localhost:3000</code></pre>
 <p>La descarga de modelos continúa siendo responsabilidad de Ollama. Open WebUI no sustituye al <em>runtime</em>: proporciona una interfaz común para utilizarlo y administrarlo.</p>
-</section>
-<section id="separación-entre-sistema-y-modelo" class="level2">
-<h2 class="anchored" data-anchor-id="separación-entre-sistema-y-modelo">Separación entre sistema y modelo</h2>
+</section><section id="separación-entre-sistema-y-modelo" class="level2"><h2 class="anchored" data-anchor-id="separación-entre-sistema-y-modelo">Separación entre sistema y modelo</h2>
 <p>IASI distingue entre el <strong>sistema inteligente</strong> con el que se trabaja y el <strong>modelo</strong> que ese sistema pueda utilizar.</p>
 <p>Por ejemplo, ChatGPT o GitHub Copilot pueden ofrecer distintos modelos sin dejar de ser sistemas de trabajo diferentes.</p>
 <p>Esta distinción es importante porque IASI pretende trabajar con varias IA, no simplemente cambiar de modelo dentro de una misma herramienta.</p>
-</section>
-<section id="resultado" class="level2">
-<h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
+</section><section id="resultado" class="level2"><h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
 <p>La capa inicial queda organizada en dos grupos:</p>
 <pre class="text"><code>Sistemas inteligentes
 ├── ChatGPT
@@ -455,11 +436,7 @@ Herramientas de apoyo
 <p>Ollama proporciona una vía adicional para incorporar modelos locales o servicios propios cuando el proyecto lo requiera. Open WebUI ofrece una interfaz común para trabajar con ellos, mientras que OpenSpec aporta la capa de especificación persistente que puede ser compartida por los distintos asistentes de desarrollo.</p>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -860,27 +837,23 @@ Herramientas de apoyo
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>IASI · Ingeniería Asistida por Sistemas Inteligentes</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
+       
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com/iasi-org">
 <p>GitHub</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
-
-
-</body></html>
+</body>
+</html>

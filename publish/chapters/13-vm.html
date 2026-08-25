@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>vm – IASI Infra</title>
 <style>
 /* Default styles provided by pandoc.
@@ -27,25 +25,11 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script><script src="../site_libs/quarto-nav/headroom.min.js"></script><script src="../site_libs/clipboard/clipboard.min.js"></script><script src="../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../site_libs/quarto-search/fuse.min.js"></script><script src="../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script><script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../site_libs/quarto-html/popper.min.js"></script><script src="../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../site_libs/quarto-html/anchor.min.js"></script><link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9da87e570ce69d0505e7a2c367561b0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script><link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6aba9db9fa57d6565286cf9ed00b3ee2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,16 +57,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">IASI Infra</span>
@@ -94,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
@@ -135,48 +114,48 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Docker</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/iasi-org/iasi-infra"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/13-vm.html">Maquina virtual</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/13-vm.html">Maquina virtual</a></li>
+</ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../01-manifesto-bilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manifesto / Manifiesto</span></a>
-  </div>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--01-manifesto-bilingual-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--01-manifesto-bilingual-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--01-manifesto-bilingual-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../01-manifesto-bilingual.html#manifesto-manifiesto" id="toc-manifesto-manifiesto" class="nav-link active" data-scroll-target="#manifesto-manifiesto">Manifesto / Manifiesto</a></li>
+  </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -186,8 +165,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
@@ -260,83 +239,85 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#maquina-virtual" id="toc-maquina-virtual" class="nav-link active" data-scroll-target="#maquina-virtual">Maquina virtual</a>
+<li>
+<a href="#maquina-virtual" id="toc-maquina-virtual" class="nav-link active" data-scroll-target="#maquina-virtual">Maquina virtual</a>
   <ul class="collapse">
-  <li><a href="#configuración-recomendada" id="toc-configuración-recomendada" class="nav-link" data-scroll-target="#configuración-recomendada">Configuración recomendada</a></li>
-  <li><a href="#trick-windows-sin-cuenta-ni-pin" id="toc-trick-windows-sin-cuenta-ni-pin" class="nav-link" data-scroll-target="#trick-windows-sin-cuenta-ni-pin">Trick: Windows sin cuenta ni pin”</a>
+<li><a href="#configuraci%C3%B3n-recomendada" id="toc-configuración-recomendada" class="nav-link" data-scroll-target="#configuración-recomendada">Configuración recomendada</a></li>
+  <li>
+<a href="#trick-windows-sin-cuenta-ni-pin" id="toc-trick-windows-sin-cuenta-ni-pin" class="nav-link" data-scroll-target="#trick-windows-sin-cuenta-ni-pin">Trick: Windows sin cuenta ni pin”</a>
   <ul class="collapse">
-  <li><a href="#evitar-la-cuenta-de-microsoft-iniciar-sesión" id="toc-evitar-la-cuenta-de-microsoft-iniciar-sesión" class="nav-link" data-scroll-target="#evitar-la-cuenta-de-microsoft-iniciar-sesión">Evitar la cuenta de Microsoft (Iniciar sesión)</a></li>
-  <li><a href="#evitar-la-creación-del-pins" id="toc-evitar-la-creación-del-pins" class="nav-link" data-scroll-target="#evitar-la-creación-del-pins">Evitar la creación del PINS</a></li>
-  </ul></li>
-  </ul></li>
+<li><a href="#evitar-la-cuenta-de-microsoft-iniciar-sesi%C3%B3n" id="toc-evitar-la-cuenta-de-microsoft-iniciar-sesión" class="nav-link" data-scroll-target="#evitar-la-cuenta-de-microsoft-iniciar-sesión">Evitar la cuenta de Microsoft (Iniciar sesión)</a></li>
+  <li><a href="#evitar-la-creaci%C3%B3n-del-pins" id="toc-evitar-la-creación-del-pins" class="nav-link" data-scroll-target="#evitar-la-creación-del-pins">Evitar la creación del PINS</a></li>
   </ul>
-</nav>
-    </div>
+</li>
+  </ul>
+</li>
+  </ul></nav>
+</div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/13-vm.html">Maquina virtual</a></li></ol></nav></header>
-
-
-
-
-<section id="maquina-virtual" class="level1">
-<h1>Maquina virtual</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/13-vm.html">Maquina virtual</a></li>
+</ol></nav></header><section id="maquina-virtual" class="level1"><h1>Maquina virtual</h1>
 <p>Como se ha indicado, el principio de <em>isolation</em> dice que cada proyecto vive en su propia maquina virtual.</p>
 <p>El hipervisor puede ser cualquiera de los disponibles en el mercado.</p>
-<section id="configuración-recomendada" class="level2">
-<h2 class="anchored" data-anchor-id="configuración-recomendada">Configuración recomendada</h2>
+<section id="configuración-recomendada" class="level2"><h2 class="anchored" data-anchor-id="configuración-recomendada">Configuración recomendada</h2>
 <p>La capacidad de la máquina virtual dependerá principalmente de si los modelos de inteligencia artificial se ejecutan en la propia máquina o mediante servicios externos.</p>
 <table class="caption-top table">
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th></th>
 <th style="text-align: right;">🖥️ Sin IA local</th>
 <th style="text-align: right;">🧠 Con IA local</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
-<td>⚙️ <strong>CPU</strong></td>
+<td>⚙️ <strong>CPU</strong>
+</td>
 <td style="text-align: right;">4 vCPU</td>
 <td style="text-align: right;">8 vCPU</td>
 </tr>
 <tr class="even">
-<td>🧮 <strong>Memoria</strong></td>
+<td>🧮 <strong>Memoria</strong>
+</td>
 <td style="text-align: right;">16 GB RAM</td>
 <td style="text-align: right;">32 GB RAM</td>
 </tr>
 <tr class="odd">
-<td>💾 <strong>Disco</strong></td>
+<td>💾 <strong>Disco</strong>
+</td>
 <td style="text-align: right;">150 GB</td>
 <td style="text-align: right;">250 GB</td>
 </tr>
 <tr class="even">
-<td>📦 <strong>Tipo de disco</strong></td>
+<td>📦 <strong>Tipo de disco</strong>
+</td>
 <td style="text-align: right;">Dinámico</td>
 <td style="text-align: right;">Dinámico</td>
 </tr>
 <tr class="odd">
-<td>🪟 <strong>Sistema operativo</strong></td>
+<td>🪟 <strong>Sistema operativo</strong>
+</td>
 <td style="text-align: right;">Windows 11</td>
 <td style="text-align: right;">Windows 11</td>
 </tr>
 <tr class="even">
-<td>🌐 <strong>Red</strong></td>
+<td>🌐 <strong>Red</strong>
+</td>
 <td style="text-align: right;">Acceso a Internet</td>
 <td style="text-align: right;">Acceso a Internet</td>
 </tr>
 <tr class="odd">
-<td>🖥️ <strong>Resolución</strong></td>
+<td>🖥️ <strong>Resolución</strong>
+</td>
 <td style="text-align: right;">1920 × 1080</td>
 <td style="text-align: right;">1920 × 1080</td>
 </tr>
@@ -347,12 +328,9 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Estas configuraciones son puntos de partida recomendados, no requisitos de IASI.</strong></p>
 </blockquote>
 <p>Normalmente, los recursos pueden ajustarse posteriormente sin modificar la definición funcional del entorno en todas los hipervisores.</p>
-</section>
-<section id="trick-windows-sin-cuenta-ni-pin" class="level2">
-<h2 class="anchored" data-anchor-id="trick-windows-sin-cuenta-ni-pin">Trick: Windows sin cuenta ni pin”</h2>
+</section><section id="trick-windows-sin-cuenta-ni-pin" class="level2"><h2 class="anchored" data-anchor-id="trick-windows-sin-cuenta-ni-pin">Trick: Windows sin cuenta ni pin”</h2>
 <p>A la hora de realizar las pruebas se ha detectado que ls ultimas versiones de Windows 11, aparentemente, exigen tener una cuenta de Microsoft y configurar un PIN. Hacerlo o no hacerlo es decision del usuario, este es un trick para evitarlo.</p>
-<section id="evitar-la-cuenta-de-microsoft-iniciar-sesión" class="level3">
-<h3 class="anchored" data-anchor-id="evitar-la-cuenta-de-microsoft-iniciar-sesión">Evitar la cuenta de Microsoft (Iniciar sesión)</h3>
+<section id="evitar-la-cuenta-de-microsoft-iniciar-sesión" class="level3"><h3 class="anchored" data-anchor-id="evitar-la-cuenta-de-microsoft-iniciar-sesión">Evitar la cuenta de Microsoft (Iniciar sesión)</h3>
 <p>Cuando el instalador te obligue a conectarte a internet o a iniciar sesión con un correo, haz lo siguiente:</p>
 <p>En la pantalla donde te pide el correo, presiona la combinación de teclas Shift + F10 (en algunas laptops es Fn + Shift + F10).</p>
 <p>Se abrirá una ventana negra de comandos (Símbolo del sistema).</p>
@@ -360,21 +338,14 @@ ul.task-list li input[type="checkbox"] {
 <p>La máquina virtual se reiniciará automáticamente, al volver a la pantalla de red, aparecerá un nuevo botón que dice “No tengo internet”.</p>
 <p>Haz clic ahí.Selecciona “Continuar con la configuración limitada”.</p>
 <p>Ahora te dejará escribir cualquier nombre de usuario local sin pedirte correos ni contraseñas obligatorias.</p>
-</section>
-<section id="evitar-la-creación-del-pins" class="level3">
-<h3 class="anchored" data-anchor-id="evitar-la-creación-del-pins">Evitar la creación del PINS</h3>
+</section><section id="evitar-la-creación-del-pins" class="level3"><h3 class="anchored" data-anchor-id="evitar-la-creación-del-pins">Evitar la creación del PINS</h3>
 <p>si el instalador te obliga a crear un PIN de seguridad de Windows Hello después de poner tu contraseña, usa este atajo:</p>
 <p>Cuando aparezca la ventana flotante que te obliga a configurar el PIN, haz clic en Cancelar o cierra esa ventana específica si te da la opción. Si no te deja cancelar, deja los campos del PIN completamente vacíos.</p>
 <p>Presiona la tecla Esc (Escape) en tu teclado o haz clic en la flecha de “Atrás” en la esquina superior izquierda de la pantalla.</p>
 <p>El sistema se saltará el paso del PIN y te llevará directamente al escritorio de Windows</p>
 
 
-</section>
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -775,27 +746,23 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>IASI · Ingeniería Asistida por Sistemas Inteligentes</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
+       
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com/iasi-org">
 <p>GitHub</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
-
-
-</body></html>
+</body>
+</html>

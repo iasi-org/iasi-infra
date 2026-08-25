@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>docker – IASI Infra</title>
 <style>
 /* Default styles provided by pandoc.
@@ -62,25 +60,11 @@ div.sourceCode
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script><script src="../site_libs/quarto-nav/headroom.min.js"></script><script src="../site_libs/clipboard/clipboard.min.js"></script><script src="../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../site_libs/quarto-search/fuse.min.js"></script><script src="../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script><script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../site_libs/quarto-html/popper.min.js"></script><script src="../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../site_libs/quarto-html/anchor.min.js"></script><link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9da87e570ce69d0505e7a2c367561b0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script><link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6aba9db9fa57d6565286cf9ed00b3ee2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,16 +92,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">IASI Infra</span>
@@ -129,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
@@ -170,48 +149,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Docker</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/iasi-org/iasi-infra"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/20-docker.html">Docker y Docker Compose</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/20-docker.html">Docker y Docker Compose</a></li>
+</ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../01-manifesto-bilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manifesto / Manifiesto</span></a>
-  </div>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--01-manifesto-bilingual-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--01-manifesto-bilingual-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--01-manifesto-bilingual-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../01-manifesto-bilingual.html#manifesto-manifiesto" id="toc-manifesto-manifiesto" class="nav-link active" data-scroll-target="#manifesto-manifiesto">Manifesto / Manifiesto</a></li>
+  </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -221,8 +200,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
@@ -295,50 +274,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#docker-y-docker-compose" id="toc-docker-y-docker-compose" class="nav-link active" data-scroll-target="#docker-y-docker-compose">Docker y Docker Compose</a>
+<li>
+<a href="#docker-y-docker-compose" id="toc-docker-y-docker-compose" class="nav-link active" data-scroll-target="#docker-y-docker-compose">Docker y Docker Compose</a>
   <ul class="collapse">
-  <li><a href="#requisito" id="toc-requisito" class="nav-link" data-scroll-target="#requisito">Requisito</a></li>
+<li><a href="#requisito" id="toc-requisito" class="nav-link" data-scroll-target="#requisito">Requisito</a></li>
   <li><a href="#servicios-iasi" id="toc-servicios-iasi" class="nav-link" data-scroll-target="#servicios-iasi">Servicios IASI</a></li>
   <li><a href="#red-iasi" id="toc-red-iasi" class="nav-link" data-scroll-target="#red-iasi">Red IASI</a></li>
-  <li><a href="#convención-de-puertos" id="toc-convención-de-puertos" class="nav-link" data-scroll-target="#convención-de-puertos">Convención de puertos</a></li>
+  <li><a href="#convenci%C3%B3n-de-puertos" id="toc-convención-de-puertos" class="nav-link" data-scroll-target="#convención-de-puertos">Convención de puertos</a></li>
   <li><a href="#compose.yml" id="toc-compose.yml" class="nav-link" data-scroll-target="#compose.yml">compose.yml</a></li>
   <li><a href="#modelos-ollama" id="toc-modelos-ollama" class="nav-link" data-scroll-target="#modelos-ollama">Modelos Ollama</a></li>
-  <li><a href="#comunicación-interna" id="toc-comunicación-interna" class="nav-link" data-scroll-target="#comunicación-interna">Comunicación interna</a></li>
-  <li><a href="#acceso-desde-la-máquina-iasi" id="toc-acceso-desde-la-máquina-iasi" class="nav-link" data-scroll-target="#acceso-desde-la-máquina-iasi">Acceso desde la máquina IASI</a></li>
-  <li><a href="#acceso-desde-otra-máquina" id="toc-acceso-desde-otra-máquina" class="nav-link" data-scroll-target="#acceso-desde-otra-máquina">Acceso desde otra máquina</a></li>
+  <li><a href="#comunicaci%C3%B3n-interna" id="toc-comunicación-interna" class="nav-link" data-scroll-target="#comunicación-interna">Comunicación interna</a></li>
+  <li><a href="#acceso-desde-la-m%C3%A1quina-iasi" id="toc-acceso-desde-la-máquina-iasi" class="nav-link" data-scroll-target="#acceso-desde-la-máquina-iasi">Acceso desde la máquina IASI</a></li>
+  <li><a href="#acceso-desde-otra-m%C3%A1quina" id="toc-acceso-desde-otra-máquina" class="nav-link" data-scroll-target="#acceso-desde-otra-máquina">Acceso desde otra máquina</a></li>
   <li><a href="#arranque" id="toc-arranque" class="nav-link" data-scroll-target="#arranque">Arranque</a></li>
   <li><a href="#persistencia" id="toc-persistencia" class="nav-link" data-scroll-target="#persistencia">Persistencia</a></li>
-  <li><a href="#actualización" id="toc-actualización" class="nav-link" data-scroll-target="#actualización">Actualización</a></li>
-  <li><a href="#verificación" id="toc-verificación" class="nav-link" data-scroll-target="#verificación">Verificación</a>
+  <li><a href="#actualizaci%C3%B3n" id="toc-actualización" class="nav-link" data-scroll-target="#actualización">Actualización</a></li>
+  <li>
+<a href="#verificaci%C3%B3n" id="toc-verificación" class="nav-link" data-scroll-target="#verificación">Verificación</a>
   <ul class="collapse">
-  <li><a href="#plantuml" id="toc-plantuml" class="nav-link" data-scroll-target="#plantuml">PlantUML</a></li>
+<li><a href="#plantuml" id="toc-plantuml" class="nav-link" data-scroll-target="#plantuml">PlantUML</a></li>
   <li><a href="#ollama" id="toc-ollama" class="nav-link" data-scroll-target="#ollama">Ollama</a></li>
   <li><a href="#open-webui" id="toc-open-webui" class="nav-link" data-scroll-target="#open-webui">Open WebUI</a></li>
-  </ul></li>
-  <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
-  </ul></li>
   </ul>
-</nav>
-    </div>
+</li>
+  <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
+  </ul>
+</li>
+  </ul></nav>
+</div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/20-docker.html">Docker y Docker Compose</a></li></ol></nav></header>
-
-
-
-
-<section id="docker-y-docker-compose" class="level1">
-<h1>Docker y Docker Compose</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/20-docker.html">Docker y Docker Compose</a></li>
+</ol></nav></header><section id="docker-y-docker-compose" class="level1"><h1>Docker y Docker Compose</h1>
 <p>IASI utiliza Docker para ejecutar determinados servicios de infraestructura sin incorporarlos directamente a la instalación de la máquina.</p>
 <p>Este capítulo no pretende enseñar Docker ni Docker Compose. Su objetivo es definir la convención utilizada por IASI para ejecutar, agrupar y publicar sus servicios.</p>
 <p>Para aprender Docker desde cero se recomienda utilizar la documentación oficial:</p>
@@ -346,8 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://docs.docker.com/get-started/">Docker - Get started</a></li>
 <li><a href="https://docs.docker.com/compose/gettingstarted/">Docker Compose - Quickstart</a></li>
 </ul>
-<section id="requisito" class="level2">
-<h2 class="anchored" data-anchor-id="requisito">Requisito</h2>
+<section id="requisito" class="level2"><h2 class="anchored" data-anchor-id="requisito">Requisito</h2>
 <p>La máquina debe disponer de Docker y Docker Compose.</p>
 <p>En Windows puede utilizarse Docker Desktop:</p>
 <p><a href="https://docs.docker.com/get-started/get-docker/">Docker - Get Docker</a></p>
@@ -355,9 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>docker --version
 docker compose version</code></pre>
 <p>A partir de este punto asumimos que ambos comandos funcionan correctamente.</p>
-</section>
-<section id="servicios-iasi" class="level2">
-<h2 class="anchored" data-anchor-id="servicios-iasi">Servicios IASI</h2>
+</section><section id="servicios-iasi" class="level2"><h2 class="anchored" data-anchor-id="servicios-iasi">Servicios IASI</h2>
 <p>La infraestructura inicial utiliza Docker Compose para ejecutar tres servicios:</p>
 <pre class="text"><code>Docker Compose
 ├── PlantUML Server
@@ -365,13 +339,13 @@ docker compose version</code></pre>
 └── Open WebUI</code></pre>
 <p>Cada servicio conserva una responsabilidad distinta:</p>
 <ul>
-<li><strong>PlantUML Server</strong> genera los diagramas utilizados por las publicaciones.</li>
-<li><strong>Ollama</strong> proporciona el <em>runtime</em> local de modelos.</li>
-<li><strong>Open WebUI</strong> proporciona la interfaz web para utilizar esos modelos.</li>
-</ul>
-</section>
-<section id="red-iasi" class="level2">
-<h2 class="anchored" data-anchor-id="red-iasi">Red IASI</h2>
+<li>
+<strong>PlantUML Server</strong> genera los diagramas utilizados por las publicaciones.</li>
+<li>
+<strong>Ollama</strong> proporciona el <em>runtime</em> local de modelos.</li>
+<li>
+<strong>Open WebUI</strong> proporciona la interfaz web para utilizar esos modelos.</li>
+</ul></section><section id="red-iasi" class="level2"><h2 class="anchored" data-anchor-id="red-iasi">Red IASI</h2>
 <p>Todos los contenedores de la infraestructura se incorporan a una red Docker común denominada:</p>
 <pre class="text"><code>iasi</code></pre>
 <p>Dentro de esa red, los servicios se localizan mediante su nombre y su puerto interno.</p>
@@ -381,9 +355,7 @@ http://plantuml:8080
 http://open-webui:8080</code></pre>
 <p>Esta red pertenece al ámbito interno de Docker.</p>
 <p>Desde fuera de Docker no es necesario conocerla. El acceso se realiza mediante los puertos publicados por la máquina anfitriona.</p>
-</section>
-<section id="convención-de-puertos" class="level2">
-<h2 class="anchored" data-anchor-id="convención-de-puertos">Convención de puertos</h2>
+</section><section id="convención-de-puertos" class="level2"><h2 class="anchored" data-anchor-id="convención-de-puertos">Convención de puertos</h2>
 <p>IASI reserva el rango:</p>
 <pre class="text"><code>10000-10999</code></pre>
 <p>para los servicios publicados por su infraestructura local.</p>
@@ -405,11 +377,10 @@ http://open-webui:8080</code></pre>
 PlantUML Server    8080            10025
 Open WebUI         8080            10300
 Ollama            11434            10434</code></pre>
-</section>
-<section id="compose.yml" class="level2">
-<h2 class="anchored" data-anchor-id="compose.yml">compose.yml</h2>
+</section><section id="compose.yml" class="level2"><h2 class="anchored" data-anchor-id="compose.yml">compose.yml</h2>
 <p>La composición inicial es:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">services</span><span class="kw">:</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">plantuml</span><span class="kw">:</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">image</span><span class="kw">:</span><span class="at"> plantuml/plantuml-server:jetty</span></span>
@@ -452,11 +423,11 @@ Ollama            11434            10434</code></pre>
 <span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="fu">volumes</span><span class="kw">:</span></span>
 <span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ollama</span><span class="kw">:</span></span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">open-webui</span><span class="kw">:</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">open-webui</span><span class="kw">:</span></span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
 <p>La red <code>iasi</code> es explícita para que forme parte de la definición de la infraestructura y no dependa del nombre generado automáticamente por Docker Compose.</p>
-</section>
-<section id="modelos-ollama" class="level2">
-<h2 class="anchored" data-anchor-id="modelos-ollama">Modelos Ollama</h2>
+</section><section id="modelos-ollama" class="level2"><h2 class="anchored" data-anchor-id="modelos-ollama">Modelos Ollama</h2>
 <p>Llama, Qwen y DeepSeek no constituyen servicios Docker independientes.</p>
 <p>Son modelos gestionados por Ollama y, por tanto, comparten el mismo contenedor, la misma <em>API</em> y el mismo puerto publicado:</p>
 <pre class="text"><code>Ollama
@@ -471,9 +442,7 @@ docker exec -it ollama ollama pull qwen3
 docker exec -it ollama ollama pull deepseek-r1</code></pre>
 <p>Las variantes concretas deberán seleccionarse en función de los recursos disponibles y de las necesidades del entorno.</p>
 <p>Añadir, sustituir o eliminar un modelo no modifica la topología Docker ni requiere reservar un nuevo puerto IASI.</p>
-</section>
-<section id="comunicación-interna" class="level2">
-<h2 class="anchored" data-anchor-id="comunicación-interna">Comunicación interna</h2>
+</section><section id="comunicación-interna" class="level2"><h2 class="anchored" data-anchor-id="comunicación-interna">Comunicación interna</h2>
 <p>Los contenedores conectados a la red <code>iasi</code> se comunican mediante sus nombres de servicio.</p>
 <p>Open WebUI utiliza:</p>
 <pre class="text"><code>http://ollama:11434</code></pre>
@@ -487,20 +456,19 @@ docker exec -it ollama ollama pull deepseek-r1</code></pre>
     v
 Ollama</code></pre>
 <p>Los puertos <code>10xxx</code> se utilizan para acceder a los servicios desde fuera de Docker.</p>
-</section>
-<section id="acceso-desde-la-máquina-iasi" class="level2">
-<h2 class="anchored" data-anchor-id="acceso-desde-la-máquina-iasi">Acceso desde la máquina IASI</h2>
+</section><section id="acceso-desde-la-máquina-iasi" class="level2"><h2 class="anchored" data-anchor-id="acceso-desde-la-máquina-iasi">Acceso desde la máquina IASI</h2>
 <p>Cuando Docker se ejecuta en la propia máquina IASI, los servicios quedan disponibles mediante:</p>
 <pre class="text"><code>PlantUML Server   http://localhost:10025
 Ollama API        http://localhost:10434
 Open WebUI        http://localhost:10300</code></pre>
 <p>Por ejemplo, la configuración de PlantUML utilizará:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter-options</span><span class="kw">:</span></span>
+<div class="code-copy-outer-scaffold">
+<div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter-options</span><span class="kw">:</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">plantuml</span><span class="kw">:</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">server</span><span class="kw">:</span><span class="at"> http://localhost:10025</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="acceso-desde-otra-máquina" class="level2">
-<h2 class="anchored" data-anchor-id="acceso-desde-otra-máquina">Acceso desde otra máquina</h2>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">server</span><span class="kw">:</span><span class="at"> http://localhost:10025</span></span></code></pre></div>
+<button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button>
+</div>
+</section><section id="acceso-desde-otra-máquina" class="level2"><h2 class="anchored" data-anchor-id="acceso-desde-otra-máquina">Acceso desde otra máquina</h2>
 <p><code>localhost</code> significa siempre la máquina desde la que se realiza la conexión.</p>
 <p>La documentación común de IASI supone una instalación local y utiliza <code>localhost</code> como referencia.</p>
 <p>Si los servicios Docker se ejecutan en otra máquina virtual, otro equipo o un servidor compartido, las URL deberán adaptarse a la topología real.</p>
@@ -516,9 +484,7 @@ Open WebUI        http://localhost:10300</code></pre>
 otra máquina
     -&gt; host-servicios:10xxx</code></pre>
 <p>La red Docker <code>iasi</code> sigue siendo interna a la máquina que ejecuta los contenedores y no modifica esta regla.</p>
-</section>
-<section id="arranque" class="level2">
-<h2 class="anchored" data-anchor-id="arranque">Arranque</h2>
+</section><section id="arranque" class="level2"><h2 class="anchored" data-anchor-id="arranque">Arranque</h2>
 <p>Desde el directorio que contiene <code>compose.yml</code>:</p>
 <pre><code>docker compose up -d</code></pre>
 <p>Verificar el estado:</p>
@@ -530,9 +496,7 @@ otra máquina
 <p>Detener y retirar los contenedores:</p>
 <pre><code>docker compose down</code></pre>
 <p>Los volúmenes persistentes no se eliminan con este comando.</p>
-</section>
-<section id="persistencia" class="level2">
-<h2 class="anchored" data-anchor-id="persistencia">Persistencia</h2>
+</section><section id="persistencia" class="level2"><h2 class="anchored" data-anchor-id="persistencia">Persistencia</h2>
 <p>La composición define dos volúmenes:</p>
 <pre class="text"><code>ollama
 open-webui</code></pre>
@@ -540,33 +504,21 @@ open-webui</code></pre>
 <p>El segundo conserva la configuración y los datos de Open WebUI.</p>
 <p>PlantUML Server no necesita persistencia para la configuración inicial.</p>
 <p>Esto permite destruir y recrear los contenedores sin perder los datos que deben sobrevivir a su ciclo de vida.</p>
-</section>
-<section id="actualización" class="level2">
-<h2 class="anchored" data-anchor-id="actualización">Actualización</h2>
+</section><section id="actualización" class="level2"><h2 class="anchored" data-anchor-id="actualización">Actualización</h2>
 <p>Las imágenes pueden actualizarse mediante:</p>
 <pre><code>docker compose pull
 docker compose up -d</code></pre>
 <p>Durante el desarrollo pueden utilizarse las etiquetas indicadas en la composición.</p>
 <p>Para una versión cerrada y reproducible de la infraestructura deberán fijarse versiones concretas de las imágenes utilizadas.</p>
-</section>
-<section id="verificación" class="level2">
-<h2 class="anchored" data-anchor-id="verificación">Verificación</h2>
-<section id="plantuml" class="level3">
-<h3 class="anchored" data-anchor-id="plantuml">PlantUML</h3>
+</section><section id="verificación" class="level2"><h2 class="anchored" data-anchor-id="verificación">Verificación</h2>
+<section id="plantuml" class="level3"><h3 class="anchored" data-anchor-id="plantuml">PlantUML</h3>
 <pre><code>curl http://localhost:10025</code></pre>
-</section>
-<section id="ollama" class="level3">
-<h3 class="anchored" data-anchor-id="ollama">Ollama</h3>
+</section><section id="ollama" class="level3"><h3 class="anchored" data-anchor-id="ollama">Ollama</h3>
 <pre><code>curl http://localhost:10434</code></pre>
-</section>
-<section id="open-webui" class="level3">
-<h3 class="anchored" data-anchor-id="open-webui">Open WebUI</h3>
+</section><section id="open-webui" class="level3"><h3 class="anchored" data-anchor-id="open-webui">Open WebUI</h3>
 <p>Abrir en el navegador:</p>
 <pre class="text"><code>http://localhost:10300</code></pre>
-</section>
-</section>
-<section id="resultado" class="level2">
-<h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
+</section></section><section id="resultado" class="level2"><h2 class="anchored" data-anchor-id="resultado">Resultado</h2>
 <p>Al finalizar esta etapa, la máquina dispone de una capa de servicios identificable y reproducible:</p>
 <pre class="text"><code>Máquina IASI
 │
@@ -598,11 +550,7 @@ puerto 10xxx          -&gt; publicación IASI hacia el exterior</code></pre>
 <p>Las direcciones utilizadas por cada consumidor deben reflejar siempre la topología real del entorno.</p>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -1003,27 +951,23 @@ puerto 10xxx          -&gt; publicación IASI hacia el exterior</code></pre>
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>IASI · Ingeniería Asistida por Sistemas Inteligentes</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
+       
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com/iasi-org">
 <p>GitHub</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
-
-
-</body></html>
+</body>
+</html>

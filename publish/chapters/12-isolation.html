@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.10.18">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>isolation – IASI Infra</title>
 <style>
 /* Default styles provided by pandoc.
@@ -27,25 +25,11 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
-
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script><script src="../site_libs/quarto-nav/headroom.min.js"></script><script src="../site_libs/clipboard/clipboard.min.js"></script><script src="../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../site_libs/quarto-search/fuse.min.js"></script><script src="../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script><script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script><script src="../site_libs/quarto-html/popper.min.js"></script><script src="../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../site_libs/quarto-html/anchor.min.js"></script><link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9da87e570ce69d0505e7a2c367561b0b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script><link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6aba9db9fa57d6565286cf9ed00b3ee2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,16 +57,11 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-
-
 </head>
-
 <body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">IASI Infra</span>
@@ -94,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
@@ -135,48 +114,48 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Docker</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/iasi-org/iasi-infra"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/12-isolation.html">Aislamiento</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/12-isolation.html">Aislamiento</a></li>
+</ol></nav><a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+<li class="sidebar-item sidebar-item-section">
   <div class="sidebar-item-container"> 
   <a href="../01-manifesto-bilingual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manifesto / Manifiesto</span></a>
-  </div>
+  <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#iasi-sidebar--01-manifesto-bilingual-html" role="navigation" aria-expanded="false" aria-controls="iasi-sidebar--01-manifesto-bilingual-html" aria-label="Toggle section"><i class="bi bi-chevron-right ms-2"></i></a>
+</div>
+<ul id="iasi-sidebar--01-manifesto-bilingual-html" class="collapse list-unstyled sidebar-section depth2">
+<li><a href="../01-manifesto-bilingual.html#manifesto-manifiesto" id="toc-manifesto-manifiesto" class="nav-link active" data-scroll-target="#manifesto-manifiesto">Manifesto / Manifiesto</a></li>
+  </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
@@ -186,8 +165,8 @@ ul.task-list li input[type="checkbox"] {
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/11-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introducción</span></a>
@@ -260,40 +239,36 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </li>
       </ul>
-  </li>
+</li>
     </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#aislamiento" id="toc-aislamiento" class="nav-link active" data-scroll-target="#aislamiento">Aislamiento</a>
+<li>
+<a href="#aislamiento" id="toc-aislamiento" class="nav-link active" data-scroll-target="#aislamiento">Aislamiento</a>
   <ul class="collapse">
-  <li><a href="#el-ordenador-no-es-el-proyecto" id="toc-el-ordenador-no-es-el-proyecto" class="nav-link" data-scroll-target="#el-ordenador-no-es-el-proyecto">El ordenador no es el proyecto</a></li>
+<li><a href="#el-ordenador-no-es-el-proyecto" id="toc-el-ordenador-no-es-el-proyecto" class="nav-link" data-scroll-target="#el-ordenador-no-es-el-proyecto">El ordenador no es el proyecto</a></li>
   <li><a href="#el-principio-de-isolation" id="toc-el-principio-de-isolation" class="nav-link" data-scroll-target="#el-principio-de-isolation">El principio de <em>isolation</em></a></li>
   <li><a href="#cliente-y-proyecto-como-frontera" id="toc-cliente-y-proyecto-como-frontera" class="nav-link" data-scroll-target="#cliente-y-proyecto-como-frontera">Cliente y proyecto como frontera</a></li>
   <li><a href="#la-infraestructura-del-cliente-no-sustituye-al-aislamiento" id="toc-la-infraestructura-del-cliente-no-sustituye-al-aislamiento" class="nav-link" data-scroll-target="#la-infraestructura-del-cliente-no-sustituye-al-aislamiento">La infraestructura del cliente no sustituye al aislamiento</a></li>
-  <li><a href="#una-máquina-virtual-no-es-un-contenedor" id="toc-una-máquina-virtual-no-es-un-contenedor" class="nav-link" data-scroll-target="#una-máquina-virtual-no-es-un-contenedor">Una máquina virtual no es un contenedor</a></li>
-  <li><a href="#un-modelo-probado-en-la-práctica" id="toc-un-modelo-probado-en-la-práctica" class="nav-link" data-scroll-target="#un-modelo-probado-en-la-práctica">Un modelo probado en la práctica</a></li>
-  <li><a href="#aislar-también-permite-cambiar-de-ordenador" id="toc-aislar-también-permite-cambiar-de-ordenador" class="nav-link" data-scroll-target="#aislar-también-permite-cambiar-de-ordenador">Aislar también permite cambiar de ordenador</a></li>
+  <li><a href="#una-m%C3%A1quina-virtual-no-es-un-contenedor" id="toc-una-máquina-virtual-no-es-un-contenedor" class="nav-link" data-scroll-target="#una-máquina-virtual-no-es-un-contenedor">Una máquina virtual no es un contenedor</a></li>
+  <li><a href="#un-modelo-probado-en-la-pr%C3%A1ctica" id="toc-un-modelo-probado-en-la-práctica" class="nav-link" data-scroll-target="#un-modelo-probado-en-la-práctica">Un modelo probado en la práctica</a></li>
+  <li><a href="#aislar-tambi%C3%A9n-permite-cambiar-de-ordenador" id="toc-aislar-también-permite-cambiar-de-ordenador" class="nav-link" data-scroll-target="#aislar-también-permite-cambiar-de-ordenador">Aislar también permite cambiar de ordenador</a></li>
   <li><a href="#el-punto-de-partida-de-iasi-infra" id="toc-el-punto-de-partida-de-iasi-infra" class="nav-link" data-scroll-target="#el-punto-de-partida-de-iasi-infra">El punto de partida de IASI Infra</a></li>
   <li><a href="#principio-de-rebuildability" id="toc-principio-de-rebuildability" class="nav-link" data-scroll-target="#principio-de-rebuildability">Principio de <em>rebuildability</em></a></li>
-  </ul></li>
   </ul>
-</nav>
-    </div>
+</li>
+  </ul></nav>
+</div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li><li class="breadcrumb-item"><a href="../chapters/12-isolation.html">Aislamiento</a></li></ol></nav></header>
-
-
-
-
-<section id="aislamiento" class="level1">
-<h1>Aislamiento</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="../chapters/11-intro.html">Chapters</a></li>
+<li class="breadcrumb-item"><a href="../chapters/12-isolation.html">Aislamiento</a></li>
+</ol></nav></header><section id="aislamiento" class="level1"><h1>Aislamiento</h1>
 <p>En un entorno profesional es habitual trabajar para uno o varios clientes y participar, simultánea o sucesivamente, en distintos proyectos.</p>
 <p>Durante años fue frecuente que cada empresa proporcionara a sus profesionales un ordenador corporativo completamente gestionado por ella. En determinados entornos de consultoría podía incluso ocurrir que una misma persona dispusiera de varios equipos: uno perteneciente a su empresa y otros entregados por diferentes clientes, ese modelo sigue existiendo, aunque hoy es menos habitual.</p>
 <p>Actualmente es frecuente trabajar desde un único ordenador corporativo, o incluso desde un ordenador personal, y acceder a los entornos de los clientes mediante mecanismos como <em>VPN</em>, <em>Citrix</em>, escritorios remotos o infraestructuras <em>VDI</em>.</p>
@@ -314,8 +289,7 @@ ul.task-list li input[type="checkbox"] {
 <li>…</li>
 </ul>
 <p>Con el tiempo, el ordenador desde el que trabajamos puede terminar convertido en la suma histórica de todos los proyectos en los que hemos participado. IASI evita deliberadamente ese modelo.</p>
-<section id="el-ordenador-no-es-el-proyecto" class="level2">
-<h2 class="anchored" data-anchor-id="el-ordenador-no-es-el-proyecto">El ordenador no es el proyecto</h2>
+<section id="el-ordenador-no-es-el-proyecto" class="level2"><h2 class="anchored" data-anchor-id="el-ordenador-no-es-el-proyecto">El ordenador no es el proyecto</h2>
 <p>El ordenador personal o corporativo desde el que trabajamos debería mantenerse, en la medida de lo posible, estable y limpio y dedicado a su función corporativa.</p>
 <p>Su función no es absorber las herramientas, dependencias y configuraciones particulares de todos nuestros clientes.</p>
 <p>Cuando cada nuevo proyecto instala directamente sobre el ordenador todo aquello que necesita, terminamos construyendo algo parecido a esto:</p>
@@ -323,9 +297,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Los proyectos empiezan a contaminarse entre sí, una actualización necesaria para un proyecto puede romper otro. Una nueva versión de una herramienta puede modificar un comportamiento anterior. Una VPN puede alterar rutas de red. Una variable de entorno puede afectar a programas aparentemente independientes. Una configuración realizada meses atrás puede seguir actuando cuando ya hemos olvidado por qué estaba allí.</p>
 <p>También desaparece la reproducibilidad, si un proyecto funciona porque nuestro ordenador ha acumulado durante años pequeñas modificaciones cuyo origen ya no conocemos, entonces no tenemos realmente un entorno definido.</p>
 <p>Tenemos una máquina que funciona por acumulación histórica.</p>
-</section>
-<section id="el-principio-de-isolation" class="level2">
-<h2 class="anchored" data-anchor-id="el-principio-de-isolation">El principio de <em>isolation</em></h2>
+</section><section id="el-principio-de-isolation" class="level2"><h2 class="anchored" data-anchor-id="el-principio-de-isolation">El principio de <em>isolation</em>
+</h2>
 <p>IASI aplica por tanto un principio sencillo:</p>
 <blockquote class="blockquote">
 <p><strong>Cada proyecto, y cada cliente cuando constituya un contexto independiente, vive en su propia máquina virtual.</strong></p>
@@ -343,38 +316,26 @@ ul.task-list li input[type="checkbox"] {
 <blockquote class="blockquote">
 <p><strong>El ordenador físico no es el entorno de trabajo. Es la infraestructura que aloja los entornos de trabajo.</strong></p>
 </blockquote>
-</section>
-<section id="cliente-y-proyecto-como-frontera" class="level2">
-<h2 class="anchored" data-anchor-id="cliente-y-proyecto-como-frontera">Cliente y proyecto como frontera</h2>
+</section><section id="cliente-y-proyecto-como-frontera" class="level2"><h2 class="anchored" data-anchor-id="cliente-y-proyecto-como-frontera">Cliente y proyecto como frontera</h2>
 <p>La expresión «una máquina virtual por proyecto» debe entenderse como una regla de aislamiento, no como una obligación administrativa rígida, en algunos clientes varios proyectos pueden compartir exactamente el mismo contexto, las mismas herramientas y las mismas restricciones. En ese caso puede resultar razonable que compartan también una máquina virtual, en otros casos, dos proyectos del mismo cliente pueden tener requisitos suficientemente diferentes como para necesitar entornos independientes.</p>
 <p>La pregunta relevante es:</p>
 <blockquote class="blockquote">
 <p><strong>¿Puede un cambio necesario para este trabajo afectar a otro trabajo distinto?</strong></p>
 </blockquote>
 <p>Si la respuesta es sí, existe una frontera que debemos aislar, cuando necesitemos un contexto de trabajo independiente creamos una maquina virtual, la cual contendrá uno o varios proyectos. Lo importante no es su denominación, sino que sus decisiones técnicas no se propaguen accidentalmente fuera de él.</p>
-</section>
-<section id="la-infraestructura-del-cliente-no-sustituye-al-aislamiento" class="level2">
-<h2 class="anchored" data-anchor-id="la-infraestructura-del-cliente-no-sustituye-al-aislamiento">La infraestructura del cliente no sustituye al aislamiento</h2>
+</section><section id="la-infraestructura-del-cliente-no-sustituye-al-aislamiento" class="level2"><h2 class="anchored" data-anchor-id="la-infraestructura-del-cliente-no-sustituye-al-aislamiento">La infraestructura del cliente no sustituye al aislamiento</h2>
 <p>Muchos clientes proporcionan ya mecanismos de acceso o aislamiento, Una <em>VDI</em> puede ofrecer un escritorio completamente gestionado por el cliente, <em>Citrix</em> puede permitir trabajar dentro de una infraestructura remota, una VPN puede establecer una conexión segura con la red corporativa, e incluso un ordenador corporativo entregado por el propio cliente constituye un entorno físico independiente. Todo ello es compatible con el principio de <em>isolation</em>.</p>
 <p>Pero son fronteras con responsabilidades diferentes, la infraestructura proporcionada por el cliente protege y organiza <strong>su entorno</strong>, la máquina virtual que utilizamos nosotros protege y organiza <strong>nuestro contexto de trabajo</strong>. La existencia de una <em>VDI</em>*_ al otro lado de una conexión no implica que queramos instalar directamente sobre nuestro ordenador físico la VPN, los certificados, las configuraciones de red y cualquier otra dependencia necesaria para alcanzarla, todo ese contexto debe permanecer dentro de la máquina virtual asociada al cliente. Cuando dejamos de trabajar con él, podemos apagarla, archivarla o eliminarla, nuestro ordenador permanece esencialmente igual que antes.</p>
-</section>
-<section id="una-máquina-virtual-no-es-un-contenedor" class="level2">
-<h2 class="anchored" data-anchor-id="una-máquina-virtual-no-es-un-contenedor">Una máquina virtual no es un contenedor</h2>
+</section><section id="una-máquina-virtual-no-es-un-contenedor" class="level2"><h2 class="anchored" data-anchor-id="una-máquina-virtual-no-es-un-contenedor">Una máquina virtual no es un contenedor</h2>
 <p>IASI utiliza deliberadamente una <strong>máquina virtual</strong> como unidad principal de aislamiento del entorno de trabajo. No utilizamos un <em>container</em> para resolver este problema, los contenedores son una tecnología muy útil, pero están orientados a una frontera diferente: aplicaciones, servicios, procesos o componentes desplegables. Aquí queremos aislar algo mayor:</p>
 <p><strong>el puesto de trabajo completo asociado a un contexto profesional.</strong></p>
 <p>Queremos incluir dentro de esa frontera el sistema operativo, las herramientas de desarrollo, los <em>runtimes</em>, los navegadores, los clientes VPN, los certificados, las herramientas gráficas, las configuraciones del usuario y cualquier otro elemento necesario para desarrollar el trabajo.</p>
 <p>Ambos mecanismos pueden coexistir perfectamente, el <em>container</em>*_ parte del entorno pero no sustituye al entorno. La máquina virtual establece la frontera del proyecto. Los contenedores, cuando sean necesarios, establecen fronteras internas dentro de ella.</p>
-</section>
-<section id="un-modelo-probado-en-la-práctica" class="level2">
-<h2 class="anchored" data-anchor-id="un-modelo-probado-en-la-práctica">Un modelo probado en la práctica</h2>
+</section><section id="un-modelo-probado-en-la-práctica" class="level2"><h2 class="anchored" data-anchor-id="un-modelo-probado-en-la-práctica">Un modelo probado en la práctica</h2>
 <p>Este enfoque no es únicamente una construcción teórica, es el modelo de trabajo utilizado por el autor durante años en proyectos reales y ha demostrado ser extraordinariamente operativo. Las máquinas virtuales no tienen por qué residir permanentemente en el disco interno del ordenador, principalmente cuando tus clientes se acumulan. Ademas de tu ordenador corporativo tienes un almacenamiento externo donde almacenas tus VM, cuando necesitas una, la copias a tu disco interno (por temas de rendimiento) y cuando ya no es necesaria, la copias al almacenamiento externo.</p>
-</section>
-<section id="aislar-también-permite-cambiar-de-ordenador" class="level2">
-<h2 class="anchored" data-anchor-id="aislar-también-permite-cambiar-de-ordenador">Aislar también permite cambiar de ordenador</h2>
+</section><section id="aislar-también-permite-cambiar-de-ordenador" class="level2"><h2 class="anchored" data-anchor-id="aislar-también-permite-cambiar-de-ordenador">Aislar también permite cambiar de ordenador</h2>
 <p>Este modelo modifica nuestra relación con el equipo físico, el ordenador deja de ser el lugar donde reside nuestra historia profesional y pasa a ser la plataforma sobre la que ejecutamos temporalmente el entorno que necesitamos. Esto permite cambiar de ordenador sin tener que reconstruir durante días todos los contextos anteriores, permite conservar proyectos antiguos sin mantener instaladas sus herramientas y permite volver a un proyecto tiempo después recuperando su máquina.</p>
-</section>
-<section id="el-punto-de-partida-de-iasi-infra" class="level2">
-<h2 class="anchored" data-anchor-id="el-punto-de-partida-de-iasi-infra">El punto de partida de IASI Infra</h2>
+</section><section id="el-punto-de-partida-de-iasi-infra" class="level2"><h2 class="anchored" data-anchor-id="el-punto-de-partida-de-iasi-infra">El punto de partida de IASI Infra</h2>
 <p>El principio de <em>isolation</em> tiene una consecuencia fundamental para todo lo que sigue en este documento.</p>
 <p><strong>A partir de este punto asumimos siempre que partimos de una máquina virtual limpia.</strong></p>
 <p>No intentaremos adaptar una estación de trabajo que lleva años acumulando programas, versiones y configuraciones, no intentaremos descubrir qué dependencias preexistentes pueden aprovecharse, no daremos por hecho que existe ninguna herramienta instalada salvo aquellas que formen parte de la instalación base del sistema operativo.</p>
@@ -384,9 +345,8 @@ ul.task-list li input[type="checkbox"] {
 </blockquote>
 <p>Esta premisa simplifica radicalmente la documentación.Cuando indiquemos que necesitamos Git, Java, R, Quarto, Docker o cualquier otra herramienta, estaremos describiendo qué se necesita incorporar a un entorno limpio para convertirse en un entorno IASI, no estaremos documentando cómo reparar, adaptar o reconciliar una máquina preexistente. Ese problema queda fuera de alcance.</p>
 <p>Esto proporciona además una referencia inequívoca para la reproducibilidad: si el procedimiento funciona partiendo de una máquina limpia con el sistema operativo base, entonces conocemos realmente las dependencias del entorno.</p>
-</section>
-<section id="principio-de-rebuildability" class="level2">
-<h2 class="anchored" data-anchor-id="principio-de-rebuildability">Principio de <em>rebuildability</em></h2>
+</section><section id="principio-de-rebuildability" class="level2"><h2 class="anchored" data-anchor-id="principio-de-rebuildability">Principio de <em>rebuildability</em>
+</h2>
 <p>Existe una propiedad especialmente valiosa de este modelo.</p>
 <p>Si un entorno está correctamente aislado y definido, dejar de necesitarlo o que simplemente se “corrompa” no debería plantear ningún problema, la máquina virtual puede eliminarse. Ese gesto constituye una buena prueba de arquitectura.</p>
 <p>Si eliminar o que falle una máquina virtual nos preocupa porque contiene algo que no sabemos reconstruir, entonces parte del conocimiento del proyecto continúa encerrado dentro de ella, si podemos destruirla sabiendo que somos capaces de crear otra equivalente desde una máquina limpia, entonces el entorno está realmente bajo nuestro control.</p>
@@ -394,11 +354,7 @@ ul.task-list li input[type="checkbox"] {
 <p>A partir de ahi, recrear la maquina virtual es tan simple como crear una nueva de acuerdo con su manual de instalación, y recuperar los artefactos de su lugar de almacenamiento.</p>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -799,27 +755,23 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p>IASI · Ingeniería Asistida por Sistemas Inteligentes</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
+       
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="https://github.com/iasi-org">
 <p>GitHub</p>
 </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
-
-
-
-</body></html>
+</body>
+</html>
