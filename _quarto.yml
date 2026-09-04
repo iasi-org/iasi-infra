@@ -47,7 +47,7 @@ website:
         aria-label: GitHub
 
   page-footer:
-    left: "IASI · Ingeniería Asistida por Sistemas Inteligentes"
+    left: "IASI · Ingeniería Aumentada por Sistemas Inteligentes"
     right:
       - text: GitHub
         href: https://github.com/iasi-org

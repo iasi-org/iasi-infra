@@ -62,7 +62,7 @@ Virtualización, contenedores, gestores de paquetes o herramientas de infraestru
 
 ## Relación con IASI
 
-iasi-infra forma parte del ecosistema IASI — Ingeniería Asistida por Sistemas Inteligentes.
+iasi-infra forma parte del ecosistema IASI — Ingeniería Aumentada por Sistemas Inteligentes.
 
 IASI parte de una idea sencilla:
 
@@ -76,4 +76,4 @@ Proyecto en fase inicial.
 
 La primera meta será disponer de un procedimiento reproducible para preparar un entorno IASI completo desde una máquina nueva, comenzando por Windows y extendiéndolo posteriormente a Linux.
 
-IASIIngeniería Asistida por Sistemas Inteligentes
+IASIIngeniería Aumentada por Sistemas Inteligentes
